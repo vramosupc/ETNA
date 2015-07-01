@@ -1,0 +1,14 @@
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.BL.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.BL.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\EntityFramework.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.Common.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.DAL.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.Domain.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.Common.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.DAL.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\ETNA.Domain.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\EntityFramework.xml
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\bin\Debug\es\EntityFramework.resources.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\obj\Debug\ETNA.BL.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.BL\obj\Debug\ETNA.BL.pdb

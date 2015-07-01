@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5eadab6b-a7c5-4009-836b-c46f48338087" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/PV/Facturas.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Facturas4.xsd" MetadataType="Schema" ID="458163c2-138f-47e4-ab7a-f9fd37043948" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?xsd=xsd4" />
+    <MetadataFile FileName="Facturas.wsdl" MetadataType="Wsdl" ID="83a6dca1-0b6c-44de-af34-61203642e9dc" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?wsdl" />
+    <MetadataFile FileName="Facturas.xsd" MetadataType="Schema" ID="c96319a8-82c0-4874-980c-5ec8d8204f4d" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?xsd=xsd0" />
+    <MetadataFile FileName="Facturas1.xsd" MetadataType="Schema" ID="31db403e-1fa4-4c74-bee2-bd575f186883" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?xsd=xsd1" />
+    <MetadataFile FileName="Facturas2.xsd" MetadataType="Schema" ID="e4677a7d-9cef-4145-a42f-81c4e1bb0132" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?xsd=xsd2" />
+    <MetadataFile FileName="Facturas3.xsd" MetadataType="Schema" ID="24d24aab-abb8-4a98-9de2-89e5f206f892" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?xsd=xsd3" />
+    <MetadataFile FileName="Facturas.disco" MetadataType="Disco" ID="16f448fb-03c1-46c8-b492-d959aea67e6d" SourceId="1" SourceUrl="http://localhost:6078/PV/Facturas.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

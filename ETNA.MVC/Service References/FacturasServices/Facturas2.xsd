@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs" />
+  <xs:complexType name="ArrayOfFacturaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacturaDto" nillable="true" type="tns:FacturaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacturaDto" nillable="true" type="tns:ArrayOfFacturaDto" />
+  <xs:complexType name="FacturaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:ArrayOfClienteDto" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFactura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCompletoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroFactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioVenta" type="xs:double" />
+      <xs:element minOccurs="0" name="ValorVenta" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacturaDto" nillable="true" type="tns:FacturaDto" />
+  <xs:complexType name="ArrayOfClienteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClienteDto" nillable="true" type="tns:ClienteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClienteDto" nillable="true" type="tns:ArrayOfClienteDto" />
+  <xs:complexType name="ClienteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocIdentidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombres" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClienteDto" nillable="true" type="tns:ClienteDto" />
+  <xs:complexType name="ArrayOfFacturaDetalleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FacturaDetalleDto" nillable="true" type="tns:FacturaDetalleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacturaDetalleDto" nillable="true" type="tns:ArrayOfFacturaDetalleDto" />
+  <xs:complexType name="FacturaDetalleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="Factura" nillable="true" type="tns:ArrayOfFacturaDto" />
+      <xs:element minOccurs="0" name="FechaFactura" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProducto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NroFactura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioVentaProducto" type="xs:double" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ETNA.DTOs" minOccurs="0" name="Producto" nillable="true" type="q1:ArrayOfProductoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FacturaDetalleDto" nillable="true" type="tns:FacturaDetalleDto" />
+</xs:schema>

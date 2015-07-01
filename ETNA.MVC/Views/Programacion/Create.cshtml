@@ -1,0 +1,187 @@
+﻿@using ETNA.MVC.Models.PV
+@model ETNA.MVC.Models.PV.ProgramacionViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<style type="text/css">
+    .izquierda {
+        text-align: left;
+    }
+     
+</style>
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ProgramacionViewModel</legend>
+       
+        <table style="border: 1px solid white">
+            
+            <tr>
+                <td style="text-align: center; font-size: 20px; font-weight: bold;" colspan="4">Nueva Programación de Encuestas</td>
+            </tr>      
+            
+            <tr>
+               <tr>
+                <td>@Html.LabelFor(model => model.CodigoProgramacion)</td>
+                <td>
+                   
+                </td>
+                <td>@Html.LabelFor(model => model.Estado)</td>
+                <td style="text-align: left">Activo</td>
+            </tr>   
+            </tr>
+              
+            <tr>
+                <td>@Html.LabelFor(model => model.Descripcion)</td>
+                <td colspan="3" class="izquierda">
+                    @Html.TextAreaFor(model => model.Descripcion)
+                    @Html.ValidationMessageFor(model => model.Descripcion)
+                </td>
+            </tr>   
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.PlantillaId)
+                </td>
+                <td class="izquierda" >
+                    @Html.DropDownList("PlantillaId")
+                </td>
+                
+                <td>@Html.LabelFor(model => model.Periodicidad)</td>
+                <td class="izquierda">
+                    @Html.DropDownListFor(model => model.Periodicidad, new List<SelectListItem>
+                    {
+                        new SelectListItem() {Text = "Seleccione", Value = ""},
+                        new SelectListItem() {Text = "Diario", Value = "D"},
+                        new SelectListItem() {Text = "Semanal", Value = "S"},
+                        new SelectListItem() {Text = "Mensual", Value = "M"}
+                    })
+                    @Html.ValidationMessageFor(model => model.Periodicidad)
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaInicio)</td>
+                <td class="izquierda">
+                    @Html.EditorFor(model => model.FechaInicio)
+                    @Html.ValidationMessageFor(model => model.FechaInicio)
+                </td>
+                
+                <td>@Html.LabelFor(model => model.FechaFin)</td>
+                <td class="izquierda">
+                    @Html.EditorFor(model => model.FechaFin)
+                    @Html.ValidationMessageFor(model => model.FechaFin)
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.PorcentajeEncuestados)</td>
+                <td class="izquierda">
+                    @Html.EditorFor(model => model.PorcentajeEncuestados)
+                    @Html.ValidationMessageFor(model => model.PorcentajeEncuestados)
+                </td>
+                <td>@Html.LabelFor(model => model.DiasVigencia)</td>
+                <td class="izquierda">
+                    @Html.EditorFor(model => model.DiasVigencia)
+                    @Html.ValidationMessageFor(model => model.DiasVigencia)
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align: center"><input type="submit" value="Grabar" name="btnGrabar" id="btnGrabar" /></td>
+                <td colspan="2" style="text-align: center">
+                    @Html.ActionLink("Regresar", "Index")
+                </td>
+            </tr>
+        </table>
+   
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $("#btnGrabar").live('click', function () {
+
+                var codigoProgramacion = $("#CodigoProgramacion").val();
+                var estado = $("#Estado").val();
+                var descripcion = $("#Descripcion").val();
+                var plantillaId = $("#PlantillaId").val();
+                var periodicidad = $("#Periodicidad").val();
+                var fechaInicio = $("#FechaInicio").val();
+                var fechaFin = $("#FechaFin").val();
+                var porcentajeEncuestados = $("#PorcentajeEncuestados").val();
+                var diasVigencia = $("#DiasVigencia").val();
+
+
+                if (descripcion == null || descripcion == "") {
+                    alert("Debe ingresar la descripción de la Programación");
+                    $("#Descripcion").focus();
+                    return false;
+                }
+
+                if (plantillaId == null || plantillaId == "") {
+                    alert("Debe Selecionar un Tipo de Plantilla");
+                    $("#PlantillaId").focus();
+                    return false;
+                }
+
+                if (periodicidad == null || periodicidad == "") {
+                    alert("Debe seleccionar la periodicidad para la Programación");
+                    $("#Periodicidad").focus();
+                    return false;
+                }
+
+                if (fechaInicio == null || fechaInicio == "") {
+                    alert("Debe ingresar la Fecha de Inicio para la Programación");
+                    $("#FechaInicio").focus();
+                    return false;
+                }
+
+                if (fechaFin == null || fechaFin == "") {
+                    alert("Debe ingresar la Fecha de Fin para la Programación");
+                    $("#FechaFin").focus();
+                    return false;
+                }
+
+                if (fechaInicio > fechaFin) {
+                    alert("La Fecha Final de la Programación debe ser mayor o igual que la Fecha de Inicio");
+                    $("#FechaFinal").focus();
+                    return false;
+                }
+
+             
+
+                if (porcentajeEncuestados == null || porcentajeEncuestados == "") {
+                    alert("Debe ingresar un porcentaje de encuestados para la Programación");
+                    $("#PorcentajeEncuestados").focus();
+                    return false;
+                }
+
+                if (diasVigencia == null || diasVigencia == "") {
+                    alert("Debe ingresar la cantidad de días de vigencia para la Programación");
+                    $("#DiasVigencia").focus();
+                    return false;
+                }
+
+                if (confirm("¿Desea Registrar la Programación?")) {
+                    alert("Se registró correctamente la programación de envío de encuestas");
+                } else {
+                    return false;
+                }
+
+            });
+
+
+        });
+    </script>
+}
+

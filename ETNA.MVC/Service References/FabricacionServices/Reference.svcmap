@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bd9a2b01-9f9a-48b4-b0f3-4879ee1e03a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/FB/LotesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LotesService.xsd" MetadataType="Schema" ID="760d1005-ad35-47f2-aff7-d4667b75c8c1" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LotesService.wsdl" MetadataType="Wsdl" ID="495c2cc4-92b0-4761-9e5f-9251d5846cad" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?wsdl" />
+    <MetadataFile FileName="LotesService1.xsd" MetadataType="Schema" ID="365119fe-9fe0-44ba-baec-0809948da9ed" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LotesService.disco" MetadataType="Disco" ID="444247c0-ce8d-4df7-bee8-7d22f829df3e" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?disco" />
+    <MetadataFile FileName="LotesService2.xsd" MetadataType="Schema" ID="88ef35f3-1094-4b99-a6a3-a6be484448ea" SourceId="1" SourceUrl="http://localhost:6078/FB/LotesService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

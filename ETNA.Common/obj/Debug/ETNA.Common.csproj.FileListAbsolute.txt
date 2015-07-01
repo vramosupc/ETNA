@@ -1,0 +1,4 @@
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Common\bin\Debug\ETNA.Common.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Common\bin\Debug\ETNA.Common.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Common\obj\Debug\ETNA.Common.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Common\obj\Debug\ETNA.Common.pdb

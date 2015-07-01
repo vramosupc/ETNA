@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ETNA.MVC.Models.PV.ProgramacionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+     
+</style>
+
+
+<h2>Programaciones de Encuestas</h2> 
+
+<p>
+    @Html.ActionLink("Crear Programación", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoProgramacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periodicidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoProgramacion)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionPeriodicidad)
+        </td>
+        <td>
+            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(modelItem => item.FechaInicio).ToString()))
+        </td>
+    <td>
+        @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(modelItem => item.FechaFin).ToString()))
+    </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        </td>
+  
+        <td>
+            @if (item.Estado != "E")
+            {
+                @Html.ActionLink("Modificar", "Edit", new {id = item.Id})
+            }
+            else
+            {
+                <a href="#" class="btndenegado">Modificar</a>
+            } |
+            @Html.ActionLink("Ver", "Details", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Regresar", "Index", "Postventa")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".btndenegado").click(function(){
+                alert("No se puede editar, por que se encuentra en ejecución");
+            });
+        });
+    </script>
+
+}

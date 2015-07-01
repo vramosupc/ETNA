@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d038a6b0-b526-4675-b83f-1c30830d1789" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/PV/Programacion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Programacion.xsd" MetadataType="Schema" ID="ba1c51f8-2bb7-4229-9574-d7a401384ca7" SourceId="1" SourceUrl="http://localhost:6078/PV/Programacion.svc?xsd=xsd2" />
+    <MetadataFile FileName="Programacion.wsdl" MetadataType="Wsdl" ID="6ded456c-d86d-4ba4-af83-19c49eeee60d" SourceId="1" SourceUrl="http://localhost:6078/PV/Programacion.svc?wsdl" />
+    <MetadataFile FileName="Programacion1.xsd" MetadataType="Schema" ID="4d890093-628b-4c11-8d9f-866e89bbc0c6" SourceId="1" SourceUrl="http://localhost:6078/PV/Programacion.svc?xsd=xsd1" />
+    <MetadataFile FileName="Programacion.disco" MetadataType="Disco" ID="0ff78961-0b0c-4e1a-a177-b02dcde6af98" SourceId="1" SourceUrl="http://localhost:6078/PV/Programacion.svc?disco" />
+    <MetadataFile FileName="Programacion2.xsd" MetadataType="Schema" ID="d5b91ed7-014f-4c99-874c-404e0089c8c9" SourceId="1" SourceUrl="http://localhost:6078/PV/Programacion.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

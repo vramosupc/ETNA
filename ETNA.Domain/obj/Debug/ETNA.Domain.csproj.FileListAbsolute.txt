@@ -1,0 +1,5 @@
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Domain\bin\Debug\ETNA.Domain.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Domain\bin\Debug\ETNA.Domain.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Domain\obj\Debug\ETNA.Domain.dll
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Domain\obj\Debug\ETNA.Domain.pdb
+C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.Domain\obj\Debug\ETNA.Domain.csprojResolveAssemblyReference.cache

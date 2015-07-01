@@ -1,0 +1,89 @@
+﻿@model ETNA.MVC.Models.PV.ProgramacionViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style type="text/css">
+    .izquierda {
+        text-align: left;
+    }
+     
+</style>
+
+<fieldset>
+    <legend>ProgramacionViewModel</legend>
+    
+    
+    <table style="border: 1px solid white">
+            
+            <tr>
+                <td style="text-align: center; font-size: 20px; font-weight: bold;" colspan="4">Consultar de Programación Encuestas</td>
+            </tr>   
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.CodigoProgramacion)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.CodigoProgramacion)
+                </td>
+                
+                <td>@Html.LabelFor(model => model.Estado)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.DescripcionEstado)
+                </td>
+            </tr>   
+            
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.Descripcion)</td>
+                <td colspan="3" class="izquierda">
+                    @Html.DisplayTextFor(model => model.Descripcion)
+                </td>
+            </tr>   
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.PlantillaId)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.NombrePlantilla)
+                </td>
+                
+                <td>@Html.LabelFor(model => model.Periodicidad)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.DescripcionPeriodicidad)
+              
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaInicio)</td>
+                <td class="izquierda">
+                  @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model=> model.FechaInicio).ToString()))
+               </td>
+                
+                <td>@Html.LabelFor(model => model.FechaFin)</td>
+                <td class="izquierda">
+                   
+              @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model=> model.FechaFin).ToString()))
+  
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.PorcentajeEncuestados)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.PorcentajeEncuestados)
+                </td>
+                <td>@Html.LabelFor(model => model.DiasVigencia)</td>
+                <td class="izquierda">
+                    @Html.DisplayFor(model => model.DiasVigencia)
+                </td>
+            </tr>
+
+        <tr>
+                <td colspan="4" style="text-align: center">
+                    @Html.ActionLink("Regresar", "Index")
+                </td>
+        </tr>
+            
+        </table>
+</fieldset>

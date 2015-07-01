@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4ff3f349-c74d-4bd8-adaf-9de8835b6ffd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/PV/Reclamos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Reclamos.xsd" MetadataType="Schema" ID="a51833b6-8fe0-40be-8331-c0be922bcfa1" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd1" />
+    <MetadataFile FileName="Reclamos.disco" MetadataType="Disco" ID="97a02a7e-bb8d-44dd-87e5-8c6653893d51" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?disco" />
+    <MetadataFile FileName="Reclamos1.xsd" MetadataType="Schema" ID="511b19f2-371a-4394-93ea-c37942251a41" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd2" />
+    <MetadataFile FileName="Reclamos.wsdl" MetadataType="Wsdl" ID="fd7de7b3-6414-42e9-bd6c-d4af1405b612" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?wsdl" />
+    <MetadataFile FileName="Reclamos2.xsd" MetadataType="Schema" ID="92d6066f-d226-4393-9750-7db621742bb6" SourceId="1" SourceUrl="http://localhost:6078/PV/Reclamos.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

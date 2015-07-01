@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6ea47938-db18-4c61-bf87-18a25e1f4e3e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/PV/Plantillas.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Plantillas.wsdl" MetadataType="Wsdl" ID="d9552e5b-8bc0-492f-981e-9a68a2a3848b" SourceId="1" SourceUrl="http://localhost:6078/PV/Plantillas.svc?wsdl" />
+    <MetadataFile FileName="Plantillas.xsd" MetadataType="Schema" ID="fec26499-1249-474c-8feb-13d3fda21c5b" SourceId="1" SourceUrl="http://localhost:6078/PV/Plantillas.svc?xsd=xsd0" />
+    <MetadataFile FileName="Plantillas1.xsd" MetadataType="Schema" ID="3db5c675-9b2c-48f7-ad68-41c680525863" SourceId="1" SourceUrl="http://localhost:6078/PV/Plantillas.svc?xsd=xsd2" />
+    <MetadataFile FileName="Plantillas.disco" MetadataType="Disco" ID="07b91305-7397-4132-a30f-6f7a98cdacde" SourceId="1" SourceUrl="http://localhost:6078/PV/Plantillas.svc?disco" />
+    <MetadataFile FileName="Plantillas2.xsd" MetadataType="Schema" ID="da1ffeef-0a13-4f33-8b06-40356568712f" SourceId="1" SourceUrl="http://localhost:6078/PV/Plantillas.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

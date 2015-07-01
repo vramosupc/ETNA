@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6078/LO/EntradasYSalidasService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.LO" />
+  <xs:element name="ObtenerAlmacenesPorEmpleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAlmacenesPorEmpleadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ETNA.DTOs.LO" minOccurs="0" name="ObtenerAlmacenesPorEmpleadoResult" nillable="true" type="q1:ArrayOfAlmacenDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSolicitudesEntrada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSolicitud" type="xs:int" />
+        <xs:element minOccurs="0" name="estadoSolicitud" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idEmpleado" type="xs:int" />
+        <xs:element minOccurs="0" name="tipoEntrada" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSolicitudesEntradaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.LO" minOccurs="0" name="ObtenerSolicitudesEntradaResult" nillable="true" type="q2:ArrayOfListaSolicitudEntradaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSolicitudEntrada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSolicitud" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSolicitudEntradaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ETNA.DTOs.LO" minOccurs="0" name="ObtenerSolicitudEntradaResult" nillable="true" type="q3:SolicitudEntradaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

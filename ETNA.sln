@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.MVC", "ETNA.MVC\ETNA.MVC.csproj", "{5D938D7E-8739-492C-A865-798F8730CD9B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C} = {D26FF297-E881-4261-A6AD-324ACDA4EC7C}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Dominio", "01.Dominio", "{256DA016-982C-4113-8625-5BC311D28BB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Datos", "02.Datos", "{F0497192-25EF-4498-AA41-14A8865A6739}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Negocio", "03.Negocio", "{D7C275C1-A58C-483B-972A-CEC949BCD5FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Servicios", "04.Servicios", "{AD3F80A7-D02B-4FD8-9AF2-1DE8FCAF8187}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Presentacion", "05.Presentacion", "{05D0DF63-95F3-4B31-AE77-CB7931416869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.WCF", "ETNA.WCF\ETNA.WCF.csproj", "{D26FF297-E881-4261-A6AD-324ACDA4EC7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.DTOs", "ETNA.DTOs\ETNA.DTOs.csproj", "{3ACCCE0A-ADFF-40B2-A769-E43C555958E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.DAL", "ETNA.DAL\ETNA.DAL.csproj", "{3E42986B-E8AF-4EEB-87CD-454A8271A235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.Domain", "ETNA.Domain\ETNA.Domain.csproj", "{25235949-3740-407A-9CFC-3A1AF58C18E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.BL", "ETNA.BL\ETNA.BL.csproj", "{72A26D14-EC17-4557-9B1B-D77555BFBC54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Común", "00. Común", "{8BB68309-57C4-4047-8D71-A186C8699236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.Common", "ETNA.Common\ETNA.Common.csproj", "{48128773-EA3B-41F6-9095-A267D4536913}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tp2-etna-postventa.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ETNA.BL\\ETNA.BL.csproj
+		SccProjectTopLevelParentUniqueName1 = ETNA.sln
+		SccProjectName1 = ETNA.BL
+		SccLocalPath1 = ETNA.BL
+		SccProjectUniqueName2 = ETNA.Common\\ETNA.Common.csproj
+		SccProjectTopLevelParentUniqueName2 = ETNA.sln
+		SccProjectName2 = ETNA.Common
+		SccLocalPath2 = ETNA.Common
+		SccProjectUniqueName3 = ETNA.DAL\\ETNA.DAL.csproj
+		SccProjectTopLevelParentUniqueName3 = ETNA.sln
+		SccProjectName3 = ETNA.DAL
+		SccLocalPath3 = ETNA.DAL
+		SccProjectUniqueName4 = ETNA.Domain\\ETNA.Domain.csproj
+		SccProjectTopLevelParentUniqueName4 = ETNA.sln
+		SccProjectName4 = ETNA.Domain
+		SccLocalPath4 = ETNA.Domain
+		SccProjectUniqueName5 = ETNA.DTOs\\ETNA.DTOs.csproj
+		SccProjectTopLevelParentUniqueName5 = ETNA.sln
+		SccProjectName5 = ETNA.DTOs
+		SccLocalPath5 = ETNA.DTOs
+		SccProjectUniqueName6 = ETNA.MVC\\ETNA.MVC.csproj
+		SccProjectTopLevelParentUniqueName6 = ETNA.sln
+		SccProjectName6 = ETNA.MVC
+		SccLocalPath6 = ETNA.MVC
+		SccProjectUniqueName7 = ETNA.WCF\\ETNA.WCF.csproj
+		SccProjectTopLevelParentUniqueName7 = ETNA.sln
+		SccProjectName7 = ETNA.WCF
+		SccLocalPath7 = ETNA.WCF
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D938D7E-8739-492C-A865-798F8730CD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D938D7E-8739-492C-A865-798F8730CD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D938D7E-8739-492C-A865-798F8730CD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D938D7E-8739-492C-A865-798F8730CD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ACCCE0A-ADFF-40B2-A769-E43C555958E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ACCCE0A-ADFF-40B2-A769-E43C555958E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ACCCE0A-ADFF-40B2-A769-E43C555958E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ACCCE0A-ADFF-40B2-A769-E43C555958E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E42986B-E8AF-4EEB-87CD-454A8271A235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E42986B-E8AF-4EEB-87CD-454A8271A235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E42986B-E8AF-4EEB-87CD-454A8271A235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E42986B-E8AF-4EEB-87CD-454A8271A235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25235949-3740-407A-9CFC-3A1AF58C18E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25235949-3740-407A-9CFC-3A1AF58C18E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25235949-3740-407A-9CFC-3A1AF58C18E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25235949-3740-407A-9CFC-3A1AF58C18E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A26D14-EC17-4557-9B1B-D77555BFBC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A26D14-EC17-4557-9B1B-D77555BFBC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A26D14-EC17-4557-9B1B-D77555BFBC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A26D14-EC17-4557-9B1B-D77555BFBC54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48128773-EA3B-41F6-9095-A267D4536913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48128773-EA3B-41F6-9095-A267D4536913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48128773-EA3B-41F6-9095-A267D4536913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48128773-EA3B-41F6-9095-A267D4536913}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D938D7E-8739-492C-A865-798F8730CD9B} = {05D0DF63-95F3-4B31-AE77-CB7931416869}
+		{25235949-3740-407A-9CFC-3A1AF58C18E3} = {256DA016-982C-4113-8625-5BC311D28BB5}
+		{3E42986B-E8AF-4EEB-87CD-454A8271A235} = {F0497192-25EF-4498-AA41-14A8865A6739}
+		{72A26D14-EC17-4557-9B1B-D77555BFBC54} = {D7C275C1-A58C-483B-972A-CEC949BCD5FF}
+		{D26FF297-E881-4261-A6AD-324ACDA4EC7C} = {AD3F80A7-D02B-4FD8-9AF2-1DE8FCAF8187}
+		{3ACCCE0A-ADFF-40B2-A769-E43C555958E5} = {AD3F80A7-D02B-4FD8-9AF2-1DE8FCAF8187}
+		{48128773-EA3B-41F6-9095-A267D4536913} = {8BB68309-57C4-4047-8D71-A186C8699236}
+	EndGlobalSection
+EndGlobal

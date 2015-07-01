@@ -1,0 +1,167 @@
+﻿@using ETNA.MVC.Models.PV
+@model ETNA.MVC.Models.PV.ReclamoViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<br />
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+    <fieldset>
+        <legend>ReclamoViewModel</legend>
+
+        <table style="border: 1px solid white">
+            <tr>
+                <td style="text-align: center; font-size: 20px; font-weight: bold;" colspan="4">Modificar Reclamo</td>
+            </tr>        
+            <tr>
+           <td>@Html.LabelFor(model => model.CodigoReclamo)</td>
+                <td style="text-align: left">
+                   @Html.DisplayFor(model => model.CodigoReclamo)
+                </td>
+                <td>@Html.LabelFor(model => model.Estado)</td>
+            
+                <td style="text-align: left">
+                    @Html.DropDownListFor(model => model.Estado, new List<SelectListItem>
+                    {
+                        new SelectListItem() {Text = "Pendiente", Value = "P"},
+                        new SelectListItem() {Text = "Cancelado", Value = "C"},
+                      
+                    })
+                    @Html.ValidationMessageFor(model => model.Estado)
+                </td>
+            </tr>        
+            
+            <tr>
+            <td>@Html.LabelFor(model => model.FechaHoraReclamo)</td>
+                <td   style="text-align: left">
+               
+                    @string.Format("{0:dd/MM/yyyy HH:mm}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaHoraReclamo).ToString()))
+              
+                </td>
+                <td>@Html.LabelFor(model => model.FechaRespuesta)</td>
+                <td  style="text-align: left">
+                
+                       @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaRespuesta).ToString()))
+              
+                </td>
+            </tr>  
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Motivo)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.EditorFor(model => model.Motivo)
+                    @Html.ValidationMessageFor(model => model.Motivo)
+                </td>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NumeroFactura)</td>
+                <td colspan="3" style="text-align: left">
+                   @Html.DisplayFor(model => model.NumeroFactura)
+             
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreCliente)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.DisplayFor(model => model.NombreCliente)
+             
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreProducto)</td>
+                <td colspan="3" style="text-align: left">
+                     @Html.DisplayFor(model => model.NombreProducto)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.Detalle)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.TextAreaFor(model => model.Detalle)
+                    @Html.ValidationMessageFor(model => model.Detalle)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.Observaciones)</td>
+                <td colspan="3" style="text-align: left">
+                    @Html.TextAreaFor(model => model.Observaciones)
+                    @Html.ValidationMessageFor(model => model.Observaciones)
+                </td>
+            </tr> 
+              <tr>
+                <td colspan="1">@Html.LabelFor(model => model.NombreRegistrador)</td>
+                <td colspan="3" style="text-align: left">
+                 @Html.DisplayFor(model => model.NombreRegistrador)
+                </td>
+            </tr> 
+            
+                      
+            <tr>
+                <td colspan="2" style="text-align: center"><input type="submit" value="Grabar" name="btnGrabar" id="btnGrabar" /></td>
+                <td colspan="2" style="text-align: center">
+                    @Html.ActionLink("Regresar", "Index")
+                </td>
+            </tr>  
+
+        </table>
+     
+        <p>
+            
+        </p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#btnGrabar").live('click', function() {
+
+                var motivo = $("#Motivo").val();
+                var detalle = $("#Detalle").val();
+                var idFactura = $("#FacturaId").val();
+      
+                var observaciones = $("#Observaciones").val();
+
+                if (motivo == null || motivo == "") {
+                    alert("Debe ingresar el Motivo del Reclamo");
+                    $("#Motivo").focus();
+                    return false;
+                }
+
+                if (detalle == null || detalle == "") {
+                    alert("Debe ingresar el Detalle del reclamo");
+                    $("#Detalle").focus();
+                    return false;
+                }
+
+
+                if (confirm("¿Desea Actualizar el reclamo?")) {
+                    alert("Se actualizó correctamente el reclamo");
+                } else {
+                    return false;
+                }
+
+
+            });
+
+
+        });
+    </script>
+
+
+}

@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ETNADbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ETNADbModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DocumentosReferencia" EntityType="ETNADbModel.DocumentoReferencia" />
+    <EntitySet Name="Almacenes" EntityType="ETNADbModel.Almacen" />
+    <AssociationSet Name="DocumentoReferenciaAlmacen" Association="ETNADbModel.DocumentoReferenciaAlmacen">
+      <End Role="DocumentoReferencia" EntitySet="DocumentosReferencia" />
+      <End Role="Almacen" EntitySet="Almacenes" />
+    </AssociationSet>
+    <EntitySet Name="UserProfile" EntityType="ETNADbModel.UserProfile" />
+    <EntitySet Name="webpages_Membership" EntityType="ETNADbModel.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="ETNADbModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="ETNADbModel.webpages_Roles" />
+    <AssociationSet Name="webpages_UsersInRoles" Association="ETNADbModel.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+    </AssociationSet>
+    <EntitySet Name="Empleados" EntityType="ETNADbModel.Empleado" />
+    <AssociationSet Name="EmpleadoUserProfile" Association="ETNADbModel.EmpleadoUserProfile">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoAlmacen" Association="ETNADbModel.EmpleadoAlmacen">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="Almacen" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoDocumentoReferencia" Association="ETNADbModel.EmpleadoDocumentoReferencia">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="DocumentoReferencia" EntitySet="DocumentosReferencia" />
+    </AssociationSet>
+    <EntitySet Name="Productos" EntityType="ETNADbModel.Producto" />
+    <EntitySet Name="SolicitudesEntrada" EntityType="ETNADbModel.SolicitudEntrada" />
+    <AssociationSet Name="GuiaEntradaSolicitudEntrada" Association="ETNADbModel.GuiaEntradaSolicitudEntrada">
+      <End Role="GuiaEntrada" EntitySet="DocumentosReferencia" />
+      <End Role="SolicitudEntrada" EntitySet="SolicitudesEntrada" />
+    </AssociationSet>
+    <EntitySet Name="DetalleSolicitudEntrada" EntityType="ETNADbModel.DetalleSolicitudEntrada" />
+    <AssociationSet Name="SolicitudEntradaSolicitudEntradaProducto" Association="ETNADbModel.SolicitudEntradaSolicitudEntradaProducto">
+      <End Role="SolicitudEntrada" EntitySet="SolicitudesEntrada" />
+      <End Role="SolicitudEntradaProducto" EntitySet="DetalleSolicitudEntrada" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoSolicitudEntradaProducto" Association="ETNADbModel.ProductoSolicitudEntradaProducto">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="SolicitudEntradaProducto" EntitySet="DetalleSolicitudEntrada" />
+    </AssociationSet>
+    <EntitySet Name="Kardex" EntityType="ETNADbModel.Kardex" />
+    <AssociationSet Name="DocumentoReferenciaKardex" Association="ETNADbModel.DocumentoReferenciaKardex">
+      <End Role="DocumentoReferencia" EntitySet="DocumentosReferencia" />
+      <End Role="Kardex" EntitySet="Kardex" />
+    </AssociationSet>
+    <AssociationSet Name="AlmacenKardex" Association="ETNADbModel.AlmacenKardex">
+      <End Role="Almacen" EntitySet="Almacenes" />
+      <End Role="Kardex" EntitySet="Kardex" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoKardex" Association="ETNADbModel.ProductoKardex">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="Kardex" EntitySet="Kardex" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoSolicitudEntrada" Association="ETNADbModel.EmpleadoSolicitudEntrada">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="SolicitudEntrada" EntitySet="SolicitudesEntrada" />
+    </AssociationSet>
+    <EntitySet Name="Lotes" EntityType="ETNADbModel.Lote" />
+    <EntitySet Name="TipoLotes" EntityType="ETNADbModel.TipoLote" />
+    <AssociationSet Name="LoteTipoLote" Association="ETNADbModel.LoteTipoLote">
+      <End Role="Lote" EntitySet="Lotes" />
+      <End Role="TipoLote" EntitySet="TipoLotes" />
+    </AssociationSet>
+    <EntitySet Name="Reclamos" EntityType="ETNADbModel.Reclamo" />
+    <EntitySet Name="InformesReclamo" EntityType="ETNADbModel.InformeReclamo" />
+    <AssociationSet Name="ReclamoInformeReclamo" Association="ETNADbModel.ReclamoInformeReclamo">
+      <End Role="Reclamo" EntitySet="Reclamos" />
+      <End Role="InformeReclamo" EntitySet="InformesReclamo" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoInformeReclamoElaboradoPor" Association="ETNADbModel.EmpleadoInformeReclamoElaboradoPor">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="InformeReclamo" EntitySet="InformesReclamo" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoInformeReclamoAprobadoPor" Association="ETNADbModel.EmpleadoInformeReclamoAprobadoPor">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="InformeReclamo" EntitySet="InformesReclamo" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadoReclamoResgistradoPor" Association="ETNADbModel.EmpleadoReclamoResgistradoPor">
+      <End Role="Empleado" EntitySet="Empleados" />
+      <End Role="Reclamo" EntitySet="Reclamos" />
+    </AssociationSet>
+    <EntitySet Name="InformesResultado" EntityType="ETNADbModel.InformeResultado" />
+    <AssociationSet Name="InformeResultadoEmpleado" Association="ETNADbModel.InformeResultadoEmpleado">
+      <End Role="InformeResultado" EntitySet="InformesResultado" />
+      <End Role="Empleado" EntitySet="Empleados" />
+    </AssociationSet>
+    <EntitySet Name="Plantillas" EntityType="ETNADbModel.Plantilla" />
+    <EntitySet Name="TiposPlantilla" EntityType="ETNADbModel.TipoPlantilla" />
+    <AssociationSet Name="PlantillaTipoPlantilla" Association="ETNADbModel.PlantillaTipoPlantilla">
+      <End Role="Plantilla" EntitySet="Plantillas" />
+      <End Role="TipoPlantilla" EntitySet="TiposPlantilla" />
+    </AssociationSet>
+    <AssociationSet Name="PlantillaInformeResultado" Association="ETNADbModel.PlantillaInformeResultado">
+      <End Role="Plantilla" EntitySet="Plantillas" />
+      <End Role="InformeResultado" EntitySet="InformesResultado" />
+    </AssociationSet>
+    <EntitySet Name="PlantillasDetalle" EntityType="ETNADbModel.PlantillaDetalle" />
+    <AssociationSet Name="PlantillaDetallePlantilla" Association="ETNADbModel.PlantillaDetallePlantilla">
+      <End Role="PlantillaDetalle" EntitySet="PlantillasDetalle" />
+      <End Role="Plantilla" EntitySet="Plantillas" />
+    </AssociationSet>
+    <EntitySet Name="Programaciones" EntityType="ETNADbModel.Programacion" />
+    <AssociationSet Name="ProgramacionPlantilla" Association="ETNADbModel.ProgramacionPlantilla">
+      <End Role="Programacion" EntitySet="Programaciones" />
+      <End Role="Plantilla" EntitySet="Plantillas" />
+    </AssociationSet>
+    <EntitySet Name="Encuestas" EntityType="ETNADbModel.Encuesta" />
+    <AssociationSet Name="PlantillaDetalleEncuesta" Association="ETNADbModel.PlantillaDetalleEncuesta">
+      <End Role="PlantillaDetalle" EntitySet="PlantillasDetalle" />
+      <End Role="Encuesta" EntitySet="Encuestas" />
+    </AssociationSet>
+    <EntitySet Name="Clientes" EntityType="ETNADbModel.Cliente" />
+    <AssociationSet Name="ClienteEncuesta" Association="ETNADbModel.ClienteEncuesta">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Encuesta" EntitySet="Encuestas" />
+    </AssociationSet>
+    <EntitySet Name="ProgramacionesEncuesta" EntityType="ETNADbModel.ProgramacionesEncuesta" />
+    <AssociationSet Name="EncuestaProgramacion" Association="ETNADbModel.EncuestaProgramacion">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="Programacion" EntitySet="Programaciones" />
+    </AssociationSet>
+    <EntitySet Name="Facturas" EntityType="ETNADbModel.Factura" />
+    <AssociationSet Name="ClienteFactura" Association="ETNADbModel.ClienteFactura">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <EntitySet Name="FacturaDetalles" EntityType="ETNADbModel.FacturaDetalle" />
+    <AssociationSet Name="FacturaFacturaDetalle" Association="ETNADbModel.FacturaFacturaDetalle">
+      <End Role="Factura" EntitySet="Facturas" />
+      <End Role="FacturaDetalle" EntitySet="FacturaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="ReclamoFacturaDetalle" Association="ETNADbModel.ReclamoFacturaDetalle">
+      <End Role="Reclamo" EntitySet="Reclamos" />
+      <End Role="FacturaDetalle" EntitySet="FacturaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoFacturaDetalle" Association="ETNADbModel.ProductoFacturaDetalle">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="FacturaDetalle" EntitySet="FacturaDetalles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DocumentoReferencia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="IdentificadorDocumento" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="DateTime" Name="FechaElaboracion" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Observaciones" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Almacen" Relationship="ETNADbModel.DocumentoReferenciaAlmacen" FromRole="DocumentoReferencia" ToRole="Almacen" />
+    <NavigationProperty Name="Empleado" Relationship="ETNADbModel.EmpleadoDocumentoReferencia" FromRole="DocumentoReferencia" ToRole="Empleado" />
+    <NavigationProperty Name="Kardex" Relationship="ETNADbModel.DocumentoReferenciaKardex" FromRole="DocumentoReferencia" ToRole="Kardex" />
+  </EntityType>
+  <EntityType Name="GuiaEntrada" BaseType="ETNADbModel.DocumentoReferencia">
+    <NavigationProperty Name="SolicitudEntrada" Relationship="ETNADbModel.GuiaEntradaSolicitudEntrada" FromRole="GuiaEntrada" ToRole="SolicitudEntrada" />
+  </EntityType>
+  <EntityType Name="GuiaSalida" BaseType="ETNADbModel.DocumentoReferencia" />
+  <EntityType Name="AjusteInventario" BaseType="ETNADbModel.DocumentoReferencia">
+    <Property Name="Estado" Nullable="false" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Almacen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Tipo" Nullable="false" />
+    <Property Type="Int32" Name="AreaEnM2" Nullable="false" />
+    <NavigationProperty Name="DocumentoReferencia" Relationship="ETNADbModel.DocumentoReferenciaAlmacen" FromRole="Almacen" ToRole="DocumentoReferencia" />
+    <NavigationProperty Name="Empleado" Relationship="ETNADbModel.EmpleadoAlmacen" FromRole="Almacen" ToRole="Empleado" />
+    <NavigationProperty Name="Kardex" Relationship="ETNADbModel.AlmacenKardex" FromRole="Almacen" ToRole="Kardex" />
+  </EntityType>
+  <Association Name="DocumentoReferenciaAlmacen">
+    <End Type="ETNADbModel.DocumentoReferencia" Role="DocumentoReferencia" Multiplicity="*" />
+    <End Type="ETNADbModel.Almacen" Role="Almacen" Multiplicity="1" />
+  </Association>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_Roles" Relationship="ETNADbModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+    <NavigationProperty Name="Empleado" Relationship="ETNADbModel.EmpleadoUserProfile" FromRole="UserProfile" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Precision="3" />
+    <Property Type="String" Name="ConfirmationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsConfirmed" />
+    <Property Type="DateTime" Name="LastPasswordFailureDate" Precision="3" />
+    <Property Type="Int32" Name="PasswordFailuresSinceLastSuccess" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PasswordChangedDate" Precision="3" />
+    <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PasswordVerificationToken" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PasswordVerificationTokenExpirationDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="ProviderUserId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="UserId" Nullable="false" Type="Int32" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Type="Int32" Name="RoleId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="ETNADbModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+  </EntityType>
+  <Association Name="webpages_UsersInRoles">
+    <End Type="ETNADbModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+    <End Type="ETNADbModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="UserProfile" Relationship="ETNADbModel.EmpleadoUserProfile" FromRole="Empleado" ToRole="UserProfile" />
+    <NavigationProperty Name="Almacen" Relationship="ETNADbModel.EmpleadoAlmacen" FromRole="Empleado" ToRole="Almacen" />
+    <Property Type="String" Name="Nombres" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Apellidos" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="Cargo" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DocumentoReferencia" Relationship="ETNADbModel.EmpleadoDocumentoReferencia" FromRole="Empleado" ToRole="DocumentoReferencia" />
+    <NavigationProperty Name="SolicitudEntrada" Relationship="ETNADbModel.EmpleadoSolicitudEntrada" FromRole="Empleado" ToRole="SolicitudEntrada" />
+    <NavigationProperty Name="InformeReclamo" Relationship="ETNADbModel.EmpleadoInformeReclamoElaboradoPor" FromRole="Empleado" ToRole="InformeReclamo" />
+    <NavigationProperty Name="InformeReclamo1" Relationship="ETNADbModel.EmpleadoInformeReclamoAprobadoPor" FromRole="Empleado" ToRole="InformeReclamo" />
+    <NavigationProperty Name="Reclamo" Relationship="ETNADbModel.EmpleadoReclamoResgistradoPor" FromRole="Empleado" ToRole="Reclamo" />
+  </EntityType>
+  <Association Name="EmpleadoUserProfile">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="ETNADbModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+  </Association>
+  <Association Name="EmpleadoAlmacen">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="*" />
+    <End Type="ETNADbModel.Almacen" Role="Almacen" Multiplicity="*" />
+  </Association>
+  <Association Name="EmpleadoDocumentoReferencia">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="ETNADbModel.DocumentoReferencia" Role="DocumentoReferencia" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="DescripcionCorta" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="String" Name="DescripcionLarga" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Double" Name="PrecioListaCompra" Nullable="false" />
+    <Property Type="Double" Name="PrecioListaVenta" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <NavigationProperty Name="SolicitudEntradaProducto" Relationship="ETNADbModel.ProductoSolicitudEntradaProducto" FromRole="Producto" ToRole="SolicitudEntradaProducto" />
+    <NavigationProperty Name="Kardex" Relationship="ETNADbModel.ProductoKardex" FromRole="Producto" ToRole="Kardex" />
+  </EntityType>
+  <EntityType Name="SolicitudEntrada">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="FechaElaboracion" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="TipoEntrada" Nullable="false" />
+    <Property Type="Int32" Name="Estado" Nullable="false" />
+    <NavigationProperty Name="GuiaEntrada" Relationship="ETNADbModel.GuiaEntradaSolicitudEntrada" FromRole="SolicitudEntrada" ToRole="GuiaEntrada" />
+    <NavigationProperty Name="SolicitudEntradaProducto" Relationship="ETNADbModel.SolicitudEntradaSolicitudEntradaProducto" FromRole="SolicitudEntrada" ToRole="SolicitudEntradaProducto" />
+    <NavigationProperty Name="Empleado" Relationship="ETNADbModel.EmpleadoSolicitudEntrada" FromRole="SolicitudEntrada" ToRole="Empleado" />
+  </EntityType>
+  <Association Name="GuiaEntradaSolicitudEntrada">
+    <End Type="ETNADbModel.GuiaEntrada" Role="GuiaEntrada" Multiplicity="0..1" />
+    <End Type="ETNADbModel.SolicitudEntrada" Role="SolicitudEntrada" Multiplicity="1" />
+  </Association>
+  <EntityType Name="DetalleSolicitudEntrada">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+      <PropertyRef Name="IdSolicitudEntrada" />
+    </Key>
+    <Property Type="Int32" Name="IdProducto" Nullable="false" />
+    <Property Type="Int32" Name="IdSolicitudEntrada" Nullable="false" />
+    <Property Type="String" Name="Cantidad" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SolicitudEntrada" Relationship="ETNADbModel.SolicitudEntradaSolicitudEntradaProducto" FromRole="SolicitudEntradaProducto" ToRole="SolicitudEntrada" />
+    <NavigationProperty Name="Producto" Relationship="ETNADbModel.ProductoSolicitudEntradaProducto" FromRole="SolicitudEntradaProducto" ToRole="Producto" />
+  </EntityType>
+  <Association Name="SolicitudEntradaSolicitudEntradaProducto">
+    <End Type="ETNADbModel.SolicitudEntrada" Role="SolicitudEntrada" Multiplicity="1" />
+    <End Type="ETNADbModel.DetalleSolicitudEntrada" Role="SolicitudEntradaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudEntrada">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudEntradaProducto">
+        <PropertyRef Name="IdSolicitudEntrada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductoSolicitudEntradaProducto">
+    <End Type="ETNADbModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="ETNADbModel.DetalleSolicitudEntrada" Role="SolicitudEntradaProducto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudEntradaProducto">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Kardex">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="TipoMovimiento" Nullable="false" />
+    <NavigationProperty Name="DocumentoReferencia" Relationship="ETNADbModel.DocumentoReferenciaKardex" FromRole="Kardex" ToRole="DocumentoReferencia" />
+    <NavigationProperty Name="Almacen" Relationship="ETNADbModel.AlmacenKardex" FromRole="Kardex" ToRole="Almacen" />
+    <NavigationProperty Name="Producto" Relationship="ETNADbModel.ProductoKardex" FromRole="Kardex" ToRole="Producto" />
+    <Property Type="String" Name="Cantidad" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="Double" Name="ValorUnitario" Nullable="false" />
+  </EntityType>
+  <Association Name="DocumentoReferenciaKardex">
+    <End Type="ETNADbModel.DocumentoReferencia" Role="DocumentoReferencia" Multiplicity="1" />
+    <End Type="ETNADbModel.Kardex" Role="Kardex" Multiplicity="*" />
+  </Association>
+  <Association Name="AlmacenKardex">
+    <End Type="ETNADbModel.Almacen" Role="Almacen" Multiplicity="1" />
+    <End Type="ETNADbModel.Kardex" Role="Kardex" Multiplicity="*" />
+  </Association>
+  <Association Name="ProductoKardex">
+    <End Type="ETNADbModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="ETNADbModel.Kardex" Role="Kardex" Multiplicity="*" />
+  </Association>
+  <Association Name="EmpleadoSolicitudEntrada">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="ETNADbModel.SolicitudEntrada" Role="SolicitudEntrada" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Lote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NroLote" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Type="DateTime" Name="FechaCreacion" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TipoLote" Relationship="ETNADbModel.LoteTipoLote" FromRole="Lote" ToRole="TipoLote" />
+  </EntityType>
+  <EntityType Name="TipoLote">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Lote" Relationship="ETNADbModel.LoteTipoLote" FromRole="TipoLote" ToRole="Lote" />
+  </EntityType>
+  <Association Name="LoteTipoLote">
+    <End Type="ETNADbModel.Lote" Role="Lote" Multiplicity="*" />
+    <End Type="ETNADbModel.TipoLote" Role="TipoLote" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Reclamo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CodigoReclamo" Nullable="false" />
+    <Property Type="DateTime" Name="FechaHoraReclamo" Nullable="false" />
+    <Property Type="String" Name="Motivo" Nullable="false" />
+    <Property Type="String" Name="Detalle" Nullable="false" />
+    <Property Type="String" Name="Observaciones" Nullable="true" />
+    <Property Type="DateTime" Name="FechaRespuesta" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" />
+    <NavigationProperty Name="RegistradoPor" Relationship="ETNADbModel.EmpleadoReclamoResgistradoPor" FromRole="Reclamo" ToRole="Empleado" />
+    <NavigationProperty Name="FacturaDetalle" Relationship="ETNADbModel.ReclamoFacturaDetalle" FromRole="Reclamo" ToRole="FacturaDetalle" />
+  </EntityType>
+  <EntityType Name="InformeReclamo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Reclamo" Relationship="ETNADbModel.ReclamoInformeReclamo" FromRole="InformeReclamo" ToRole="Reclamo" />
+    <NavigationProperty Name="ElaboradoPor" Relationship="ETNADbModel.EmpleadoInformeReclamoElaboradoPor" FromRole="InformeReclamo" ToRole="Empleado" />
+    <NavigationProperty Name="AprobadoPor" Relationship="ETNADbModel.EmpleadoInformeReclamoAprobadoPor" FromRole="InformeReclamo" ToRole="Empleado" />
+    <Property Type="String" Name="CodigoInforme" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+    <Property Type="String" Name="DetalleInforme" Nullable="false" />
+    <Property Type="DateTime" Name="FechaAprobacion" Nullable="false" />
+    <Property Type="DateTime" Name="FechaElaboracion" Nullable="false" />
+    <Property Type="String" Name="ObservacionAprobador" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" />
+  </EntityType>
+  <Association Name="ReclamoInformeReclamo">
+    <End Type="ETNADbModel.Reclamo" Role="Reclamo" Multiplicity="1" />
+    <End Type="ETNADbModel.InformeReclamo" Role="InformeReclamo" Multiplicity="0..1" />
+  </Association>
+  <Association Name="EmpleadoInformeReclamoElaboradoPor">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="ETNADbModel.InformeReclamo" Role="InformeReclamo" Multiplicity="*" />
+  </Association>
+  <Association Name="EmpleadoInformeReclamoAprobadoPor">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="0..1" />
+    <End Type="ETNADbModel.InformeReclamo" Role="InformeReclamo" Multiplicity="*" />
+  </Association>
+  <Association Name="EmpleadoReclamoResgistradoPor">
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="ETNADbModel.Reclamo" Role="Reclamo" Multiplicity="*" />
+  </Association>
+  <EntityType Name="InformeResultado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+    <Property Type="String" Name="FechaElaboracion" Nullable="false" />
+    <Property Type="String" Name="FechaTabIni" Nullable="false" />
+    <Property Type="String" Name="FechaTabFin" Nullable="false" />
+    <Property Type="String" Name="DetalleAnalisis" Nullable="false" />
+    <NavigationProperty Name="ElaboradoPor" Relationship="ETNADbModel.InformeResultadoEmpleado" FromRole="InformeResultado" ToRole="Empleado" />
+    <NavigationProperty Name="Plantilla" Relationship="ETNADbModel.PlantillaInformeResultado" FromRole="InformeResultado" ToRole="Plantilla" />
+  </EntityType>
+  <Association Name="InformeResultadoEmpleado">
+    <End Type="ETNADbModel.InformeResultado" Role="InformeResultado" Multiplicity="*" />
+    <End Type="ETNADbModel.Empleado" Role="Empleado" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Plantilla">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" />
+    <NavigationProperty Name="TipoPlantilla" Relationship="ETNADbModel.PlantillaTipoPlantilla" FromRole="Plantilla" ToRole="TipoPlantilla" />
+  </EntityType>
+  <EntityType Name="TipoPlantilla">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+  </EntityType>
+  <Association Name="PlantillaTipoPlantilla">
+    <End Type="ETNADbModel.Plantilla" Role="Plantilla" Multiplicity="*" />
+    <End Type="ETNADbModel.TipoPlantilla" Role="TipoPlantilla" Multiplicity="1" />
+  </Association>
+  <Association Name="PlantillaInformeResultado">
+    <End Type="ETNADbModel.Plantilla" Role="Plantilla" Multiplicity="1" />
+    <End Type="ETNADbModel.InformeResultado" Role="InformeResultado" Multiplicity="*" />
+  </Association>
+  <EntityType Name="PlantillaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CodigoPregunta" Nullable="false" />
+    <Property Type="String" Name="DescripcionPregunta" Nullable="false" />
+    <Property Type="String" Name="Respuesta1" Nullable="false" />
+    <Property Type="String" Name="Respuesta2" Nullable="false" />
+    <Property Type="String" Name="Respuesta3" Nullable="false" />
+    <Property Type="String" Name="Respuesta4" Nullable="false" />
+    <Property Type="String" Name="Respuesta5" Nullable="false" />
+    <NavigationProperty Name="Plantilla" Relationship="ETNADbModel.PlantillaDetallePlantilla" FromRole="PlantillaDetalle" ToRole="Plantilla" />
+    <NavigationProperty Name="Encuesta" Relationship="ETNADbModel.PlantillaDetalleEncuesta" FromRole="PlantillaDetalle" ToRole="Encuesta" />
+  </EntityType>
+  <Association Name="PlantillaDetallePlantilla">
+    <End Type="ETNADbModel.PlantillaDetalle" Role="PlantillaDetalle" Multiplicity="*" />
+    <End Type="ETNADbModel.Plantilla" Role="Plantilla" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Programacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+    <Property Type="String" Name="CodigoProgramacion" Nullable="false" />
+    <Property Type="String" Name="Periodicidad" Nullable="false" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="false" />
+    <Property Type="DateTime" Name="FechaFin" Nullable="false" />
+    <Property Type="Double" Name="PorcentajeEncuestados" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" />
+    <Property Type="Int16" Name="DiasVigencia" Nullable="false" />
+    <NavigationProperty Name="Plantilla" Relationship="ETNADbModel.ProgramacionPlantilla" FromRole="Programacion" ToRole="Plantilla" />
+  </EntityType>
+  <Association Name="ProgramacionPlantilla">
+    <End Type="ETNADbModel.Programacion" Role="Programacion" Multiplicity="*" />
+    <End Type="ETNADbModel.Plantilla" Role="Plantilla" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Encuesta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="FechaInicio" Nullable="false" />
+    <Property Type="DateTime" Name="FechaRespuesta" Nullable="false" />
+    <NavigationProperty Name="PlantillaDetalle" Relationship="ETNADbModel.PlantillaDetalleEncuesta" FromRole="Encuesta" ToRole="PlantillaDetalle" />
+    <NavigationProperty Name="Cliente" Relationship="ETNADbModel.ClienteEncuesta" FromRole="Encuesta" ToRole="Cliente" />
+    <Property Type="String" Name="Titulo" Nullable="false" />
+    <NavigationProperty Name="Programacion" Relationship="ETNADbModel.EncuestaProgramacion" FromRole="Encuesta" ToRole="Programacion" />
+  </EntityType>
+  <Association Name="PlantillaDetalleEncuesta">
+    <End Type="ETNADbModel.PlantillaDetalle" Role="PlantillaDetalle" Multiplicity="*" />
+    <End Type="ETNADbModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Type="Int32" Name="Codigo" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Direccion" Nullable="false" />
+    <Property Type="String" Name="DocIdentidad" Nullable="false" />
+    <Property Type="String" Name="Apellidos" Nullable="false" />
+    <Property Type="String" Name="Nombres" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="ETNADbModel.ClienteFactura" FromRole="Cliente" ToRole="Factura" />
+  </EntityType>
+  <Association Name="ClienteEncuesta">
+    <End Type="ETNADbModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="ETNADbModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+  </Association>
+  <EntityType Name="ProgramacionesEncuesta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="EncuestaProgramacion">
+    <End Type="ETNADbModel.Encuesta" Role="Encuesta" Multiplicity="*" />
+    <End Type="ETNADbModel.Programacion" Role="Programacion" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NroFactura" Nullable="false" />
+    <Property Type="DateTime" Name="FechaFactura" Nullable="false" />
+    <Property Type="Double" Name="ValorVenta" Nullable="false" />
+    <Property Type="Double" Name="PrecioVenta" Nullable="false" />
+    <Property Type="String" Name="Estado" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="ETNADbModel.ClienteFactura" FromRole="Factura" ToRole="Cliente" />
+    <NavigationProperty Name="FacturaDetalle" Relationship="ETNADbModel.FacturaFacturaDetalle" FromRole="Factura" ToRole="FacturaDetalle" />
+  </EntityType>
+  <Association Name="ClienteFactura">
+    <End Type="ETNADbModel.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="ETNADbModel.Factura" Role="Factura" Multiplicity="*" />
+  </Association>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Factura" Relationship="ETNADbModel.FacturaFacturaDetalle" FromRole="FacturaDetalle" ToRole="Factura" />
+    <NavigationProperty Name="Producto" Relationship="ETNADbModel.ProductoFacturaDetalle" FromRole="FacturaDetalle" ToRole="Producto" />
+  </EntityType>
+  <Association Name="FacturaFacturaDetalle">
+    <End Type="ETNADbModel.Factura" Role="Factura" Multiplicity="1" />
+    <End Type="ETNADbModel.FacturaDetalle" Role="FacturaDetalle" Multiplicity="*" />
+  </Association>
+  <Association Name="ReclamoFacturaDetalle">
+    <End Type="ETNADbModel.Reclamo" Role="Reclamo" Multiplicity="*" />
+    <End Type="ETNADbModel.FacturaDetalle" Role="FacturaDetalle" Multiplicity="1" />
+  </Association>
+  <Association Name="ProductoFacturaDetalle">
+    <End Type="ETNADbModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="ETNADbModel.FacturaDetalle" Role="FacturaDetalle" Multiplicity="*" />
+  </Association>
+</Schema>

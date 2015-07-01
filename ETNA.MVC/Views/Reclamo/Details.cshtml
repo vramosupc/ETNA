@@ -1,0 +1,100 @@
+﻿@using System.Globalization
+@model ETNA.MVC.Models.PV.ReclamoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<!--<h2>Consultar Reclamo</h2> !-->
+<br/>
+<fieldset>
+    <legend>ReclamoViewModel</legend>
+
+    <table style="border: 1px solid white">
+            <tr>
+                <td style="text-align: center; font-size: 20px; font-weight: bold;" colspan="8" style="width:100%">Consultar Reclamo</td>
+            </tr>        
+            <tr>
+                <td>@Html.LabelFor(model => model.CodigoReclamo)</td>
+                <td colspan="3" style="text-align: left">
+                   @Html.DisplayFor(model => model.CodigoReclamo)
+                </td>
+                <td>@Html.LabelFor(model => model.Estado)</td>
+                <td  colspan="3" style="text-align: left">
+                   @Html.DisplayFor(model => model.DescripcionEstado)
+                </td>
+            </tr>        
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.FechaHoraReclamo)</td>
+                <td  colspan="3" style="text-align: left">
+               
+                          @string.Format("{0:dd/MM/yyyy HH:mm}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaHoraReclamo).ToString()))
+              
+                </td>
+                <td>@Html.LabelFor(model => model.FechaRespuesta)</td>
+                <td colspan="3" style="text-align: left">
+                
+                       @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaRespuesta).ToString()))
+              
+                </td>
+            </tr>  
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Motivo)</td>
+                <td colspan="7" style="text-align: left">
+                      @Html.DisplayFor(model => model.Motivo)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NumeroFactura)</td>
+                <td colspan="7" style="text-align: left">
+                   @Html.DisplayFor(model => model.NumeroFactura)
+             
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreCliente)</td>
+                <td colspan="7" style="text-align: left">
+                    @Html.DisplayFor(model => model.NombreCliente)
+             
+                </td>
+            </tr>
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.NombreProducto)</td>
+                <td colspan="7" style="text-align: left">
+                     @Html.DisplayFor(model => model.NombreProducto)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>@Html.LabelFor(model => model.Detalle)</td>
+                <td colspan="7" style="text-align: left">
+                 @Html.DisplayTextFor(model => model.Detalle)
+                </td>
+            </tr>  
+            
+            <tr>
+                <td colspan="1">@Html.LabelFor(model => model.Observaciones)</td>
+                <td colspan="7" style="text-align: left">
+                   @Html.DisplayTextFor(model => model.Observaciones)
+                </td>
+            </tr> 
+          <tr>
+                <td colspan="1">@Html.LabelFor(model => model.NombreRegistrador)</td>
+                <td colspan="7" style="text-align: left">
+                 @Html.DisplayFor(model => model.NombreRegistrador)
+                </td>
+            </tr> 
+            
+            <tr>
+                <td colspan="8" style="text-align: center">
+                    @Html.ActionLink("Regresar", "Index")
+                </td>
+            </tr>  
+
+        </table>
+     </fieldset>

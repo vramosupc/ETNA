@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ETNA.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProductoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductoDto" nillable="true" type="tns:ProductoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductoDto" nillable="true" type="tns:ArrayOfProductoDto" />
+  <xs:complexType name="ProductoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescripcionCorta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionLarga" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecioListaCompra" type="xs:double" />
+      <xs:element minOccurs="0" name="PrecioListaVenta" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductoDto" nillable="true" type="tns:ProductoDto" />
+</xs:schema>

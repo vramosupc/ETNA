@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Facturas" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" />
+      <xsd:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs" />
+      <xsd:import schemaLocation="http://localhost:6078/PV/Facturas.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFacturas_ListaFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ListaFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ObtenerFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFactura" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ObtenerFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ListaFacturaDetalles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturaDetalles" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ListaFacturaDetalles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturaDetallesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_NroPaginasPorDetalleNroFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:NroPaginasPorDetalleNroFactura" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_NroPaginasPorDetalleNroFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NroPaginasPorDetalleNroFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ListarDetallePorNroFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDetallePorNroFactura" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ListarDetallePorNroFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarDetallePorNroFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ObtenerFacturaDetalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="IFacturas_ObtenerFacturaDetalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerFacturaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFacturas">
+    <wsdl:operation name="ListaFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/ListaFacturas" message="tns:IFacturas_ListaFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/ListaFacturasResponse" message="tns:IFacturas_ListaFacturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/ObtenerFactura" message="tns:IFacturas_ObtenerFactura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/ObtenerFacturaResponse" message="tns:IFacturas_ObtenerFactura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaFacturaDetalles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/ListaFacturaDetalles" message="tns:IFacturas_ListaFacturaDetalles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/ListaFacturaDetallesResponse" message="tns:IFacturas_ListaFacturaDetalles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NroPaginasPorDetalleNroFactura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/NroPaginasPorDetalleNroFactura" message="tns:IFacturas_NroPaginasPorDetalleNroFactura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/NroPaginasPorDetalleNroFacturaResponse" message="tns:IFacturas_NroPaginasPorDetalleNroFactura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarDetallePorNroFactura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/ListarDetallePorNroFactura" message="tns:IFacturas_ListarDetallePorNroFactura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/ListarDetallePorNroFacturaResponse" message="tns:IFacturas_ListarDetallePorNroFactura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturaDetalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFacturas/ObtenerFacturaDetalle" message="tns:IFacturas_ObtenerFacturaDetalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFacturas/ObtenerFacturaDetalleResponse" message="tns:IFacturas_ObtenerFacturaDetalle_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFacturas" type="tns:IFacturas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaFacturas">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/ListaFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/ObtenerFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFacturaDetalles">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/ListaFacturaDetalles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NroPaginasPorDetalleNroFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/NroPaginasPorDetalleNroFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarDetallePorNroFactura">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/ListarDetallePorNroFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerFacturaDetalle">
+      <soap:operation soapAction="http://tempuri.org/IFacturas/ObtenerFacturaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Facturas">
+    <wsdl:port name="BasicHttpBinding_IFacturas" binding="tns:BasicHttpBinding_IFacturas">
+      <soap:address location="http://localhost:6078/PV/Facturas.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

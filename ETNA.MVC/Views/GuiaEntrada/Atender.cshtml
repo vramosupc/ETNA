@@ -1,0 +1,73 @@
+﻿@model ETNA.MVC.Models.LO.SolicitudEntradaViewModel
+
+@{
+    ViewBag.Title = "Atender solicitud de Entrada";
+}
+
+<h2>Atender Solicitud de Entrada</h2>
+
+<fieldset>
+    <legend>SolicitudEntradaViewModel</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FechaElaboracion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaElaboracion)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TipoEntrada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoEntrada)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.NombreEmpleado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreEmpleado)
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="display-label">
+            @Html.DisplayName("Productos")
+        </div>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("Cantidad")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Detalle)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                </tr>
+            }
+        </table>
+        
+        @Html.Hidden("IdSolicitud", (int)ViewBag.IdSolicitud)
+        @Html.Hidden("IdAlmacen", (int)ViewBag.IdAlmacen)
+        @Html.Hidden("Observaciones", "")
+    
+        <input type="submit" value="Atender" />
+    }
+</fieldset>
+
+
+
+
+
+

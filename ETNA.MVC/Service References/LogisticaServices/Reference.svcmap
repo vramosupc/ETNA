@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a6720a4d-4a01-470c-94f2-a22077af5bc2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6078/LO/EntradasYSalidasService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EntradasYSalidasService.xsd" MetadataType="Schema" ID="e967c112-dbb2-4ecc-a824-4e5798d1c9f4" SourceId="1" SourceUrl="http://localhost:6078/LO/EntradasYSalidasService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EntradasYSalidasService1.xsd" MetadataType="Schema" ID="ee5251ba-8c36-4a15-938b-7071014ff88b" SourceId="1" SourceUrl="http://localhost:6078/LO/EntradasYSalidasService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EntradasYSalidasService.wsdl" MetadataType="Wsdl" ID="77b5ff78-6f4b-4b37-9c7f-c42b4c98685a" SourceId="1" SourceUrl="http://localhost:6078/LO/EntradasYSalidasService.svc?wsdl" />
+    <MetadataFile FileName="EntradasYSalidasService.disco" MetadataType="Disco" ID="07feee89-491c-4169-ba8c-4866aacfe0f4" SourceId="1" SourceUrl="http://localhost:6078/LO/EntradasYSalidasService.svc?disco" />
+    <MetadataFile FileName="EntradasYSalidasService2.xsd" MetadataType="Schema" ID="eef3af14-b0b6-4685-adbf-9de311a5ea38" SourceId="1" SourceUrl="http://localhost:6078/LO/EntradasYSalidasService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

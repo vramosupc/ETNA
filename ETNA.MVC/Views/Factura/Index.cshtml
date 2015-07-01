@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ETNA.MVC.Models.PV.FacturaViewModel>
+
+@{
+    ViewBag.Title = "Facturas";
+    Layout = null;
+}
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+     
+</style>
+
+
+<h2>Facturas Registradas</h2>
+
+<table class="ui-tabs-selected" style="width:100%">
+    <tr>
+       
+    </tr>
+        <tr>
+
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.NroFactura)
+        </th>
+            
+        <th class="centrado">
+            @Html.DisplayNameFor(model=> model.NombreCompletoCliente)
+        </th>
+            
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.PrecioVenta)
+        </th>
+        
+        <th class="centrado">
+            @Html.DisplayNameFor(model=> model.ValorVenta)
+        </th>
+            
+        <th class="centrado">
+             @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        
+       
+        <th>Opciones</th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.NroFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCompletoCliente)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioVenta)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorVenta)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Seleccionar", "Select", new { id=item.Id }) 
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Regresar", "Index", "Postventa")

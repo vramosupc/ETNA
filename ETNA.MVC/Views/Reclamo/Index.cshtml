@@ -1,0 +1,124 @@
+﻿@model IEnumerable<ETNA.MVC.Models.PV.ReclamoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+     
+</style>
+
+
+<h2>Reclamos Registrados</h2> 
+
+
+
+<p>
+    @Html.ActionLink("Crear Reclamo", "Create")
+</p>
+
+<table class="ui-tabs-selected" style="width:100%">
+    <tr>
+       
+    </tr>
+        <tr>
+     
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.CodigoReclamo)
+        </th>
+            
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.NombreCliente)
+        </th>
+    
+        <th class="centrado">
+             @Html.DisplayNameFor(model => model.Motivo)
+        </th>
+        
+            
+        
+        <th class="centrado">
+            @Html.DisplayNameFor(model=> model.FechaHoraReclamo)
+        </th>
+            
+        <th class="centrado">
+            @Html.DisplayNameFor(model=> model.FechaRespuesta)
+        </th>
+        <th class="centrado">
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+            
+       
+        <th>Opciones</th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoReclamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCliente)
+        </td>
+                <td>
+            @Html.DisplayFor(modelItem => item.Motivo)
+        </td>
+        
+        <td>
+            
+               @string.Format("{0:dd/MM/yyyy HH:mm}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaHoraReclamo).ToString()))
+              
+        </td>
+        
+        <td>
+ 
+                 @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaRespuesta).ToString()))
+           
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        </td>
+        
+        <td>
+            
+            @if (item.Estado != "A")
+            {
+                @Html.ActionLink("Modificar", "Edit", new {id = item.Id})
+            }
+            else
+            {
+                <a href="#" class="btndenegado">Modificar</a>
+            } |
+
+            @Html.ActionLink("Ver", "Details", new { id=item.Id  }) 
+     
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Regresar", "Index", "Postventa")
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".btndenegado").click(function(){
+                alert("No se puede editar, por que se encuentra Atendido");
+            });
+        });
+    </script>
+
+}
