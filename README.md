@@ -1,14 +1,17 @@
 Hola muchachos de EPE!!,
-este es el nuevo repositorio del sistema integrado de ETNA, el cual incluye los modulo de:
+este es el nuevo repositorio del sistema integrado de ETNA, el cual incluye los modulos de:
 
-Post Venta[D[D[D[D[-[4~
+Post Venta
 Produccion
-Ventas-Marketing
+Ventas y Marketing
 Control de Calidad
 Exportaciones
 
-Sean bienvenidos!
-Saludos.[1~[1~[1~[D[C
+Aqui se visualizaran todos los cambios y estara el resultado final del proyecto.
+
+Ahora si a programar como locos!! xD
+Estamos en contacto.
+Saludos.
 
 Atte.
 Paul Taboada
