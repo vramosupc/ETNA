@@ -2,15 +2,15 @@ Hola muchachos de EPE!!,
 
 este es el nuevo repositorio del sistema integrado de ETNA, el cual incluye los modulos de:
 
--> Post Venta
+> Post Venta
 
--> Produccion
+> Produccion
 
--> Ventas y Marketing
+> Ventas y Marketing
 
--> Control de Calidad
+> Control de Calidad
 
--> Exportaciones
+> Exportaciones
 
 Aqui se visualizaran todos los cambios y estara el resultado final del proyecto.
 
