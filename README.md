@@ -1,4 +1,5 @@
 Hola muchachos de EPE!!,
+
 este es el nuevo repositorio del sistema integrado de ETNA, el cual incluye los modulos de:
 
 -> Post Venta
@@ -18,5 +19,7 @@ Estamos en contacto.
 Saludos.
 
 Atte.
+
 Paul Taboada
+Web Master Developer
 DBA Post-Venta
