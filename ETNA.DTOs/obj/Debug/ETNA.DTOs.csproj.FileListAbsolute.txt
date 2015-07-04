@@ -5,3 +5,10 @@ C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.DTOs\obj\Debug\ETNA.DTOs.dll
 C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.DTOs\obj\Debug\ETNA.DTOs.pdb
 C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.DTOs\bin\Debug\ETNA.Domain.dll
 C:\ETNA-TP2\ETNA\ETNA.Solution\ETNA.DTOs\bin\Debug\ETNA.Domain.pdb
+C:\Repository\ETNA\ETNA.DTOs\bin\Debug\ETNA.DTOs.dll
+C:\Repository\ETNA\ETNA.DTOs\bin\Debug\ETNA.DTOs.pdb
+C:\Repository\ETNA\ETNA.DTOs\bin\Debug\ETNA.Domain.dll
+C:\Repository\ETNA\ETNA.DTOs\bin\Debug\ETNA.Domain.pdb
+C:\Repository\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.csprojResolveAssemblyReference.cache
+C:\Repository\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.dll
+C:\Repository\ETNA\ETNA.DTOs\obj\Debug\ETNA.DTOs.pdb

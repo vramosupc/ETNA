@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a80130dda6b434f969644bf3577af2e" Name="Diagrama1">
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_Almacenes" Width="1.5" PointX="0.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DetalleSolicitudEntrada" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DocumentosReferencia" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DocumentosReferenciaAjusteInventario" Width="1.5" PointX="5.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DocumentosReferenciaGuiaEntrada" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_DocumentosReferenciaGuiaSalida" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_Kardex" Width="1.5" PointX="5.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_Productos" Width="1.5" PointX="11.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_ReservaStock" Width="1.5" PointX="10.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_AL_SolicitudesEntrada" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_DetalleOrdenCalidad" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_DetallePlanCalidad" Width="1.5" PointX="5.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_Especialista" Width="1.5" PointX="13.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_EspecialistaCalendario" Width="1.5" PointX="13.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_IngenieriaProducto" Width="1.5" PointX="15.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_OrdenCalidad" Width="1.5" PointX="15.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_PlanCalidad" Width="1.5" PointX="2.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CA_TipoPrueba" Width="1.5" PointX="15.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_Contrato" Width="1.5" PointX="10.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CronogramaDespacho" Width="1.5" PointX="10.25" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_CronogramaEmbarque" Width="1.5" PointX="10.25" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_DetalleRequerimiento" Width="1.5" PointX="13.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_DetalleDocExportacion" Width="1.5" PointX="15.5" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_DocumentoExportacion" Width="1.5" PointX="11.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_DocumentoSIICEX" Width="1.5" PointX="11.25" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_FormatoDocumento" Width="1.5" PointX="12.5" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_IATA" Width="1.5" PointX="8" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_PackingList" Width="1.5" PointX="10.25" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_EX_SolicitudAtencion" Width="1.5" PointX="8" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_Lotes" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_MA_Pais" Width="1.5" PointX="5.75" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_ModalidadCredito" Width="1.5" PointX="8" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PR_LoteFabricacion" Width="1.5" PointX="15.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PR_OrdenTrabajo" Width="1.5" PointX="15.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_Encuestas" Width="1.5" PointX="13.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_InformesReclamo" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_InformesResultado" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_Plantillas" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_PlantillasDetalle" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_Programaciones" Width="1.5" PointX="8.25" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_Reclamos" Width="1.5" PointX="10.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_PV_TiposPlantilla" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_Requerimiento" Width="1.5" PointX="8" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_RH_Empleados" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_SE_Membership" Width="1.5" PointX="17.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_SE_OAuthMembership" Width="1.5" PointX="17.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_SE_Roles" Width="1.5" PointX="1.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_SE_UserProfile" Width="1.5" PointX="0.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_TipoLotes" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Categoria" Width="1.5" PointX="17.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Clientes" Width="1.5" PointX="9" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Contacto" Width="1.5" PointX="17.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_DetallePedido" Width="1.5" PointX="13.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Direccion" Width="1.5" PointX="6.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_FacturaDetalles" Width="1.5" PointX="12.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Facturas" Width="1.5" PointX="10.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_GrupoVenta" Width="1.5" PointX="17.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_ListaPrecios" Width="1.5" PointX="17.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Pedido" Width="1.5" PointX="11.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRADOModel.TB_VT_Telefono" Width="1.5" PointX="19.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="INTEGRADOModel.FK_AlmacenKardex" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DocumentoReferenciaAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_ProductoSolicitudEntradaProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_SolicitudEntradaSolicitudEntradaProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_AjusteInventario_inherits_DocumentoReferencia" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DocumentoReferenciaKardex" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadoDocumentoReferencia" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_GuiaEntradaSolicitudEntrada" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_ProductoKardex" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_detallepedido_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleRequerimiento_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_FacturaDetalles_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_ReservaStock_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadoSolicitudEntrada" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Contrato_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_CronogramaDespacho_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_CronogramaEmbarque_SolixitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleRequerimiento_DocumentoExportacion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleRequerimiento_DocumentoSIICEX" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleRequerimiento_Requerimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleRequerimiento_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleDocExportacion_DocumentoExportacion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_DetalleDocExportacion_DocumentoSIICEX" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_FormatoDocumento_PackingList" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_IATA_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_PackingList_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Facturas_SolicitudAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_LoteTipoLote" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Requerimiento_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Facturas_ModalidadCredito" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EncuestaProgramacion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Encuestas_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadoInformeReclamoAprobadoPor" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadoInformeReclamoElaboradoPor" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_ReclamoInformeReclamo" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_InformeResultadoEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_PlantillaInformeResultado" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_PlantillaDetallePlantilla" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_PlantillaTiposPlantilla" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_ProgramacionPlantilla" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadoReclamoResgistradoPor" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Reclamos_FacturaDetalles" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Facturas_Requerimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Requerimiento_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_EmpleadosUserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Facturas_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Pedido_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Clientes_Direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_Facturas_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_TB_VT_Pedido_TB_VT_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_detallepedido_Pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.FK_FacturaDetalles_Facturas" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.TB_AL_EmpleadoAlmacen" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.TB_PV_PlantillaDetalleEncuesta" ManuallyRouted="false" />
+        <AssociationConnector Association="INTEGRADOModel.TB_SE_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
