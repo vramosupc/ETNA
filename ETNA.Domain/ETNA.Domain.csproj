@@ -87,6 +87,11 @@
     <Compile Include="InformeResultado.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="INTEGRADODbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Kardex.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>
@@ -115,6 +120,186 @@
     <Compile Include="SolicitudEntrada.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_AL_Almacenes.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_DetalleSolicitudEntrada.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_DocumentosReferencia.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_DocumentosReferenciaAjusteInventario.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_DocumentosReferenciaGuiaEntrada.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_DocumentosReferenciaGuiaSalida.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_Kardex.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_Productos.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_ReservaStock.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_AL_SolicitudesEntrada.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_DetalleOrdenCalidad.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_DetallePlanCalidad.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_Especialista.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_EspecialistaCalendario.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_IngenieriaProducto.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_OrdenCalidad.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_PlanCalidad.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CA_TipoPrueba.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Contrato.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CronogramaDespacho.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_CronogramaEmbarque.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_DetalleRequerimiento.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_DetalleDocExportacion.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_DocumentoExportacion.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_DocumentoSIICEX.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_FormatoDocumento.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_IATA.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_PackingList.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_EX_SolicitudAtencion.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Lotes.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_MA_Pais.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ModalidadCredito.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PR_LoteFabricacion.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PR_OrdenTrabajo.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_Encuestas.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_InformesReclamo.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_InformesResultado.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_Plantillas.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_PlantillasDetalle.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_Programaciones.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_Reclamos.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PV_TiposPlantilla.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Requerimiento.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_RH_Empleados.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SE_Membership.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SE_OAuthMembership.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SE_Roles.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_SE_UserProfile.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_TipoLotes.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Categoria.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Clientes.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Contacto.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_DetallePedido.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Direccion.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_FacturaDetalles.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Facturas.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_GrupoVenta.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_ListaPrecios.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Pedido.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_VT_Telefono.cs">
+      <DependentUpon>INTEGRADODbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoLote.cs">
       <DependentUpon>ETNADbModel.tt</DependentUpon>
     </Compile>
@@ -138,6 +323,10 @@
     <None Include="ETNADbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ETNADbModel.cs</LastGenOutput>
+    </None>
+    <None Include="INTEGRADODbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>INTEGRADODbModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
