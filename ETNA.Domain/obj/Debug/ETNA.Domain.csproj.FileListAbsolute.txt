@@ -8,3 +8,8 @@ C:\Repository\ETNA\ETNA.Domain\bin\Debug\ETNA.Domain.pdb
 C:\Repository\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.csprojResolveAssemblyReference.cache
 C:\Repository\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.dll
 C:\Repository\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.pdb
+C:\ETNA\ETNA\ETNA.Domain\bin\Debug\ETNA.Domain.dll
+C:\ETNA\ETNA\ETNA.Domain\bin\Debug\ETNA.Domain.pdb
+C:\ETNA\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.csprojResolveAssemblyReference.cache
+C:\ETNA\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.dll
+C:\ETNA\ETNA\ETNA.Domain\obj\Debug\ETNA.Domain.pdb

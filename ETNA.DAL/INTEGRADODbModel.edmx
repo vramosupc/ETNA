@@ -869,7 +869,7 @@
           <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="GrupoVentaId" Type="int" />
+          <Property Name="GrupoVentaId" Type="int" Nullable="false" />
           <Property Name="DocIdentidad" Type="varchar" MaxLength="20" />
           <Property Name="Activo" Type="bit" Nullable="false" />
         </EntityType>
@@ -904,7 +904,6 @@
           </Key>
           <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
-          <Property Name="RoleDescription" Type="varchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="TB_SE_UserProfile">
           <Key>
@@ -1906,7 +1905,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="INTEGRADOModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="INTEGRADOEntities" p1:LazyLoadingEnabled="true">
+        <EntityContainer Name="INTEGRADOModelContainer" p1:LazyLoadingEnabled="true">
           <EntitySet Name="TB_AL_Almacenes" EntityType="INTEGRADOModel.TB_AL_Almacenes" />
           <EntitySet Name="TB_AL_DetalleSolicitudEntrada" EntityType="INTEGRADOModel.TB_AL_DetalleSolicitudEntrada" />
           <EntitySet Name="TB_AL_DocumentosReferencia" EntityType="INTEGRADOModel.TB_AL_DocumentosReferencia" />
@@ -2740,7 +2739,7 @@
           <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Cargo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="GrupoVentaId" Type="Int32" />
+          <Property Name="GrupoVentaId" Type="Int32" Nullable="false" />
           <Property Name="DocIdentidad" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="TB_AL_DocumentosReferencia" Relationship="INTEGRADOModel.FK_EmpleadoDocumentoReferencia" FromRole="TB_RH_Empleados" ToRole="TB_AL_DocumentosReferencia" />
@@ -2785,7 +2784,6 @@
           </Key>
           <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-          <Property Name="RoleDescription" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="TB_SE_UserProfile" Relationship="INTEGRADOModel.TB_SE_UsersInRoles" FromRole="TB_SE_Roles" ToRole="TB_SE_UserProfile" />
         </EntityType>
         <EntityType Name="TB_SE_UserProfile">
@@ -3630,7 +3628,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="INTEGRADOModelStoreContainer" CdmEntityContainer="INTEGRADOEntities">
+        <EntityContainerMapping StorageEntityContainer="INTEGRADOModelStoreContainer" CdmEntityContainer="INTEGRADOModelContainer">
           <EntitySetMapping Name="TB_AL_Almacenes">
             <EntityTypeMapping TypeName="INTEGRADOModel.TB_AL_Almacenes">
               <MappingFragment StoreEntitySet="TB_AL_Almacenes">
@@ -4183,7 +4181,6 @@
               <MappingFragment StoreEntitySet="TB_SE_Roles">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4414,6 +4411,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

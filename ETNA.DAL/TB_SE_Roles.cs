@@ -21,7 +21,6 @@ namespace ETNA.DAL
     
         public int RoleId { get; set; }
         public string RoleName { get; set; }
-        public string RoleDescription { get; set; }
     
         public virtual ICollection<TB_SE_UserProfile> TB_SE_UserProfile { get; set; }
     }

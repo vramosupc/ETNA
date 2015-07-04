@@ -13,10 +13,10 @@ namespace ETNA.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class INTEGRADOEntities : DbContext
+    public partial class INTEGRADOModelContainer : DbContext
     {
-        public INTEGRADOEntities()
-            : base("name=INTEGRADOEntities")
+        public INTEGRADOModelContainer()
+            : base("name=INTEGRADOModelContainer")
         {
         }
     
