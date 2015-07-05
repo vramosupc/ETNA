@@ -124,6 +124,10 @@
       <Project>{48128773-ea3b-41f6-9095-a267d4536913}</Project>
       <Name>ETNA.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ETNA.DAL\ETNA.DAL.csproj">
+      <Project>{3E42986B-E8AF-4EEB-87CD-454A8271A235}</Project>
+      <Name>ETNA.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ETNA.Domain\ETNA.Domain.csproj">
       <Project>{25235949-3740-407a-9cfc-3a1af58c18e3}</Project>
       <Name>ETNA.Domain</Name>

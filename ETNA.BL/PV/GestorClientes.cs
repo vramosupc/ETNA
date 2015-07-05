@@ -10,16 +10,16 @@ namespace ETNA.BL.PV
 {
     class GestorClientes
     {
-        public List<Cliente> Listar()
+        public List<TB_VT_Clientes> Listar()
         {
-            var context = new ETNADbModelContainer();
-            return context.Clientes.ToList();
+            var context = new INTEGRADOModelContainer();
+            return context.TB_VT_Clientes.ToList();
         }
 
-        public Cliente ObtenerCliente(int idCliente)
+        public TB_VT_Clientes ObtenerCliente(int idCliente)
         {
-            var context = new ETNADbModelContainer();
-            return context.Clientes.Find(idCliente);
+            var context = new INTEGRADOModelContainer();
+            return context.TB_VT_Clientes.Find(idCliente);
         }
     }
 }

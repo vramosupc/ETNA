@@ -20,9 +20,6 @@ C:\Repository\ETNA\ETNA.DAL\bin\Debug\es\EntityFramework.resources.dll
 C:\Repository\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.csprojResolveAssemblyReference.cache
 C:\Repository\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.dll
 C:\Repository\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.pdb
-C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.csprojResolveAssemblyReference.cache
-C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.dll
-C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.pdb
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\ETNA.DAL.dll.config
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\ETNA.DAL.dll
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\ETNA.DAL.pdb
@@ -31,3 +28,6 @@ C:\ETNA\ETNA\ETNA.DAL\bin\Debug\ETNA.Domain.dll
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\ETNA.Domain.pdb
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\EntityFramework.xml
 C:\ETNA\ETNA\ETNA.DAL\bin\Debug\es\EntityFramework.resources.dll
+C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.csprojResolveAssemblyReference.cache
+C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.dll
+C:\ETNA\ETNA\ETNA.DAL\obj\Debug\ETNA.DAL.pdb

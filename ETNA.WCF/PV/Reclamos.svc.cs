@@ -41,18 +41,21 @@ namespace ETNA.WCF.PV
             foreach (var reclamo in lista)
             {
                 var dto = new ReclamoDto();
-                dto.Id = reclamo.Id;
+                dto.Id = reclamo.ReclamoId;
                 dto.CodigoReclamo = reclamo.CodigoReclamo;
                 dto.Detalle = reclamo.Detalle;
                 dto.FechaHoraReclamo = reclamo.FechaHoraReclamo;
                 dto.Observaciones = reclamo.Observaciones;
                 dto.FechaRespuesta = reclamo.FechaRespuesta;
-                dto.NombreRegistrador = reclamo.RegistradoPor.Nombres + " " + reclamo.RegistradoPor.Apellidos;
-                dto.NombreCliente = reclamo.FacturaDetalle.Factura.Cliente.Nombres + " " +
-                                    reclamo.FacturaDetalle.Factura.Cliente.Apellidos;
-                dto.NumeroFactura = reclamo.FacturaDetalle.Factura.NroFactura;
-                dto.NombreProducto= reclamo.FacturaDetalle.Producto.Nombre;
-                dto.IdFacturaDetalle = reclamo.FacturaDetalle.Id;
+   //             dto.NombreRegistrador = reclamo.RegistradoPorId.Nombres + " " + reclamo.RegistradoPorId.Apellidos;
+                dto.NombreRegistrador = reclamo.TB_RH_Empleados.Nombres + " " + reclamo.TB_RH_Empleados.Apellidos;
+      
+                dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.Nombre + " " +
+                                    reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno;
+                dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact.ToString();
+                dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre;
+  
+                dto.IdFacturaDetalle = reclamo.TB_VT_FacturaDetalles.FacturaDetalleId;
 
                 if (reclamo.Estado.Equals("P"))
                 {
@@ -85,21 +88,22 @@ namespace ETNA.WCF.PV
             var gestorReclamos = new GestorReclamos();
             var reclamo = gestorReclamos.ObtenerReclamo(idReclamo);
             var dto = new ReclamoDto();
-            dto.Id = reclamo.Id;
+            dto.Id = reclamo.ReclamoId;
             dto.CodigoReclamo = reclamo.CodigoReclamo;
             dto.Detalle = reclamo.Detalle;
             dto.FechaHoraReclamo = reclamo.FechaHoraReclamo;
             dto.Observaciones = reclamo.Observaciones;
             dto.FechaRespuesta = reclamo.FechaRespuesta;
-            dto.NombreRegistrador = reclamo.RegistradoPor.Nombres+ " "+reclamo.RegistradoPor.Apellidos;
+            //             dto.NombreRegistrador = reclamo.RegistradoPorId.Nombres + " " + reclamo.RegistradoPorId.Apellidos;
+            dto.NombreRegistrador = reclamo.TB_RH_Empleados.Nombres + " " + reclamo.TB_RH_Empleados.Apellidos;
             
             dto.Estado = reclamo.Estado;
             dto.Motivo = reclamo.Motivo;
-            dto.NombreCliente = reclamo.FacturaDetalle.Factura.Cliente.Nombres + " " +
-                               reclamo.FacturaDetalle.Factura.Cliente.Apellidos;
-            dto.NumeroFactura = reclamo.FacturaDetalle.Factura.NroFactura;
-            dto.NombreProducto = reclamo.FacturaDetalle.Producto.Nombre;
-            dto.IdFacturaDetalle = reclamo.FacturaDetalle.Id;
+            dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.Nombre + " " +
+                               reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno;
+            dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact.ToString();
+            dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre;
+            dto.IdFacturaDetalle = reclamo.TB_VT_FacturaDetalles.FacturaDetalleId;
             if (reclamo.Estado.Equals("P"))
             {
                 dto.DescripcionEstado = "Pendiente";

@@ -24,13 +24,13 @@ namespace ETNA.WCF.PV
             foreach (var factura in lista)
             {
                 var dto = new FacturaDto();
-                dto.Id = factura.Id;
-                dto.NroFactura = factura.NroFactura;
-                dto.FechaFactura = factura.FechaFactura;
+                dto.Id = factura.FacturaId;
+                dto.NroFactura = factura.NumeroFact.ToString();
+                dto.FechaFactura = factura.FechaEmision;
                 dto.ValorVenta = factura.ValorVenta;
-                dto.PrecioVenta = factura.PrecioVenta;
-                dto.Estado = factura.Estado;
-                dto.NombreCompletoCliente = factura.Cliente.Apellidos + ", " + factura.Cliente.Nombres;
+                dto.PrecioVenta = (double) (factura.MontoIGV + (decimal) factura.ValorVenta);
+                dto.Estado = factura.EstadoFacturacion;
+                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.Nombre;
 
                 listaDtos.Add(dto);
             }
@@ -50,13 +50,13 @@ namespace ETNA.WCF.PV
                 {
                     throw new Exception("Factura no encontrada");
                 }
-                dto.Id = factura.Id;
-                dto.NroFactura = factura.NroFactura;
-                dto.FechaFactura = factura.FechaFactura;
+                dto.Id = factura.FacturaId;
+                dto.NroFactura = factura.NumeroFact.ToString();
+                dto.FechaFactura = factura.FechaEmision;
                 dto.ValorVenta = factura.ValorVenta;
-                dto.PrecioVenta = factura.PrecioVenta;
-                dto.Estado = factura.Estado;
-                dto.NombreCompletoCliente = factura.Cliente.Apellidos + ", " + factura.Cliente.Nombres;
+                dto.PrecioVenta = (double)(factura.MontoIGV + (decimal)factura.ValorVenta);
+                dto.Estado = factura.EstadoFacturacion;
+                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.Nombre;
             }
             catch (Exception e)
             {
@@ -75,13 +75,13 @@ namespace ETNA.WCF.PV
             foreach (var detalle in lista)
             {
                 var dto = new FacturaDetalleDto();
-                dto.Id = detalle.Id;
-                dto.NroFactura = detalle.Factura.NroFactura;
-                dto.IdProducto = detalle.Producto.Id;
-                dto.NombreProducto = detalle.Producto.Nombre;
-                dto.PrecioVentaProducto = detalle.Producto.PrecioListaVenta;
-                dto.EstadoProducto = detalle.Producto.Estado;
-                dto.FechaFactura = detalle.Factura.FechaFactura;
+                dto.Id = detalle.FacturaDetalleId;
+                dto.NroFactura = detalle.TB_VT_Facturas.NumeroFact.ToString();
+                dto.IdProducto = detalle.TB_AL_Productos.ProductoId;
+                dto.NombreProducto = detalle.TB_AL_Productos.Nombre;
+                dto.PrecioVentaProducto = detalle.TB_AL_Productos.PrecioListaVenta;
+                dto.EstadoProducto = detalle.TB_AL_Productos.Estado;
+                dto.FechaFactura = detalle.TB_VT_Facturas.FechaEmision;
                 listaDtos.Add(dto);
             }
 
@@ -103,14 +103,14 @@ namespace ETNA.WCF.PV
             foreach (var detalle in lista)
             {
                 var dto = new FacturaDetalleDto();
-                dto.Id = detalle.Id;
-                dto.NroFactura = detalle.Factura.NroFactura;
-                dto.NombreCliente = detalle.Factura.Cliente.Apellidos + ", " + detalle.Factura.Cliente.Nombres;
-                dto.IdProducto = detalle.Producto.Id;
-                dto.NombreProducto = detalle.Producto.Nombre;
-                dto.PrecioVentaProducto = detalle.Producto.PrecioListaVenta;
-                dto.EstadoProducto = detalle.Producto.Estado;
-                dto.FechaFactura = detalle.Factura.FechaFactura;
+                dto.Id = detalle.FacturaDetalleId;
+                dto.NroFactura = detalle.TB_VT_Facturas.NumeroFact.ToString();
+                dto.NombreCliente = detalle.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno + ", " + detalle.TB_VT_Facturas.TB_VT_Clientes.Nombre;
+                dto.IdProducto = detalle.TB_AL_Productos.ProductoId;
+                dto.NombreProducto = detalle.TB_AL_Productos.Nombre;
+                dto.PrecioVentaProducto = detalle.TB_AL_Productos.PrecioListaVenta;
+                dto.EstadoProducto = detalle.TB_AL_Productos.Estado;
+                dto.FechaFactura = detalle.TB_VT_Facturas.FechaEmision;
 
                 listaDtos.Add(dto);
             }
@@ -125,13 +125,13 @@ namespace ETNA.WCF.PV
             var dto = new FacturaDetalleDto();
             try
             {
-                dto.Id = detalle.Id;
-                dto.NroFactura = detalle.Factura.NroFactura;
-                dto.FechaFactura = detalle.Factura.FechaFactura;
-                dto.IdProducto = detalle.Producto.Id;
-                dto.NombreProducto = detalle.Producto.Nombre;
-                dto.PrecioVentaProducto = detalle.Producto.PrecioListaVenta;
-                dto.EstadoProducto = detalle.Producto.Estado;
+                dto.Id = detalle.FacturaDetalleId;
+                dto.NroFactura = detalle.TB_VT_Facturas.NumeroFact.ToString();
+                dto.FechaFactura = detalle.TB_VT_Facturas.FechaEmision;
+                dto.IdProducto = detalle.TB_AL_Productos.ProductoId;
+                dto.NombreProducto = detalle.TB_AL_Productos.Nombre;
+                dto.PrecioVentaProducto = detalle.TB_AL_Productos.PrecioListaVenta;
+                dto.EstadoProducto = detalle.TB_AL_Productos.Estado;
             }
             catch (Exception e)
             {
