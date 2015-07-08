@@ -212,6 +212,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\InformesReclamosServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LogisticaServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -343,6 +348,19 @@
     <None Include="Service References\FacturasServices\Facturas4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\InformesReclamosServices\ETNA.MVC.InformesReclamosServices.InformeReclamoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\InformesReclamosServices\InformesReclamos.wsdl" />
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformesReclamosServices\InformesReclamos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LogisticaServices\EntradasYSalidasService.disco" />
     <None Include="Service References\LogisticaServices\configuration91.svcinfo" />
     <None Include="Service References\LogisticaServices\configuration.svcinfo" />
@@ -360,6 +378,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\InformesReclamosServices\InformesReclamos.disco" />
+    <Content Include="Service References\InformesReclamosServices\configuration91.svcinfo" />
+    <Content Include="Service References\InformesReclamosServices\configuration.svcinfo" />
+    <Content Include="Service References\InformesReclamosServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Service References\LogisticaServices\ETNA.MVC.LogisticaServices.ListaSolicitudEntradaDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -522,6 +547,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\FabricacionServices\" />
     <WCFMetadataStorage Include="Service References\FacturasServices\" />
+    <WCFMetadataStorage Include="Service References\InformesReclamosServices\" />
     <WCFMetadataStorage Include="Service References\LogisticaServices\" />
     <WCFMetadataStorage Include="Service References\PlantillasServices\" />
     <WCFMetadataStorage Include="Service References\PostVentaServices\" />
