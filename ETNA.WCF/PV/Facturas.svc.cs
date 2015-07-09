@@ -30,7 +30,7 @@ namespace ETNA.WCF.PV
                 dto.ValorVenta = factura.ValorVenta;
                 dto.PrecioVenta = (double) (factura.MontoIGV + (decimal) factura.ValorVenta);
                 dto.Estado = factura.EstadoFacturacion;
-                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.Nombre;
+                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.PrimerNombre;
 
                 listaDtos.Add(dto);
             }
@@ -56,7 +56,7 @@ namespace ETNA.WCF.PV
                 dto.ValorVenta = factura.ValorVenta;
                 dto.PrecioVenta = (double)(factura.MontoIGV + (decimal)factura.ValorVenta);
                 dto.Estado = factura.EstadoFacturacion;
-                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.Nombre;
+                dto.NombreCompletoCliente = factura.TB_VT_Clientes.ApellidoPaterno + ", " + factura.TB_VT_Clientes.PrimerNombre;
             }
             catch (Exception e)
             {
@@ -105,7 +105,7 @@ namespace ETNA.WCF.PV
                 var dto = new FacturaDetalleDto();
                 dto.Id = detalle.FacturaDetalleId;
                 dto.NroFactura = detalle.TB_VT_Facturas.NumeroFact.ToString();
-                dto.NombreCliente = detalle.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno + ", " + detalle.TB_VT_Facturas.TB_VT_Clientes.Nombre;
+               // dto.NombreCliente = detalle.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno + ", " + detalle.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre;
                 dto.IdProducto = detalle.TB_AL_Productos.ProductoId;
                 dto.NombreProducto = detalle.TB_AL_Productos.Nombre;
                 dto.PrecioVentaProducto = detalle.TB_AL_Productos.PrecioListaVenta;
