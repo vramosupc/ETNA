@@ -10,7 +10,7 @@
     
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>ReclamoViewModel</legend>
+        <legend>InformeReclamoViewModel</legend>
 
         <table style="border: 1px solid white">
             <tr>
@@ -42,7 +42,7 @@
                    @if (@Html.DisplayFor(model => model.FechaElaboracion).ToString() == "0001-01-01")
             {
 
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => Model.FechaAprobacion).ToString()));
+                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => model.FechaAprobacion).ToString()));
             }
  
                 </td>
@@ -108,49 +108,45 @@
 
     }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
-    
-    <script type="text/javascript">
-        $(document).ready(function() {
+        <script type="text/javascript">
+            $(document).ready(function () {
 
-            $("#btnGrabar").live('click', function() {
+                $("#btnGrabar").live('click', function () {
 
-                var descripcion = $("#Descripcion").val();
-                var detalle = $("#DetalleInforme").val();
-               
-                if (descripcion == null || descripcion == "") {
-                    alert("Debe ingresar la descripción del Informe");
-                    $("#Descripcion").focus();
-                    return false;
-                }
+                    var descripcion = $("#Descripcion").val();
+                    var detalle = $("#DetalleInforme").val();
 
-                if (detalle == null || detalle == "") {
-                    alert("Debe ingresar el Detalle del Informe");
-                    $("#DetalleInforme").focus();
-                    return false;
-                }
+                    if (descripcion == null || descripcion == "") {
+                        alert("Debe ingresar el Descripcion del informe");
+                        $("#Descripcion").focus();
+                        return false;
+                    }
+
+                    if (detalle == null || detalle == "") {
+                        alert("Debe ingresar el Detalle del informe");
+                        $("#DetalleInforme").focus();
+                        return false;
+                    }
 
 
-                if (confirm("¿Desea Actualizar el Informe del Reclamo?")) {
-                    alert("Se actualizó correctamente el Informe del reclamo");
-                } else {
-                    return false;
-                }
+                    if (confirm("¿Desea Actualizar el Informe de reclamo?")) {
+                        alert("Se actualizó correctamente el Informe de reclamo");
+                    } else {
+                        return false;
+                    }
+
+
+                });
 
 
             });
-
-
-        });
     </script>
+
+
 
 
 }
