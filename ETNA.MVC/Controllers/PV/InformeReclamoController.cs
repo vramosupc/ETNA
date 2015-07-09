@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using ETNA.MVC.InformesReclamosServices;
+using ETNA.MVC.Models.PV;
+using AutoMapper;
 namespace ETNA.MVC.Controllers.PV
 {
     public class InformeReclamoController : Controller
@@ -13,7 +15,14 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Index()
         {
-            return View();
+            var service = new InformesReclamosServices.InformesReclamosClient();
+            var dtos = service.ListaInfomesReclamos();
+
+            Mapper.CreateMap<InformeReclamoDto, InformeReclamoViewModel>();
+            var model = Mapper.Map<List<InformeReclamoViewModel>>(dtos);
+
+
+            return View(model);
         }
 
         //

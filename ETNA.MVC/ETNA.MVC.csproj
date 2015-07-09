@@ -198,6 +198,7 @@
     <Compile Include="Models\LO\SolicitudEntradaViewModel.cs" />
     <Compile Include="Models\PV\FacturaDetalleViewModel.cs" />
     <Compile Include="Models\PV\FacturaViewModel.cs" />
+    <Compile Include="Models\PV\InformeReclamoViewModel.cs" />
     <Compile Include="Models\PV\PlantillaViewModel.cs" />
     <Compile Include="Models\PV\ProgramacionViewModel.cs" />
     <Compile Include="Models\PV\ReclamoViewModel.cs" />
@@ -528,6 +529,7 @@
     <Content Include="Views\Programacion\Edit.cshtml" />
     <Content Include="Views\Programacion\Create.cshtml" />
     <Content Include="Views\Plantilla\Index.cshtml" />
+    <Content Include="Views\InformeReclamo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
