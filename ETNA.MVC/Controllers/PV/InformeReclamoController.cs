@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using ETNA.MVC.FacturasServices;
 using ETNA.MVC.InformesReclamosServices;
 using ETNA.MVC.Models.PV;
 using AutoMapper;
+
 namespace ETNA.MVC.Controllers.PV
 {
     public class InformeReclamoController : Controller
@@ -57,7 +60,7 @@ namespace ETNA.MVC.Controllers.PV
         // POST: /InformeReclamo/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(InformeReclamoViewModel model)
         {
             try
             {
@@ -83,8 +86,8 @@ namespace ETNA.MVC.Controllers.PV
             var informeDto = service.ObtenerInformeReclamo(id);
 
             //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
-            var model = Mapper.Map<InformeReclamoViewModel>(informeDto);
-            return View(model);
+            var model1 = Mapper.Map<InformeReclamoViewModel>(informeDto);
+            return View(model1);
         }
 
         //
@@ -92,13 +95,13 @@ namespace ETNA.MVC.Controllers.PV
         
 
         [HttpPost]
-        public ActionResult Edit(InformeReclamoViewModel model)
+        public ActionResult Edit(InformeReclamoViewModel model1)
         {
             try
             {
                 var service = new InformesReclamosClient();
 
-                service.EditarInformeReclamo(model.InformeReclamoId, model.CodigoInforme, model.Descripcion, model.DetalleInforme, model.FechaAprobacion, model.FechaElaboracion, model.ObservacionAprobador, model.Estado, model.ReclamoId,model.ElaboradoPorId,model.AprobadoPorId);
+                service.EditarInformeReclamo(model1.InformeReclamoId, model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId,model1.ElaboradoPorId,model1.AprobadoPorId);
      
                 return RedirectToAction("Index", new { modifico = true });
 
