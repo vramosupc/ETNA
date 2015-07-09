@@ -59,7 +59,6 @@
     <Compile Include="PV\GestorPlantillas.cs" />
     <Compile Include="PV\GestorProgramaciones.cs" />
     <Compile Include="PV\GestorReclamos.cs" />
-    <Compile Include="PV\idInforme.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETNA.Common\ETNA.Common.csproj">
