@@ -30,7 +30,19 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Details(int id)
         {
-            return View();
+            @ViewBag.Id = id;
+
+
+            //Invocamos al servicio
+            var service = new InformesReclamosServices.InformesReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var informesDto = service.ObtenerInformeReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model = Mapper.Map<InformeReclamoViewModel>(informesDto);
+
+            return View(model);
         }
 
         //
