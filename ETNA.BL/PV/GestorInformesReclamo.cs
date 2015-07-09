@@ -54,7 +54,7 @@ namespace ETNA.BL.PV
             {
                 informe.Descripcion = descripcion;
                 informe.DetalleInforme = detalleInforme;
-                informe.Estado = estado;
+            //    informe.Estado = estado;
                 
                 context.SaveChanges();
             }

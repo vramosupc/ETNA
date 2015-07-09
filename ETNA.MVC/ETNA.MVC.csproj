@@ -352,7 +352,7 @@
     <Content Include="Service References\InformesReclamosServices\ETNA.MVC.InformesReclamosServices.InformeReclamoDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\InformesReclamosServices\InformesReclamos.wsdl" />
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.wsdl" />
     <None Include="Service References\InformesReclamosServices\InformesReclamos.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -379,13 +379,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\InformesReclamosServices\InformesReclamos.disco" />
-    <Content Include="Service References\InformesReclamosServices\configuration91.svcinfo" />
-    <Content Include="Service References\InformesReclamosServices\configuration.svcinfo" />
-    <Content Include="Service References\InformesReclamosServices\Reference.svcmap">
+    <None Include="Service References\InformesReclamosServices\InformesReclamos.disco" />
+    <None Include="Service References\InformesReclamosServices\configuration91.svcinfo" />
+    <None Include="Service References\InformesReclamosServices\configuration.svcinfo" />
+    <None Include="Service References\InformesReclamosServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Service References\LogisticaServices\ETNA.MVC.LogisticaServices.ListaSolicitudEntradaDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -531,6 +531,7 @@
     <Content Include="Views\Plantilla\Index.cshtml" />
     <Content Include="Views\InformeReclamo\Index.cshtml" />
     <Content Include="Views\InformeReclamo\Details.cshtml" />
+    <Content Include="Views\InformeReclamo\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

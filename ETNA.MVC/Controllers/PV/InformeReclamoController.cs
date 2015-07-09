@@ -76,20 +76,31 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Edit(int id)
         {
-            return View();
+            //Invocamos al servicio
+            var service = new InformesReclamosServices.InformesReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var informeDto = service.ObtenerInformeReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model = Mapper.Map<InformeReclamoViewModel>(informeDto);
+            return View(model);
         }
 
         //
         // POST: /InformeReclamo/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(InformeReclamoViewModel model)
         {
             try
             {
-                // TODO: Add update logic here
+                var service = new InformesReclamosServices.InformesReclamosClient();
 
-                return RedirectToAction("Index");
+                service.EditarInformeReclamo(model.InformeReclamoId, model.CodigoInforme, model.Descripcion, model.DetalleInforme, model.FechaAprobacion, model.FechaElaboracion, model.ObservacionAprobador, model.Estado, model.ReclamoId,model.ElaboradoPorId,model.AprobadoPorId);
+     
+                return RedirectToAction("Index", new { modifico = true });
+
             }
             catch
             {

@@ -15,9 +15,9 @@ namespace ETNA.MVC.Models.PV
         public string CodigoInforme { get; set; }
         [Required(ErrorMessage = "Debe ingresar el Descripción del reclamo.")]
         [DisplayName("Descripción")]
-       
-        public string Descripcion { get; set; }
+       public string Descripcion { get; set; }
         [Required(ErrorMessage = "Debe ingresar el Detalle del reclamo.")]
+        [DisplayName("Detalle de Informe")]
         public string DetalleInforme { get; set; }
         [DisplayName("Fecha Aprobación")]
         [DataType(DataType.Date)]
