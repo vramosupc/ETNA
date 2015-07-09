@@ -97,12 +97,12 @@ namespace ETNA.MVC.Controllers.PV
         [HttpPost]
         public ActionResult Edit(InformeReclamoViewModel model1)
         {
-            try
-            {
+          try
+          {
                 var service = new InformesReclamosClient();
 
                 service.EditarInformeReclamo(model1.InformeReclamoId, model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId,model1.ElaboradoPorId,model1.AprobadoPorId);
-     
+          
                 return RedirectToAction("Index", new { modifico = true });
 
             }
