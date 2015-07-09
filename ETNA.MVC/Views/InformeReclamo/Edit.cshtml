@@ -1,16 +1,17 @@
-﻿@using ETNA.MVC.Models.PV
-@model ETNA.MVC.Models.PV.InformeReclamoViewModel
+﻿@model ETNA.MVC.Models.PV.InformeReclamoViewModel
 
 @{
     ViewBag.Title = "Edit";
 }
 
+<br />
 
-
-@using (Html.BeginForm()) {
-    
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    <fieldset>
+
+<fieldset>
         <legend>InformeReclamoViewModel</legend>
 
         <table style="border: 1px solid white">
@@ -34,17 +35,17 @@
                 <td>@Html.LabelFor(model => model.FechaElaboracion)</td>
                 <td  style="text-align: left">
                
-                          @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaElaboracion).ToString()))
+                          @string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(Html.DisplayFor(model => model.FechaElaboracion).ToString()))
               
                 </td>
                 <td>@Html.LabelFor(model => model.FechaAprobacion)</td>
                 <td style="text-align: left">
                 
                    @if (@Html.DisplayFor(model => model.FechaElaboracion).ToString() == "0001-01-01")
-            {
+                   {
 
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => model.FechaAprobacion).ToString()));
-            }
+                       string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => model.FechaAprobacion).ToString()));
+                   }
  
                 </td>
             </tr>  
@@ -105,8 +106,8 @@
             
         </p>
     </fieldset>
+}
 
-    }
 
 
 @section Scripts {
