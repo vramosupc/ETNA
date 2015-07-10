@@ -22,6 +22,36 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# By Component
+ETNA.BL/obj/[Dd]ebug/
+ETNA.BL/obj/[Dd]ebugPublic/
+ETNA.BL/obj/[Rr]elease/
+ETNA.BL/obj/[Rr]eleases/
+ETNA.Common/obj/[Dd]ebug/
+ETNA.Common/obj/[Dd]ebugPublic/
+ETNA.Common/obj/[Rr]elease/
+ETNA.Common/obj/[Rr]eleases/
+ETNA.DAL/obj/[Dd]ebug/
+ETNA.DAL/obj/[Dd]ebugPublic/
+ETNA.DAL/obj/[Rr]elease/
+ETNA.DAL/obj/[Rr]eleases/
+ETNA.Domain/obj/[Dd]ebug/
+ETNA.Domain/obj/[Dd]ebugPublic/
+ETNA.Domain/obj/[Rr]elease/
+ETNA.Domain/obj/[Rr]eleases/
+ETNA.DTOs/obj/[Dd]ebug/
+ETNA.DTOs/obj/[Dd]ebugPublic/
+ETNA.DTOs/obj/[Rr]elease/
+ETNA.DTOs/obj/[Rr]eleases/
+ETNA.MVC/obj/[Dd]ebug/
+ETNA.MVC/obj/[Dd]ebugPublic/
+ETNA.MVC/obj/[Rr]elease/
+ETNA.MVC/obj/[Rr]eleases/
+ETNA.WCF/obj/[Dd]ebug/
+ETNA.WCF/obj/[Dd]ebugPublic/
+ETNA.WCF/obj/[Rr]elease/
+ETNA.WCF/obj/[Rr]eleases/
+
 # Visual Studio 2015 cache/options directory
 .vs/
 
