@@ -26,7 +26,7 @@ namespace ETNA.BL.PV
             newReclamo.Motivo = motivo;
             newReclamo.Detalle = detalle;
             newReclamo.Observaciones = observaciones;
-            newReclamo.FechaRespuesta = DateTime.Now.AddDays(5);
+            newReclamo.FechaRespuesta = null;
             newReclamo.Estado = "P";
             newReclamo.TB_RH_Empleados= context.TB_RH_Empleados.Find(1);
                 newReclamo.RegistradoPorId = newReclamo.TB_RH_Empleados.EmpleadoId;

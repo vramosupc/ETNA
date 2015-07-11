@@ -25,7 +25,7 @@ namespace ETNA.DTOs.PV
         [DataMember]
         public string Observaciones { get; set; }
         [DataMember]
-        public System.DateTime FechaRespuesta { get; set; }
+        public Nullable<System.DateTime> FechaRespuesta { get; set; }
         [DataMember]
         public int IdFacturaDetalle { get; set; }
         [DataMember]

@@ -828,7 +828,7 @@
           <Property Name="Motivo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Detalle" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Observaciones" Type="nvarchar(max)" />
-          <Property Name="FechaRespuesta" Type="datetime" Nullable="false" />
+          <Property Name="FechaRespuesta" Type="datetime" />
           <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
           <Property Name="RegistradoPorId" Type="int" Nullable="false" />
           <Property Name="FacturaDetalleId" Type="int" Nullable="false" />
@@ -2683,7 +2683,7 @@
           <Property Name="Motivo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Detalle" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Observaciones" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="FechaRespuesta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaRespuesta" Type="DateTime" Precision="3" />
           <Property Name="Estado" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="RegistradoPorId" Type="Int32" Nullable="false" />
           <Property Name="FacturaDetalleId" Type="Int32" Nullable="false" />
