@@ -10,13 +10,16 @@
 namespace ETNA.DAL
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TB_VT_Direccion
+    public partial class GetPaginasRowNumber_Result
     {
-        public int DireccionId { get; set; }
-        public int ClienteId { get; set; }
-        public string Descripcion { get; set; }
-        public bool DireccionPrincipal { get; set; }
+        public Nullable<long> rownum { get; set; }
+        public int FacturaDetalleId { get; set; }
+        public int FacturaId { get; set; }
+        public Nullable<int> ProductoId { get; set; }
+        public Nullable<decimal> Cantidad { get; set; }
+        public Nullable<decimal> Valortotal { get; set; }
+        public string Observacion { get; set; }
+        public Nullable<int> CodigoReq { get; set; }
     }
 }

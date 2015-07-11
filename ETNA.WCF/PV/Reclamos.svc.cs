@@ -48,11 +48,11 @@ namespace ETNA.WCF.PV
                 dto.Observaciones = reclamo.Observaciones;
                 dto.FechaRespuesta = reclamo.FechaRespuesta;
    //             dto.NombreRegistrador = reclamo.RegistradoPorId.Nombres + " " + reclamo.RegistradoPorId.Apellidos;
-                dto.NombreRegistrador = reclamo.TB_RH_Empleados.Nombres + " " + reclamo.TB_RH_Empleados.Apellidos;
+                dto.NombreRegistrador = reclamo.TB_RH_Empleados.Nombres.Trim() + " " + reclamo.TB_RH_Empleados.Apellidos.Trim();
       
-              //  dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim() + " " +
-              //                      reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim();
-                dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact.ToString();
+                dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim() + " " +
+                                    reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim();
+                dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact;
                 dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre.Trim();
   
                 dto.IdFacturaDetalle = reclamo.TB_VT_FacturaDetalles.FacturaDetalleId;
@@ -99,9 +99,9 @@ namespace ETNA.WCF.PV
             
             dto.Estado = reclamo.Estado;
             dto.Motivo = reclamo.Motivo;
-        //    dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim() + " " +
-         //                      reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim();
-            dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact.ToString();
+            dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim() + " " +
+                               reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim();
+            dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact;
             dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre.Trim();
             dto.IdFacturaDetalle = reclamo.TB_VT_FacturaDetalles.FacturaDetalleId;
             if (reclamo.Estado.Equals("P"))

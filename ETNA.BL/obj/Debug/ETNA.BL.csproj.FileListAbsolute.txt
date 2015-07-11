@@ -26,6 +26,7 @@ C:\Repository\ETNA\ETNA.BL\bin\Debug\es\EntityFramework.resources.dll
 C:\Repository\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 C:\Repository\ETNA\ETNA.BL\obj\Debug\ETNA.BL.dll
 C:\Repository\ETNA\ETNA.BL\obj\Debug\ETNA.BL.pdb
+C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\ETNA.BL.dll
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\ETNA.BL.pdb
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\EntityFramework.dll
@@ -37,6 +38,5 @@ C:\ETNA\ETNA\ETNA.BL\bin\Debug\ETNA.DAL.pdb
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\ETNA.Domain.pdb
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\EntityFramework.xml
 C:\ETNA\ETNA\ETNA.BL\bin\Debug\es\EntityFramework.resources.dll
-C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.csprojResolveAssemblyReference.cache
 C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.dll
 C:\ETNA\ETNA\ETNA.BL\obj\Debug\ETNA.BL.pdb
