@@ -532,6 +532,7 @@
     <Content Include="Views\InformeReclamo\Index.cshtml" />
     <Content Include="Views\InformeReclamo\Details.cshtml" />
     <Content Include="Views\InformeReclamo\Edit.cshtml" />
+    <Content Include="Views\InformeReclamo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

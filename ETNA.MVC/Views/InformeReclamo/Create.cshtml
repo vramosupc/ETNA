@@ -1,0 +1,151 @@
+﻿@model ETNA.MVC.Models.PV.InformeReclamoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+<script type="text/javascript">
+    
+    function load() {
+        var fecha = new Date();
+        fecha = "0" + fecha.getDate() + "/0" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
+        // por regla de negocio, La fecha de respuesta son 5 días despues  de la fecha de reclamo.
+        
+        document.getElementById("FechaElaboracion").value = fecha;
+    }
+    window.onload = load;
+
+    function mostrarFecha(days) {
+        var fecha = new Date();
+        var day = fecha.getDate()+days;
+        var month = fecha.getMonth() + 1;
+        var year = fecha.getFullYear();
+
+        //var tiempo = fecha.getTime();
+        //var milisegundos = parseInt(days * 24 * 60 * 60 * 1000);
+        //var total = fecha.setTime(tiempo + milisegundos);
+        day = (fecha.getDate().toString.length != 1) ? "0" + day : day;
+        //month = (fecha.getDate().toString.length != 1) ? "0" + fecha.getDate() : fecha.getDate();
+        //year = fecha.getFullYear();
+        return "" + day + "/0" + month + "/" + year;
+        return total;
+    }
+    function mensaje() {
+        alert("El Reclamo se guardo correctamente");
+        /*window.close();*/
+    }
+</script>
+
+<h2>Crear</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>InformeReclamoViewModel</legend>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CodigoInforme)
+        </div>
+        <div class="editor-field">
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DetalleInforme)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DetalleInforme)
+            @Html.ValidationMessageFor(model => model.DetalleInforme)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FechaElaboracion)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FechaElaboracion,(object)new {disabled="disabled",Style="background:#cccccc;" })
+
+        </div>
+
+
+   
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReclamoId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReclamoId)
+            @Html.ValidationMessageFor(model => model.ReclamoId)
+        </div>
+
+ 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescripcionEstado)
+        </div>
+        <div class="editor-field">
+            Elaborado
+        </div>
+
+    
+        <p>
+                <input type="submit" value="Grabar" name="btnGrabar" id="btnGrabar" />
+                
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnGrabar").live('click', function () {
+
+                var descripcion = $("#Descripcion").val();
+                var detalle = $("#DetalleInforme").val();
+                var idReclamo = $("#ReclamoId").val();
+      
+                if (descripcion == null || descripcion == "") {
+                    alert("Debe ingresar la descripcion del informe");
+                    $("#Descripcion").focus();
+                    return false;
+                }
+                if (detalle == null || detalle == "") {
+                    alert("Debe ingresar el Detalle del Informe");
+                    $("#DetalleInforme").focus();
+                    return false;
+                }
+
+
+                if (idReclamo == null || idReclamo == "") {
+                    alert("Debe ingresar el Id del Reclamo");
+                    $("#ReclamoId").focus();
+                    return false;
+                }
+
+
+                
+
+                if (confirm("¿Desea Registrar el Informe del reclamo?")) {
+                    alert("Se registró correctamente el reclamo");
+                } else {
+                    return false;
+                }
+
+            });
+
+
+        });
+    </script>
+
+}
+

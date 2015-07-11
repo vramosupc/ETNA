@@ -60,13 +60,16 @@ namespace ETNA.MVC.Controllers.PV
         // POST: /InformeReclamo/Create
 
         [HttpPost]
-        public ActionResult Create(InformeReclamoViewModel model)
+        public ActionResult Create(InformeReclamoViewModel model1)
         {
             try
             {
-                // TODO: Add insert logic here
+                var service = new InformesReclamosServices.InformesReclamosClient();
+                service.InsertarInformeReclamo(model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId, model1.ElaboradoPorId, model1.AprobadoPorId);
+          
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { creado = true });
+
             }
             catch
             {
