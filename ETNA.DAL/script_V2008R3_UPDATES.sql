@@ -338,3 +338,33 @@ VALUES (16, 4, 17 , 5, 190, '', NULL)
 INSERT INTO TB_VT_FacturaDetalles (FacturaDetalleId, FacturaId, ProductoId, Cantidad, Valortotal, Observacion, CodigoReq)
 VALUES (17, 4, 18 , 4, 200, '', NULL)
 GO
+
+
+/*
+Fecha : 04/07/2015
+Autor: Paul Taboada Casas
+Rol: DBA PostVenta
+Modulo: PostVenta
+Descripcion: Paginacion para la lista de Reclamos
+*/
+
+CREATE PROCEDURE GetPaginasRowNumberReclamos
+   @NUM_PAGINA   INT
+   ,@TAM_PAGINA   INT
+   ,@COD_RECLAMO VARCHAR(30)
+AS
+   SET NOCOUNT ON;
+   SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED; 
+   WITH DRV_TBL AS 
+   (
+      SELECT 
+         ROW_NUMBER() OVER (ORDER BY r.ReclamoId DESC) AS rownum
+         ,r.*
+      FROM TB_PV_Reclamos AS r
+      WHERE r.CodigoReclamo LIKE '%'+@COD_RECLAMO+'%' and r.Estado='P'
+      /*INNER JOIN Clientes AS c ON c.Codigo = f.Cliente_Codigo
+      INNER JOIN Productos AS p ON p.Id = fd.Producto_Id*/
+   )
+   SELECT * FROM DRV_TBL
+   WHERE ROWNUM BETWEEN (@NUM_PAGINA*@TAM_PAGINA)-@TAM_PAGINA+1 AND (@NUM_PAGINA*@TAM_PAGINA)
+GO

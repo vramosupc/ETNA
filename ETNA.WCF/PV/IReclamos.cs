@@ -28,5 +28,11 @@ namespace ETNA.WCF.PV
 
         [OperationContract]
         ReclamoDto ObtenerReclamo(int idReclamo);
+
+        [OperationContract]
+        List<int> NroPaginasPorCodigoReclamo(string codigoReclamo);
+
+        [OperationContract]
+        List<ReclamoDto> ListarReclamosPorCodigo(string codigoReclamo, int nroPagina);
     }
 }
