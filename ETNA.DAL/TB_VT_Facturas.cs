@@ -20,7 +20,7 @@ namespace ETNA.DAL
         }
     
         public int FacturaId { get; set; }
-        public Nullable<int> NumeroFact { get; set; }
+        public string NumeroFact { get; set; }
         public int ClienteId { get; set; }
         public System.DateTime FechaEmision { get; set; }
         public System.DateTime FechaEntrega { get; set; }

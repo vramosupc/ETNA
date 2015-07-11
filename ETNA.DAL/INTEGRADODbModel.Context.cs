@@ -12,6 +12,9 @@ namespace ETNA.DAL
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class INTEGRADOModelContainer : DbContext
     {
@@ -85,5 +88,22 @@ namespace ETNA.DAL
         public DbSet<TB_VT_ListaPrecios> TB_VT_ListaPrecios { get; set; }
         public DbSet<TB_VT_Pedido> TB_VT_Pedido { get; set; }
         public DbSet<TB_VT_Telefono> TB_VT_Telefono { get; set; }
+    
+        public virtual ObjectResult<GetPaginasRowNumber_Result> GetPaginasRowNumber(Nullable<int> nUM_PAGINA, Nullable<int> tAM_PAGINA, string nRO_FACTURA)
+        {
+            var nUM_PAGINAParameter = nUM_PAGINA.HasValue ?
+                new ObjectParameter("NUM_PAGINA", nUM_PAGINA) :
+                new ObjectParameter("NUM_PAGINA", typeof(int));
+    
+            var tAM_PAGINAParameter = tAM_PAGINA.HasValue ?
+                new ObjectParameter("TAM_PAGINA", tAM_PAGINA) :
+                new ObjectParameter("TAM_PAGINA", typeof(int));
+    
+            var nRO_FACTURAParameter = nRO_FACTURA != null ?
+                new ObjectParameter("NRO_FACTURA", nRO_FACTURA) :
+                new ObjectParameter("NRO_FACTURA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPaginasRowNumber_Result>("GetPaginasRowNumber", nUM_PAGINAParameter, tAM_PAGINAParameter, nRO_FACTURAParameter);
+        }
     }
 }

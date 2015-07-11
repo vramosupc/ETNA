@@ -163,7 +163,7 @@
                 var facturaId = $("#FacturaId").val();
 
                 if (facturaId !== "") {
-                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
+                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> Buscando...');
 
                     var request = $.ajax({
                         url: "/Factura/Details/" + facturaId,

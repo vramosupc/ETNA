@@ -24,7 +24,6 @@ namespace ETNA.DAL
     
         public int ClienteId { get; set; }
         public int TipoTerceroId { get; set; }
-        public string Nombre { get; set; }
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }
         public string PrimerNombre { get; set; }
@@ -34,7 +33,6 @@ namespace ETNA.DAL
         public Nullable<int> Ruc { get; set; }
         public string DocIdentidad { get; set; }
         public bool Activo { get; set; }
-        public int DireccionPrincipalId { get; set; }
         public string Direccion { get; set; }
         public decimal LineaCredito { get; set; }
         public int ModalidadCreditoId { get; set; }
@@ -52,7 +50,6 @@ namespace ETNA.DAL
     
         public virtual ICollection<TB_PV_Encuestas> TB_PV_Encuestas { get; set; }
         public virtual ICollection<TB_Requerimiento> TB_Requerimiento { get; set; }
-        public virtual TB_VT_Direccion TB_VT_Direccion { get; set; }
         public virtual ICollection<TB_VT_Facturas> TB_VT_Facturas { get; set; }
         public virtual ICollection<TB_VT_Pedido> TB_VT_Pedido { get; set; }
     }
