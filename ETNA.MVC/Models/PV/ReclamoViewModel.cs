@@ -15,7 +15,7 @@ namespace ETNA.MVC.Models.PV
         public string CodigoReclamo { get; set; }
 
        
-        [DisplayName("Fecha Hora Registro")]
+        [DisplayName("Fecha Registro")]
         public System.DateTime FechaHoraReclamo { get; set; }
 
         [Required(ErrorMessage = "Debe ingresar el motivo del reclamo.")]
@@ -26,7 +26,7 @@ namespace ETNA.MVC.Models.PV
         public string Observaciones { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        
         [DisplayName("Fecha Respuesta")]
         public System.DateTime FechaRespuesta { get; set; }
         [Required(ErrorMessage = "Debe Indicar la Factura y el Producto a Reclamar")]

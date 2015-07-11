@@ -29,17 +29,16 @@
                 <td>@Html.LabelFor(model => model.FechaHoraReclamo)</td>
                 <td  colspan="3" style="text-align: left">
                
-                          @string.Format("{0:dd/MM/yyyy HH:mm}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaHoraReclamo).ToString()))
+                          @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaHoraReclamo).ToString()))
               
                 </td>
                 <td>@Html.LabelFor(model => model.FechaRespuesta)</td>
                 <td colspan="3" style="text-align: left">
                 
-                      @if (@Html.DisplayFor(model => model.FechaRespuesta).ToString() == "0001-01-01")
-            {
-
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => Model.FechaRespuesta).ToString()));
-            }
+                     @if (Html.DisplayFor(model => model.FechaRespuesta).ToString() != "01/01/0001")
+                     {
+                         @Html.DisplayFor(model => model.FechaRespuesta)
+                     }
                 
                 </td>
             </tr>  

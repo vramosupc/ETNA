@@ -64,12 +64,12 @@
         </td>
  
         <td>
-            @if (item.FechaAprobacion.ToString("yyyy-MM-dd") == "0001-01-01")
-            {
-
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaAprobacion).ToString()));
-            }
-     
+                @if (Html.DisplayFor(modelItem => item.FechaAprobacion).ToString() != "01/01/0001")
+                     {
+                         @Html.DisplayFor(modelItem => item.FechaAprobacion)
+                     }
+                
+            
         </td>
        
         <td>

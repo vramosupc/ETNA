@@ -73,18 +73,16 @@
         
         <td>
             
-               @string.Format("{0:dd/MM/yyyy HH:mm}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaHoraReclamo).ToString()))
+               @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaHoraReclamo).ToString()))
               
         </td>
         
         <td>
  
-           @if (item.FechaRespuesta.ToString("yyyy-MM-dd") == "0001-01-01")
+            @if (Html.DisplayFor(modelItem => item.FechaRespuesta).ToString() != "01/01/0001")
             {
-
-                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaRespuesta).ToString()));
+                @Html.DisplayFor(modelItem => item.FechaRespuesta)
             }
-           
         </td>
 
 

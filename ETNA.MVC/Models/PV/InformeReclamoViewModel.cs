@@ -26,7 +26,6 @@ namespace ETNA.MVC.Models.PV
         
         [DisplayName("Fecha Aprobación")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]      
         public System.DateTime FechaAprobacion { get; set; }
         
         [DisplayName("Fecha Elaboración")]
