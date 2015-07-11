@@ -57,5 +57,11 @@ namespace ETNA.MVC.Models.PV
         
         [DisplayName("Reclamo")]
         public string CodigoReclamo { get; set; }
+
+        [DisplayName("Cliente")]
+        public string NombreCliente { get; set; }
+
+        [DisplayName("Fecha Hora Reclamo")]
+        public System.DateTime FechaHoraReclamo { get; set; }
     }
 }
