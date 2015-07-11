@@ -32,6 +32,9 @@ namespace ETNA.MVC.PostVentaServices {
         private string DetalleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiasSinAtenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -109,6 +112,19 @@ namespace ETNA.MVC.PostVentaServices {
                 if ((object.ReferenceEquals(this.DetalleField, value) != true)) {
                     this.DetalleField = value;
                     this.RaisePropertyChanged("Detalle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DiasSinAtender {
+            get {
+                return this.DiasSinAtenderField;
+            }
+            set {
+                if ((this.DiasSinAtenderField.Equals(value) != true)) {
+                    this.DiasSinAtenderField = value;
+                    this.RaisePropertyChanged("DiasSinAtender");
                 }
             }
         }
@@ -288,6 +304,12 @@ namespace ETNA.MVC.PostVentaServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamos", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamosPendientes", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosPendientesResponse")]
+        ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamosPendientes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ListaReclamosPendientes", ReplyAction="http://tempuri.org/IReclamos/ListaReclamosPendientesResponse")]
+        System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosPendientesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/ObtenerReclamo", ReplyAction="http://tempuri.org/IReclamos/ObtenerReclamoResponse")]
         ETNA.MVC.PostVentaServices.ReclamoDto ObtenerReclamo(int idReclamo);
         
@@ -344,6 +366,14 @@ namespace ETNA.MVC.PostVentaServices {
         
         public System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosAsync() {
             return base.Channel.ListaReclamosAsync();
+        }
+        
+        public ETNA.MVC.PostVentaServices.ReclamoDto[] ListaReclamosPendientes() {
+            return base.Channel.ListaReclamosPendientes();
+        }
+        
+        public System.Threading.Tasks.Task<ETNA.MVC.PostVentaServices.ReclamoDto[]> ListaReclamosPendientesAsync() {
+            return base.Channel.ListaReclamosPendientesAsync();
         }
         
         public ETNA.MVC.PostVentaServices.ReclamoDto ObtenerReclamo(int idReclamo) {

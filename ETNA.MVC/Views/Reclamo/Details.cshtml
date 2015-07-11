@@ -2,7 +2,7 @@
 @model ETNA.MVC.Models.PV.ReclamoViewModel
 
 @{
-    ViewBag.Title = "Details";
+   // ViewBag.Title = "Details";
 }
 
 <!--<h2>Consultar Reclamo</h2> !-->
@@ -95,7 +95,8 @@
             
             <tr>
                 <td colspan="8" style="text-align: center">
-                    @Html.ActionLink("Regresar", "Index")
+                    @Html.ActionLink("Regresar", null, null, null, new { href = Request.UrlReferrer})
+                    
                 </td>
             </tr>  
 

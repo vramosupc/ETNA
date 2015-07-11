@@ -68,6 +68,7 @@ namespace ETNA.WCF.PV
 
                 dto.Estado = reclamo.Estado;
                 dto.Motivo = reclamo.Motivo;
+                dto.DiasSinAtender = DateTime.Today.Subtract(reclamo.FechaHoraReclamo).Days+1;
 
                 listaDtos.Add(dto);
             }
@@ -79,6 +80,57 @@ namespace ETNA.WCF.PV
            
             //var listaDtos = Mapper.Map<List<ReclamoDto>>(lista);
             
+
+        }
+
+        public List<ReclamoDto> ListaReclamosPendientes()
+        {
+            var gestorReclamos = new GestorReclamos();
+            var lista = gestorReclamos.ListarPorEstado("P");
+            var listaDtos = new List<ReclamoDto>();
+
+            foreach (var reclamo in lista)
+            {
+                var dto = new ReclamoDto();
+                dto.Id = reclamo.ReclamoId;
+                dto.CodigoReclamo = reclamo.CodigoReclamo;
+                dto.Detalle = reclamo.Detalle;
+                dto.FechaHoraReclamo = reclamo.FechaHoraReclamo;
+                dto.Observaciones = reclamo.Observaciones;
+                dto.FechaRespuesta = reclamo.FechaRespuesta;
+                //             dto.NombreRegistrador = reclamo.RegistradoPorId.Nombres + " " + reclamo.RegistradoPorId.Apellidos;
+                dto.NombreRegistrador = reclamo.TB_RH_Empleados.Nombres.Trim() + " " + reclamo.TB_RH_Empleados.Apellidos.Trim();
+
+                dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim() + " " +
+                                    reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim();
+                dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact;
+                dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre.Trim();
+
+                dto.IdFacturaDetalle = reclamo.TB_VT_FacturaDetalles.FacturaDetalleId;
+
+                if (reclamo.Estado.Equals("P"))
+                {
+                    dto.DescripcionEstado = "Pendiente";
+                }
+                else if (reclamo.Estado.Equals("C"))
+                {
+                    dto.DescripcionEstado = "Cancelado";
+                }
+                else { dto.DescripcionEstado = "Atendido"; }
+
+                dto.Estado = reclamo.Estado;
+                dto.Motivo = reclamo.Motivo;
+                dto.DiasSinAtender = DateTime.Today.Subtract(reclamo.FechaHoraReclamo).Days+1;
+                listaDtos.Add(dto);
+            }
+
+            return listaDtos;
+
+            // Mapper.CreateMap<Reclamo, ReclamoDto>();
+
+
+            //var listaDtos = Mapper.Map<List<ReclamoDto>>(lista);
+
 
         }
 
@@ -113,6 +165,7 @@ namespace ETNA.WCF.PV
                 dto.DescripcionEstado = "Cancelado";
             }
             else { dto.DescripcionEstado = "Atendido"; }
+            dto.DiasSinAtender = DateTime.Today.Subtract(reclamo.FechaHoraReclamo).Days+1;
 
            return dto;
  

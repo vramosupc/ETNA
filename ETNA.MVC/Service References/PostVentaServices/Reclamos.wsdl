@@ -25,6 +25,12 @@
   <wsdl:message name="IReclamos_ListaReclamos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaReclamosResponse" />
   </wsdl:message>
+  <wsdl:message name="IReclamos_ListaReclamosPendientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaReclamosPendientes" />
+  </wsdl:message>
+  <wsdl:message name="IReclamos_ListaReclamosPendientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaReclamosPendientesResponse" />
+  </wsdl:message>
   <wsdl:message name="IReclamos_ObtenerReclamo_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerReclamo" />
   </wsdl:message>
@@ -43,6 +49,10 @@
     <wsdl:operation name="ListaReclamos">
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ListaReclamos" message="tns:IReclamos_ListaReclamos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ListaReclamosResponse" message="tns:IReclamos_ListaReclamos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaReclamosPendientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ListaReclamosPendientes" message="tns:IReclamos_ListaReclamosPendientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ListaReclamosPendientesResponse" message="tns:IReclamos_ListaReclamosPendientes_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerReclamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ObtenerReclamo" message="tns:IReclamos_ObtenerReclamo_InputMessage" />
@@ -71,6 +81,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListaReclamos">
       <soap:operation soapAction="http://tempuri.org/IReclamos/ListaReclamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaReclamosPendientes">
+      <soap:operation soapAction="http://tempuri.org/IReclamos/ListaReclamosPendientes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

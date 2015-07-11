@@ -75,6 +75,13 @@ namespace ETNA.BL.PV
             return context.TB_PV_Reclamos.ToList();
         }
 
+        public List<TB_PV_Reclamos> ListarPorEstado(String estado)
+        {
+            var context = new INTEGRADOModelContainer();
+            
+            return context.TB_PV_Reclamos.Where(d => d.Estado=="P").ToList();
+        }
+
         public TB_PV_Reclamos ObtenerReclamo(int idReclamo)
         {
             var context = new INTEGRADOModelContainer();

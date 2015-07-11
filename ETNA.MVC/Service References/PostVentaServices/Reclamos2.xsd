@@ -56,6 +56,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaReclamosPendientes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaReclamosPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ListaReclamosPendientesResult" nillable="true" type="q2:ArrayOfReclamoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ObtenerReclamo">
     <xs:complexType>
       <xs:sequence>
@@ -66,7 +78,7 @@
   <xs:element name="ObtenerReclamoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerReclamoResult" nillable="true" type="q2:ReclamoDto" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" minOccurs="0" name="ObtenerReclamoResult" nillable="true" type="q3:ReclamoDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

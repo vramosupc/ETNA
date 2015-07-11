@@ -25,6 +25,8 @@ namespace ETNA.WCF.PV
         [OperationContract]
         List<ReclamoDto> ListaReclamos();
 
+        [OperationContract]
+        List<ReclamoDto> ListaReclamosPendientes();
 
         [OperationContract]
         ReclamoDto ObtenerReclamo(int idReclamo);

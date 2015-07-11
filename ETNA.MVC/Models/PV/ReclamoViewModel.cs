@@ -43,5 +43,7 @@ namespace ETNA.MVC.Models.PV
         public string NombreProducto { get; set; }
         [DisplayName("Cliente")]
         public string NombreCliente { get; set; }
+        [DisplayName("Días sin Atender")]
+        public string DiasSinAtender { get; set; }
     }
 }

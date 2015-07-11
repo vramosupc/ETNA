@@ -40,7 +40,8 @@ namespace ETNA.DTOs.PV
         public string NombreProducto { get; set; }
         [DataMember] 
         public string NombreCliente { get; set; }
-       
+        [DataMember]
+        public int DiasSinAtender { get; set; }
     }
     }
     
