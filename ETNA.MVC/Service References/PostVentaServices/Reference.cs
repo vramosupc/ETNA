@@ -38,7 +38,7 @@ namespace ETNA.MVC.PostVentaServices {
         private System.DateTime FechaHoraReclamoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FechaRespuestaField;
+        private System.Nullable<System.DateTime> FechaRespuestaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
@@ -140,7 +140,7 @@ namespace ETNA.MVC.PostVentaServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FechaRespuesta {
+        public System.Nullable<System.DateTime> FechaRespuesta {
             get {
                 return this.FechaRespuestaField;
             }

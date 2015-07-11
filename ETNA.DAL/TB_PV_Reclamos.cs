@@ -25,7 +25,7 @@ namespace ETNA.DAL
         public string Motivo { get; set; }
         public string Detalle { get; set; }
         public string Observaciones { get; set; }
-        public System.DateTime FechaRespuesta { get; set; }
+        public Nullable<System.DateTime> FechaRespuesta { get; set; }
         public string Estado { get; set; }
         public int RegistradoPorId { get; set; }
         public int FacturaDetalleId { get; set; }

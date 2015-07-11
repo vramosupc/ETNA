@@ -35,8 +35,12 @@
                 <td>@Html.LabelFor(model => model.FechaRespuesta)</td>
                 <td colspan="3" style="text-align: left">
                 
-                       @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(Html.DisplayFor(model => model.FechaRespuesta).ToString()))
-              
+                      @if (@Html.DisplayFor(model => model.FechaRespuesta).ToString() == "0001-01-01")
+            {
+
+                string.Format("{0:dd/MM/yyyy}", Convert.ToDateTime(@Html.DisplayFor(model => Model.FechaRespuesta).ToString()));
+            }
+                
                 </td>
             </tr>  
 
