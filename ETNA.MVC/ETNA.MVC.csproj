@@ -179,6 +179,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LO\GuiaEntradaController.cs" />
     <Compile Include="Controllers\LO\LogisticaController.cs" />
+    <Compile Include="Controllers\PV\AprobarInformeReclamo.cs" />
     <Compile Include="Controllers\PV\AtenderReclamosController.cs" />
     <Compile Include="Controllers\PV\FacturaController.cs" />
     <Compile Include="Controllers\PV\InformeReclamoController.cs" />
@@ -535,6 +536,7 @@
     <Content Include="Views\InformeReclamo\Edit.cshtml" />
     <Content Include="Views\InformeReclamo\Create.cshtml" />
     <Content Include="Views\AtenderReclamos\Index.cshtml" />
+    <Content Include="Views\AprobarInformeReclamo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -25,6 +25,12 @@
   <wsdl:message name="IInformesReclamos_ListaInfomesReclamos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaInfomesReclamosResponse" />
   </wsdl:message>
+  <wsdl:message name="IInformesReclamos_AprobarInformeReclamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AprobarInformeReclamo" />
+  </wsdl:message>
+  <wsdl:message name="IInformesReclamos_AprobarInformeReclamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AprobarInformeReclamoResponse" />
+  </wsdl:message>
   <wsdl:message name="IInformesReclamos_ObtenerInformeReclamo_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerInformeReclamo" />
   </wsdl:message>
@@ -43,6 +49,10 @@
     <wsdl:operation name="ListaInfomesReclamos">
       <wsdl:input wsaw:Action="http://tempuri.org/IInformesReclamos/ListaInfomesReclamos" message="tns:IInformesReclamos_ListaInfomesReclamos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IInformesReclamos/ListaInfomesReclamosResponse" message="tns:IInformesReclamos_ListaInfomesReclamos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AprobarInformeReclamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo" message="tns:IInformesReclamos_AprobarInformeReclamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse" message="tns:IInformesReclamos_AprobarInformeReclamo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerInformeReclamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IInformesReclamos/ObtenerInformeReclamo" message="tns:IInformesReclamos_ObtenerInformeReclamo_InputMessage" />
@@ -71,6 +81,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListaInfomesReclamos">
       <soap:operation soapAction="http://tempuri.org/IInformesReclamos/ListaInfomesReclamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AprobarInformeReclamo">
+      <soap:operation soapAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -304,6 +304,12 @@ namespace ETNA.MVC.InformesReclamosServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInfomesReclamos", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInfomesReclamosResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse")]
+        bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse")]
+        System.Threading.Tasks.Task<bool> AprobarInformeReclamoAsync(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ObtenerInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/ObtenerInformeReclamoResponse")]
         ETNA.MVC.InformesReclamosServices.InformeReclamoDto ObtenerInformeReclamo(int idInforme);
         
@@ -360,6 +366,14 @@ namespace ETNA.MVC.InformesReclamosServices {
         
         public System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync() {
             return base.Channel.ListaInfomesReclamosAsync();
+        }
+        
+        public bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario) {
+            return base.Channel.AprobarInformeReclamo(idInforme, fechaAprobacion, observacionAprobador, estado, idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AprobarInformeReclamoAsync(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario) {
+            return base.Channel.AprobarInformeReclamoAsync(idInforme, fechaAprobacion, observacionAprobador, estado, idUsuario);
         }
         
         public ETNA.MVC.InformesReclamosServices.InformeReclamoDto ObtenerInformeReclamo(int idInforme) {

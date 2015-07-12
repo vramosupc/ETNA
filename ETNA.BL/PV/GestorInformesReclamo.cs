@@ -54,8 +54,8 @@ namespace ETNA.BL.PV
             {
                 informe.Descripcion = descripcion;
                 informe.DetalleInforme = detalleInforme;
-            //    informe.Estado = estado;
-                
+        
+                          
                 context.SaveChanges();
             }
             catch (NullReferenceException e)
@@ -65,6 +65,31 @@ namespace ETNA.BL.PV
             return true;
         }
 
+
+        public bool AprobarInformeReclamo(int idInforme, DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario)
+        {
+            var context = new INTEGRADOModelContainer();
+
+            var informe = context.TB_PV_InformesReclamo.Find(idInforme);
+            try
+            {
+                //    informe.Estado = estado;
+                informe.Estado = estado;
+                informe.ObservacionAprobador = observacionAprobador;
+                informe.FechaAprobacion = DateTime.Now;
+                informe.TB_RH_Empleados1 = context.TB_RH_Empleados.Find(idUsuario);
+                informe.AprobadoPorId = informe.TB_RH_Empleados1.EmpleadoId;
+        
+                context.SaveChanges();
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return true;
+        }
+
+ 
         public List<TB_PV_InformesReclamo> Listar()
         {
             var context = new INTEGRADOModelContainer();

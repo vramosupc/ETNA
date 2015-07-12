@@ -1,0 +1,105 @@
+﻿
+@model IEnumerable<ETNA.MVC.Models.PV.InformeReclamoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+
+<style type="text/css">
+    .centrado {
+        text-align: center;
+    }
+     
+</style>
+
+
+<h2>Informes de Reclamos pendientes de Aprobación</h2> 
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoInforme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaElaboracion)
+        </th>
+       
+         <th>
+            @Html.DisplayNameFor(model => model.CodigoReclamo)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionEstado)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.FechaAprobacion)
+        </th>
+       
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoInforme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @string.Format("{0:dd/MM/yyyy}",Convert.ToDateTime(@Html.DisplayFor(modelItem => item.FechaElaboracion).ToString()))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoReclamo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionEstado)
+        </td>
+ 
+        <td>
+                @if (Html.DisplayFor(modelItem => item.FechaAprobacion).ToString() != "01/01/0001")
+                     {
+                         @Html.DisplayFor(modelItem => item.FechaAprobacion)
+                     }
+                
+            
+        </td>
+       
+        <td>
+                 
+            @if (item.Estado != "P" )
+            {
+                @Html.ActionLink("Aprobar/Rechazar", "Edit", new {id = item.InformeReclamoId })
+            }
+            else
+            {
+                <a href="#" class="btndenegado">Modificar</a>
+            } |
+
+            @Html.ActionLink("Ver Informe", "Details", new { id=item.InformeReclamoId   }) 
+     
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Regresar", "Index", "Postventa")
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".btndenegado").click(function () {
+                alert("Solo se pueden Aprobar o Rechazar informes Pendientes");
+            });
+        });
+    </script>
+
+}

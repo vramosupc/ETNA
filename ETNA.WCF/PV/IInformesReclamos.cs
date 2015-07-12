@@ -23,6 +23,10 @@ namespace ETNA.WCF.PV
         [OperationContract]
         List<InformeReclamoDto> ListaInfomesReclamos();
 
+        [OperationContract]
+        bool AprobarInformeReclamo(int idInforme, DateTime fechaAprobacion, string observacionAprobador, string estado,
+            int idUsuario);
+      
 
         [OperationContract]
         InformeReclamoDto ObtenerInformeReclamo(int idInforme);

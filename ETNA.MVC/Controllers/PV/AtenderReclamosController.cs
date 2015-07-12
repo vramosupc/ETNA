@@ -68,8 +68,8 @@ namespace ETNA.MVC.Controllers.PV
         {
             try
             {
-                var service = new PostVentaServices.ReclamosClient();
-                service.InsertarReclamo(model.CodigoReclamo, model.FechaHoraReclamo, model.Motivo, model.Detalle, model.Observaciones, model.FechaRespuesta, model.Estado, model.IdFacturaDetalle);
+                //var service = new PostVentaServices.ReclamosClient();
+                //service.InsertarReclamo(model.CodigoReclamo, model.FechaHoraReclamo, model.Motivo, model.Detalle, model.Observaciones, model.FechaRespuesta, model.Estado, model.IdFacturaDetalle);
 
 
                 return RedirectToAction("Index", new { creado = true });

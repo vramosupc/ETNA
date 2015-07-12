@@ -8,6 +8,7 @@ using ETNA.MVC.FacturasServices;
 using ETNA.MVC.PostVentaServices;
 using ETNA.MVC.Models.PV;
 using AutoMapper;
+using WebMatrix.WebData;
 
 namespace ETNA.MVC.Controllers.PV
 {
@@ -69,7 +70,7 @@ namespace ETNA.MVC.Controllers.PV
             try
             {
                 var service = new PostVentaServices.ReclamosClient();
-                service.InsertarReclamo(model.CodigoReclamo,model.FechaHoraReclamo,model.Motivo,model.Detalle,model.Observaciones,model.FechaRespuesta,model.Estado,model.IdFacturaDetalle);
+                service.InsertarReclamo(model.CodigoReclamo, model.FechaHoraReclamo, model.Motivo, model.Detalle, model.Observaciones, model.FechaRespuesta, model.Estado, model.IdFacturaDetalle, WebSecurity.CurrentUserId);
 
                 
                 return RedirectToAction("Index", new { creado = true });

@@ -18,10 +18,10 @@ namespace ETNA.WCF.PV
     public class Reclamos : IReclamos
     {
 
-        public int InsertarReclamo(string codigoReclamo, DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, DateTime fechaRespuesta, string estado, int idFacturaDetalle)
+        public int InsertarReclamo(string codigoReclamo, DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, DateTime fechaRespuesta, string estado, int idFacturaDetalle,int idUsuario)
         {
             var gestorReclamos = new GestorReclamos();
-            return gestorReclamos.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado,idFacturaDetalle);
+            return gestorReclamos.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado,idFacturaDetalle,idUsuario);
        
         }
 

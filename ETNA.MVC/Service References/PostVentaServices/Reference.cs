@@ -287,10 +287,10 @@ namespace ETNA.MVC.PostVentaServices {
     public interface IReclamos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/InsertarReclamo", ReplyAction="http://tempuri.org/IReclamos/InsertarReclamoResponse")]
-        int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
+        int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/InsertarReclamo", ReplyAction="http://tempuri.org/IReclamos/InsertarReclamoResponse")]
-        System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
+        System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IReclamos/EditarReclamo", ReplyAction="http://tempuri.org/IReclamos/EditarReclamoResponse")]
         bool EditarReclamo(int idReclamo, string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle);
@@ -344,12 +344,12 @@ namespace ETNA.MVC.PostVentaServices {
                 base(binding, remoteAddress) {
         }
         
-        public int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {
-            return base.Channel.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle);
+        public int InsertarReclamo(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario) {
+            return base.Channel.InsertarReclamo(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle, idUsuario);
         }
         
-        public System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {
-            return base.Channel.InsertarReclamoAsync(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle);
+        public System.Threading.Tasks.Task<int> InsertarReclamoAsync(string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle, int idUsuario) {
+            return base.Channel.InsertarReclamoAsync(codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado, idFacturaDetalle, idUsuario);
         }
         
         public bool EditarReclamo(int idReclamo, string codigoReclamo, System.DateTime fechaHoraReclamo, string motivo, string detalle, string observaciones, System.DateTime fechaRespuesta, string estado, int idFacturaDetalle) {

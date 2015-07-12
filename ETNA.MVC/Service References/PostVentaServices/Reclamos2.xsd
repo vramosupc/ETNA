@@ -12,6 +12,7 @@
         <xs:element minOccurs="0" name="fechaRespuesta" type="xs:dateTime" />
         <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idFacturaDetalle" type="xs:int" />
+        <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

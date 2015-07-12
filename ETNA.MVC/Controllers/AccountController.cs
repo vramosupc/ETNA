@@ -14,7 +14,7 @@ using ETNA.MVC.Models;
 namespace ETNA.MVC.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+   [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //

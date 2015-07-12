@@ -16,7 +16,7 @@ namespace ETNA.WCF.PV
 
         [OperationContract]
         int InsertarReclamo(string codigoReclamo, DateTime fechaHoraReclamo, string motivo,
-            string detalle, string observaciones, DateTime fechaRespuesta, string estado,int idFacturaDetalle);
+            string detalle, string observaciones, DateTime fechaRespuesta, string estado,int idFacturaDetalle,int idUsuario);
 
         [OperationContract]
         bool EditarReclamo(int idReclamo, string codigoReclamo, DateTime fechaHoraReclamo, string motivo,

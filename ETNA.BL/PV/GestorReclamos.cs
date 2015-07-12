@@ -16,7 +16,7 @@ namespace ETNA.BL.PV
         public static int TamanoPaginas = 5;
 
         public int InsertarReclamo(string codigoReclamo, DateTime fechaHoraReclamo, string motivo,
-            string detalle, string observaciones, DateTime fechaRespuesta, string estado, int idFacturaDetalle)
+            string detalle, string observaciones, DateTime fechaRespuesta, string estado, int idFacturaDetalle,int idUsuario)
         {
             var context = new INTEGRADOModelContainer();
             var newReclamo = new TB_PV_Reclamos();
@@ -30,7 +30,7 @@ namespace ETNA.BL.PV
             newReclamo.Observaciones = observaciones;
             newReclamo.FechaRespuesta = null;
             newReclamo.Estado = "P";
-            newReclamo.TB_RH_Empleados= context.TB_RH_Empleados.Find(1);
+            newReclamo.TB_RH_Empleados= context.TB_RH_Empleados.Find(idUsuario);
                 newReclamo.RegistradoPorId = newReclamo.TB_RH_Empleados.EmpleadoId;
             newReclamo.TB_VT_FacturaDetalles = context.TB_VT_FacturaDetalles.Find(idFacturaDetalle);
                 newReclamo.FacturaDetalleId = newReclamo.TB_VT_FacturaDetalles.FacturaDetalleId;

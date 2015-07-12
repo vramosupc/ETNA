@@ -26,6 +26,11 @@ namespace ETNA.WCF.PV
             return gestorInformesReclamos.EditarInformeReclamo(idInforme, codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, elboradoPorId, aprobadoPorId);
         }
 
+        public bool AprobarInformeReclamo(int idInforme,  DateTime fechaAprobacion, string observacionAprobador, string estado, int userId)
+        {
+            var gestorInformesReclamos = new GestorInformesReclamo();
+            return gestorInformesReclamos.AprobarInformeReclamo(idInforme, fechaAprobacion,  observacionAprobador, estado,userId);
+        }
 
         public List<InformeReclamoDto> ListaInfomesReclamos()
         {
