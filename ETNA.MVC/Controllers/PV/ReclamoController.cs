@@ -153,5 +153,25 @@ namespace ETNA.MVC.Controllers.PV
             }
         }
 
+        // GET: /Reclamo/List/5/page/1
+
+        public ActionResult List(string id, int page = 1)
+        {
+            @ViewBag.Id = id;
+            @ViewBag.Page = page;
+
+            //Invocamos al servicio
+            /*var service = new PostVentaServices.ReclamosClient();
+            var detalleDto = service.ListarDetallePorNroFactura(id, page);
+
+            var nros = service.NroPaginasPorDetalleNroFactura(id);
+            @ViewBag.TotalPages = nros.GetValue(1);
+            @ViewBag.NroRegistros = nros.GetValue(0);
+            Mapper.CreateMap<FacturaDetalleDto, FacturaDetalleViewModel>();
+            var model = Mapper.Map<List<FacturaDetalleViewModel>>(detalleDto);
+
+            return View(model);*/
+            return View();
+        }
     }
 }

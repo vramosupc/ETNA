@@ -24,6 +24,12 @@ namespace ETNA.MVC
                 url: "Factura/{action}/{id}/page/{page}",
                 defaults: new { controller = "Factura", action = "Details", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "reclamo",
+                url: "Reclamo/{action}/{id}/page/{page}",
+                defaults: new { controller = "Reclamo", action = "List", id = UrlParameter.Optional }
+            );
         }
     }
 }

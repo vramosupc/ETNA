@@ -170,5 +170,35 @@ namespace ETNA.WCF.PV
            return dto;
  
         }
+
+        public List<int> NroPaginasPorCodigoReclamo(string codigoReclamo)
+        {
+            var gestorReclamo = new GestorReclamos();
+            return gestorReclamo.NroPaginasPorCodigoReclamo(codigoReclamo);
+        }
+
+        public List<ReclamoDto> ListarReclamosPorCodigo(string codigoReclamo, int nroPagina)
+        {
+            var gestorReclamo = new GestorReclamos();
+            var lista = gestorReclamo.ListarReclamosPorCodigo(codigoReclamo, nroPagina);
+            var listaDtos = new List<ReclamoDto>();
+
+            foreach (var reclamo in lista)
+            {
+                var dto = new ReclamoDto();
+                dto.Id = reclamo.ReclamoId;
+                dto.IdFacturaDetalle = reclamo.FacturaDetalleId;
+                dto.NombreCliente = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim() + ", " + reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim();
+                dto.CodigoReclamo = reclamo.CodigoReclamo;
+                dto.FechaHoraReclamo = reclamo.FechaHoraReclamo;
+                dto.Motivo = reclamo.Motivo;
+                dto.Observaciones = reclamo.Observaciones;
+                dto.NumeroFactura = reclamo.TB_VT_FacturaDetalles.TB_VT_Facturas.NumeroFact;
+                dto.NombreProducto = reclamo.TB_VT_FacturaDetalles.TB_AL_Productos.Nombre;
+                listaDtos.Add(dto);
+            }
+
+            return listaDtos;
+        }
     }
 }
