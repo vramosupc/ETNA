@@ -77,7 +77,7 @@
             <tr>
                 <td><Label>Código de Reclamo</Label></td>
                 <td style="text-align: left">
-                    <input name="CodigoReclamo" id="CodigoReclamo" placeholder="... Escribe el Codigo. de Reclamo ..."/>
+                    <input name="CodReclamo" id="CodReclamo" placeholder="... Escribe el Codigo. de Reclamo ..."/>
                 </td>
                 <td colspan="2">
                     <input type="button" name="btnConsulta" id="btnConsulta" value="Consultar Reclamo"/>
@@ -141,6 +141,67 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $("#btnConsulta").click(function () {
+                var codigoReclamo = $("#CodReclamo").val();
+
+                if (codigoReclamo !== "") {
+                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> Buscando...');
+
+                    var request = $.ajax({
+                        url: "/Reclamo/List/" + codigoReclamo,
+                        method: "GET",
+                        dataType: "html"
+                    });
+
+                    request.done(function (msg) {
+                        $("#resultadoDiv").html(msg);
+                    });
+
+                    request.fail(function (jqXHR, textStatus) {
+                        alert("Request failed: " + textStatus);
+                    });
+                } else {
+                    alert("Ingrese el Cod. de Reclamo a Consultar");
+                }
+            });
+
+            $(".paginacion").live("click", function () {
+                var codigoReclamo = $("#CodReclamo").val();
+                var pagina = $(this).data("pagina");
+
+                if (codigoReclamo !== "") {
+                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
+
+                    var request = $.ajax({
+                        url: "/Reclamo/List/" + codigoReclamo + "/page/" + pagina,
+                        method: "GET",
+                        dataType: "html"
+                    });
+
+                    request.done(function (msg) {
+                        $("#resultadoDiv").html(msg);
+                    });
+
+                    request.fail(function (jqXHR, textStatus) {
+                        alert("Request failed: " + textStatus);
+                    });
+                } else {
+                    alert("Ingrese el Cod. de Reclamo a Consultar");
+                }
+            });
+
+            $(".idReclamo").live('click', function () {
+                var id = $(this).data('id');
+                var codigo = $(this).data('codigoreclamo');
+                var fechahora = $(this).data('fechahora');
+                var cliente = $(this).data('cliente');
+                $("#ReclamoId").val(id);
+                $("#CodigoReclamo").val(codigo);
+                $("#FechaHoraReclamo").val(fechahora);
+                $("#NombreCliente").val(cliente);
+            });
+
             $("#btnGrabar").live('click', function () {
 
                 var descripcion = $("#Descripcion").val();
@@ -158,15 +219,11 @@
                     return false;
                 }
 
-
                 if (idReclamo == null || idReclamo == "") {
                     alert("Debe ingresar el Id del Reclamo");
                     $("#ReclamoId").focus();
                     return false;
                 }
-
-
-                
 
                 if (confirm("¿Desea Registrar el Informe del reclamo?")) {
                     alert("Se registró correctamente el reclamo");
@@ -175,8 +232,6 @@
                 }
 
             });
-
-
         });
     </script>
 

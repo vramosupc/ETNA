@@ -1,5 +1,5 @@
-﻿@using System.Globalization
-@model ETNA.MVC.Models.PV.ReclamoViewModel
+﻿@using Microsoft.Ajax.Utilities
+@model IEnumerable<ETNA.MVC.Models.PV.ReclamoViewModel>
 
 @{
     ViewBag.Title = "Lista de Reclamos";
@@ -85,7 +85,7 @@
 }
     <tr>
         <td colspan="3">Registros: @Model.Count() de @ViewBag.NroRegistros</td>
-        <td>Pagina @ViewBag.Page de @ViewBag.TotalPages</td>
+        <td>Pag. @ViewBag.Page de @ViewBag.TotalPages</td>
         <td colspan="3" class="derecha">
             @for (int i = 1; i <= @ViewBag.TotalPages; i++)
             {
