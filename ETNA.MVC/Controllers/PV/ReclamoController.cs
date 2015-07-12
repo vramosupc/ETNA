@@ -162,17 +162,16 @@ namespace ETNA.MVC.Controllers.PV
             @ViewBag.Page = page;
 
             //Invocamos al servicio
-            /*var service = new PostVentaServices.ReclamosClient();
-            var detalleDto = service.ListarDetallePorNroFactura(id, page);
+            var service = new PostVentaServices.ReclamosClient();
+            var reclamoDto = service.ListarReclamosPorCodigo(id, page);
 
-            var nros = service.NroPaginasPorDetalleNroFactura(id);
+            var nros = service.NroPaginasPorCodigoReclamo(id);
             @ViewBag.TotalPages = nros.GetValue(1);
             @ViewBag.NroRegistros = nros.GetValue(0);
-            Mapper.CreateMap<FacturaDetalleDto, FacturaDetalleViewModel>();
-            var model = Mapper.Map<List<FacturaDetalleViewModel>>(detalleDto);
+            Mapper.CreateMap<ReclamoDto, ReclamoViewModel>();
+            var model = Mapper.Map<List<ReclamoViewModel>>(reclamoDto);
 
-            return View(model);*/
-            return View();
+            return View(model);
         }
     }
 }

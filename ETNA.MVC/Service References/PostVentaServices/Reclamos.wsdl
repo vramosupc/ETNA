@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ETNA.DTOs.PV" />
+      <xsd:import schemaLocation="http://localhost:6078/PV/Reclamos.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IReclamos_InsertarReclamo_InputMessage">
@@ -37,6 +38,18 @@
   <wsdl:message name="IReclamos_ObtenerReclamo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerReclamoResponse" />
   </wsdl:message>
+  <wsdl:message name="IReclamos_NroPaginasPorCodigoReclamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:NroPaginasPorCodigoReclamo" />
+  </wsdl:message>
+  <wsdl:message name="IReclamos_NroPaginasPorCodigoReclamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NroPaginasPorCodigoReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReclamos_ListarReclamosPorCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReclamosPorCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IReclamos_ListarReclamosPorCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarReclamosPorCodigoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IReclamos">
     <wsdl:operation name="InsertarReclamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/InsertarReclamo" message="tns:IReclamos_InsertarReclamo_InputMessage" />
@@ -57,6 +70,14 @@
     <wsdl:operation name="ObtenerReclamo">
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ObtenerReclamo" message="tns:IReclamos_ObtenerReclamo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ObtenerReclamoResponse" message="tns:IReclamos_ObtenerReclamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NroPaginasPorCodigoReclamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamo" message="tns:IReclamos_NroPaginasPorCodigoReclamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamoResponse" message="tns:IReclamos_NroPaginasPorCodigoReclamo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarReclamosPorCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ListarReclamosPorCodigo" message="tns:IReclamos_ListarReclamosPorCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ListarReclamosPorCodigoResponse" message="tns:IReclamos_ListarReclamosPorCodigo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReclamos" type="tns:IReclamos">
@@ -99,6 +120,24 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerReclamo">
       <soap:operation soapAction="http://tempuri.org/IReclamos/ObtenerReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NroPaginasPorCodigoReclamo">
+      <soap:operation soapAction="http://tempuri.org/IReclamos/NroPaginasPorCodigoReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarReclamosPorCodigo">
+      <soap:operation soapAction="http://tempuri.org/IReclamos/ListarReclamosPorCodigo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
