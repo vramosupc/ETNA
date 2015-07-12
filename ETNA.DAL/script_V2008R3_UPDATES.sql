@@ -3,7 +3,6 @@
 AQUI ESTARAN LAS ACTUALIZACIONES A LA BD INTEGRADA
 Considerar al momento de colocar lo siguiente:
 Fecha, Autor, Rol-Modulo del grupo al que pertenece, Modulo Afectado.
-
 Author: Paul Taboada
 Modulo: Post-Venta
 ===============================================================================================
