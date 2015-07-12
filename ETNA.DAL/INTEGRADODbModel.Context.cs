@@ -105,5 +105,22 @@ namespace ETNA.DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPaginasRowNumber_Result>("GetPaginasRowNumber", nUM_PAGINAParameter, tAM_PAGINAParameter, nRO_FACTURAParameter);
         }
+    
+        public virtual ObjectResult<GetPaginasRowNumberReclamos_Result> GetPaginasRowNumberReclamos(Nullable<int> nUM_PAGINA, Nullable<int> tAM_PAGINA, string cOD_RECLAMO)
+        {
+            var nUM_PAGINAParameter = nUM_PAGINA.HasValue ?
+                new ObjectParameter("NUM_PAGINA", nUM_PAGINA) :
+                new ObjectParameter("NUM_PAGINA", typeof(int));
+    
+            var tAM_PAGINAParameter = tAM_PAGINA.HasValue ?
+                new ObjectParameter("TAM_PAGINA", tAM_PAGINA) :
+                new ObjectParameter("TAM_PAGINA", typeof(int));
+    
+            var cOD_RECLAMOParameter = cOD_RECLAMO != null ?
+                new ObjectParameter("COD_RECLAMO", cOD_RECLAMO) :
+                new ObjectParameter("COD_RECLAMO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPaginasRowNumberReclamos_Result>("GetPaginasRowNumberReclamos", nUM_PAGINAParameter, tAM_PAGINAParameter, cOD_RECLAMOParameter);
+        }
     }
 }

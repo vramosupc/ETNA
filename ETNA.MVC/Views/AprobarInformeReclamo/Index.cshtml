@@ -78,10 +78,12 @@
             }
             else
             {
-                <a href="#" class="btndenegado">Modificar</a>
+                <a href="#" class="btndenegado">Aprobar/Rechazar</a>
             } |
 
-            @Html.ActionLink("Ver Informe", "Details", new { id=item.InformeReclamoId   }) 
+            @Html.ActionLink("Ver Informe", "Details","InformeReclamo", new { id=item.InformeReclamoId   },null) 
+      
+     
      
         </td>
     </tr>

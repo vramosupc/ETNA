@@ -85,7 +85,9 @@
             
             <tr>
                 <td colspan="8" style="text-align: center">
-                    @Html.ActionLink("Regresar", "Index")
+                  
+                      @Html.ActionLink("Regresar", null, null, null, new { href = Request.UrlReferrer})
+                    
                 </td>
             </tr>  
 

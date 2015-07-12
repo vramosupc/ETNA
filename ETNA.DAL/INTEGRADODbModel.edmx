@@ -738,7 +738,7 @@
           </Key>
           <Property Name="EncuestaId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="FechaInicio" Type="datetime" Nullable="false" />
-          <Property Name="FechaRespuesta" Type="datetime" Nullable="false" />
+          <Property Name="FechaRespuesta" Type="datetime" />
           <Property Name="Titulo" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ClienteId" Type="int" Nullable="false" />
           <Property Name="ProgramacionId" Type="int" Nullable="false" />
@@ -1781,6 +1781,11 @@
           <Parameter Name="TAM_PAGINA" Type="int" Mode="In" />
           <Parameter Name="NRO_FACTURA" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="GetPaginasRowNumberReclamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NUM_PAGINA" Type="int" Mode="In" />
+          <Parameter Name="TAM_PAGINA" Type="int" Mode="In" />
+          <Parameter Name="COD_RECLAMO" Type="varchar" Mode="In" />
+        </Function>
         <!--Se encontraron errores durante la generación:
       advertencia 6013: La tabla o vista 'INTEGRADO.dbo.TB_EX_PackingListDetalle' no tiene una clave principal definida y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
       
@@ -2174,6 +2179,11 @@
             <Parameter Name="NUM_PAGINA" Mode="In" Type="Int32" />
             <Parameter Name="TAM_PAGINA" Mode="In" Type="Int32" />
             <Parameter Name="NRO_FACTURA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetPaginasRowNumberReclamos" ReturnType="Collection(INTEGRADODbModel.GetPaginasRowNumberReclamos_Result)">
+            <Parameter Name="NUM_PAGINA" Mode="In" Type="Int32" />
+            <Parameter Name="TAM_PAGINA" Mode="In" Type="Int32" />
+            <Parameter Name="COD_RECLAMO" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="TB_AL_Almacenes">
@@ -2585,7 +2595,7 @@
           </Key>
           <Property Name="EncuestaId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="FechaRespuesta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaRespuesta" Type="DateTime" Precision="3" />
           <Property Name="Titulo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="ClienteId" Type="Int32" Nullable="false" />
           <Property Name="ProgramacionId" Type="Int32" Nullable="false" />
@@ -3607,6 +3617,19 @@
           <Property Type="String" Name="Observacion" Nullable="true" MaxLength="100" />
           <Property Type="Int32" Name="CodigoReq" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="GetPaginasRowNumberReclamos_Result">
+          <Property Type="Int64" Name="rownum" Nullable="true" />
+          <Property Type="Int32" Name="ReclamoId" Nullable="false" />
+          <Property Type="String" Name="CodigoReclamo" Nullable="false" />
+          <Property Type="DateTime" Name="FechaHoraReclamo" Nullable="false" />
+          <Property Type="String" Name="Motivo" Nullable="false" />
+          <Property Type="String" Name="Detalle" Nullable="false" />
+          <Property Type="String" Name="Observaciones" Nullable="true" />
+          <Property Type="DateTime" Name="FechaRespuesta" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Estado" Nullable="false" />
+          <Property Type="Int32" Name="RegistradoPorId" Nullable="false" />
+          <Property Type="Int32" Name="FacturaDetalleId" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4389,6 +4412,23 @@
                 <ScalarProperty Name="Valortotal" ColumnName="Valortotal" />
                 <ScalarProperty Name="Observacion" ColumnName="Observacion" />
                 <ScalarProperty Name="CodigoReq" ColumnName="CodigoReq" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPaginasRowNumberReclamos" FunctionName="INTEGRADODbModel.Store.GetPaginasRowNumberReclamos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="INTEGRADODbModel.GetPaginasRowNumberReclamos_Result">
+                <ScalarProperty Name="rownum" ColumnName="rownum" />
+                <ScalarProperty Name="ReclamoId" ColumnName="ReclamoId" />
+                <ScalarProperty Name="CodigoReclamo" ColumnName="CodigoReclamo" />
+                <ScalarProperty Name="FechaHoraReclamo" ColumnName="FechaHoraReclamo" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="FechaRespuesta" ColumnName="FechaRespuesta" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="RegistradoPorId" ColumnName="RegistradoPorId" />
+                <ScalarProperty Name="FacturaDetalleId" ColumnName="FacturaDetalleId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

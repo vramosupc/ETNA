@@ -21,7 +21,7 @@ namespace ETNA.DAL
     
         public int EncuestaId { get; set; }
         public System.DateTime FechaInicio { get; set; }
-        public System.DateTime FechaRespuesta { get; set; }
+        public Nullable<System.DateTime> FechaRespuesta { get; set; }
         public string Titulo { get; set; }
         public int ClienteId { get; set; }
         public int ProgramacionId { get; set; }
