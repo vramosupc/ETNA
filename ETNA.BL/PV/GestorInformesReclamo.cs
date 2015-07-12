@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using ETNA.DAL;
@@ -77,8 +78,8 @@ namespace ETNA.BL.PV
                 informe.Estado = estado;
                 informe.ObservacionAprobador = observacionAprobador;
                 informe.FechaAprobacion = DateTime.Now;
-                informe.TB_RH_Empleados1 = context.TB_RH_Empleados.Find(idUsuario);
-                informe.AprobadoPorId = informe.TB_RH_Empleados1.EmpleadoId;
+                informe.TB_RH_Empleados = context.TB_RH_Empleados.Find(idUsuario);
+                informe.AprobadoPorId = informe.TB_RH_Empleados.EmpleadoId;
         
                 context.SaveChanges();
             }
@@ -94,6 +95,11 @@ namespace ETNA.BL.PV
         {
             var context = new INTEGRADOModelContainer();
             return context.TB_PV_InformesReclamo.ToList();
+        }
+        public List<TB_PV_InformesReclamo> ListarPorEstado(string estado)
+        {
+            var context = new INTEGRADOModelContainer();
+            return context.TB_PV_InformesReclamo.Where(d => d.Estado == estado).ToList();
         }
 
         public TB_PV_InformesReclamo ObtenerInformeReclamo(int idInforme)

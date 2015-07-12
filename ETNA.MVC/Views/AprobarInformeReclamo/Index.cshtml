@@ -74,7 +74,7 @@
                  
             @if (item.Estado != "P" )
             {
-                @Html.ActionLink("Aprobar/Rechazar", "Edit", new {id = item.InformeReclamoId })
+                @Html.ActionLink("Aprobar/Rechazar", "Aprobar", new {id = item.InformeReclamoId })
             }
             else
             {

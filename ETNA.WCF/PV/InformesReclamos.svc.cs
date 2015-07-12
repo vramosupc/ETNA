@@ -129,5 +129,53 @@ namespace ETNA.WCF.PV
 
         }
 
+
+
+        public List<InformeReclamoDto> ListaInformesReclamosPendientes()
+        {
+            var gestorInformeReclamo = new GestorInformesReclamo();
+            var lista = gestorInformeReclamo.ListarPorEstado("E");
+            var listaDtos = new List<InformeReclamoDto>();
+
+            foreach (var informe in lista)
+            {
+                var dto = new InformeReclamoDto();
+                dto.InformeReclamoId = informe.InformeReclamoId;
+                dto.CodigoInforme = informe.CodigoInforme;
+                dto.DetalleInforme = informe.DetalleInforme;
+                dto.Descripcion = informe.Descripcion;
+                dto.ObservacionAprobador = informe.ObservacionAprobador;
+                dto.FechaElaboracion = informe.FechaElaboracion;
+                dto.FechaAprobacion = informe.FechaAprobacion;
+
+                //             dto.NombreRegistrador = reclamo.RegistradoPorId.Nombres + " " + reclamo.RegistradoPorId.Apellidos;
+                dto.NombreElaborador = informe.TB_RH_Empleados1.Nombres.Trim() + " " + informe.TB_RH_Empleados1.Apellidos.Trim();
+                dto.ElaboradoPorId = informe.TB_RH_Empleados1.EmpleadoId;
+
+                if (informe.TB_RH_Empleados != null)
+                {
+                    dto.NombreAprobador = informe.TB_RH_Empleados.Nombres.Trim() + " " + informe.TB_RH_Empleados.Apellidos.Trim();
+                    dto.AprobadoPorId = informe.TB_RH_Empleados.EmpleadoId;
+                }
+
+                dto.Estado = informe.Estado;
+                dto.ReclamoId = informe.ReclamoId;
+                dto.CodigoReclamo = informe.TB_PV_Reclamos.CodigoReclamo;
+
+                if (informe.Estado.Equals("E"))
+                {
+                    dto.DescripcionEstado = "Elaborado";
+                }
+                else if (informe.Estado.Equals("A"))
+                {
+                    dto.DescripcionEstado = "Aprobado";
+                }
+                else { dto.DescripcionEstado = "Rechazado"; }
+
+                listaDtos.Add(dto);
+            }
+
+            return listaDtos;
+        }
     }
 }
