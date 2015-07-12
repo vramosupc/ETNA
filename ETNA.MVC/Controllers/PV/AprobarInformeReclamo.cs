@@ -9,6 +9,7 @@ using ETNA.MVC.InformesReclamosServices;
 using ETNA.MVC.PostVentaServices;
 using ETNA.MVC.Models.PV;
 using AutoMapper;
+using WebMatrix.WebData;
 
 namespace ETNA.MVC.Controllers.PV
 {
@@ -21,7 +22,7 @@ namespace ETNA.MVC.Controllers.PV
         {
 
             var service = new InformesReclamosServices.InformesReclamosClient();
-            var dtos = service.ListaInfomesReclamos();
+            var dtos = service.ListaInformesReclamosPendientes();
 
             Mapper.CreateMap<InformeReclamoDto, InformeReclamoViewModel>();
             var model = Mapper.Map<List<InformeReclamoViewModel>>(dtos);
@@ -54,7 +55,44 @@ namespace ETNA.MVC.Controllers.PV
         // GET: /Reclamo/Create
 
         //
-        // GET: /Reclamo/Edit/5
+        // GET: /InformeReclamo/Edit/5
+
+        public ActionResult Aprobar(int id)
+        {
+            //Invocamos al servicio
+            var service = new InformesReclamosServices.InformesReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var informeDto = service.ObtenerInformeReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model1 = Mapper.Map<InformeReclamoViewModel>(informeDto);
+            model1.NombreAprobador = WebSecurity.CurrentUserName;
+            return View(model1);
+        }
+
+        //
+        // POST: /InformeReclamo/Edit/5
+
+
+        [HttpPost]
+        public ActionResult Aprobar(InformeReclamoViewModel model1)
+        {
+            try
+            {
+                var service = new InformesReclamosClient();
+
+                service.AprobarInformeReclamo(model1.InformeReclamoId, model1.FechaAprobacion, model1.ObservacionAprobador, model1.Estado, WebSecurity.CurrentUserId);
+
+                return RedirectToAction("Index", new { modifico = true });
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
 
     }
 }

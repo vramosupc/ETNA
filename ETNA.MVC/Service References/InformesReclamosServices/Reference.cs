@@ -304,6 +304,12 @@ namespace ETNA.MVC.InformesReclamosServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInfomesReclamos", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInfomesReclamosResponse")]
         System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientes", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientesResponse")]
+        ETNA.MVC.InformesReclamosServices.InformeReclamoDto[] ListaInformesReclamosPendientes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientes", ReplyAction="http://tempuri.org/IInformesReclamos/ListaInformesReclamosPendientesResponse")]
+        System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInformesReclamosPendientesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInformesReclamos/AprobarInformeReclamo", ReplyAction="http://tempuri.org/IInformesReclamos/AprobarInformeReclamoResponse")]
         bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario);
         
@@ -366,6 +372,14 @@ namespace ETNA.MVC.InformesReclamosServices {
         
         public System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInfomesReclamosAsync() {
             return base.Channel.ListaInfomesReclamosAsync();
+        }
+        
+        public ETNA.MVC.InformesReclamosServices.InformeReclamoDto[] ListaInformesReclamosPendientes() {
+            return base.Channel.ListaInformesReclamosPendientes();
+        }
+        
+        public System.Threading.Tasks.Task<ETNA.MVC.InformesReclamosServices.InformeReclamoDto[]> ListaInformesReclamosPendientesAsync() {
+            return base.Channel.ListaInformesReclamosPendientesAsync();
         }
         
         public bool AprobarInformeReclamo(int idInforme, System.DateTime fechaAprobacion, string observacionAprobador, string estado, int idUsuario) {
