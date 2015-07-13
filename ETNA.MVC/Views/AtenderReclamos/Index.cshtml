@@ -86,9 +86,9 @@
         
         <td>
             
-            @if (item.Estado != "A")
+            @if (item.Estado == "P")
             {
-                @Html.ActionLink("Atender", "Create", new {id = item.Id,codigo=item.CodigoReclamo})
+                @Html.ActionLink("Atender", "Atender",new {id =item.Id})
             }
             else
             {
@@ -112,7 +112,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(".btndenegado").click(function () {
-                alert("No se puede editar, por que se encuentra Atendido");
+                alert("Solo se pueden atender reclamos Pendientes");
             });
         });
     </script>

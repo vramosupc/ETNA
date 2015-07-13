@@ -31,6 +31,11 @@ namespace ETNA.WCF.PV
             return gestorReclamos.EditarReclamo(idReclamo,codigoReclamo, fechaHoraReclamo, motivo, detalle, observaciones, fechaRespuesta, estado,idFacturaDetalle);
         }
 
+        public bool ActualizarEstadoReclamo(int idReclamo, string estado)
+        {
+            var gestorReclamos = new GestorReclamos();
+            return gestorReclamos.ActualizarEstadoReclamo(idReclamo,  estado);
+        }
 
         public List<ReclamoDto> ListaReclamos()
         {
@@ -59,12 +64,21 @@ namespace ETNA.WCF.PV
 
                 if (reclamo.Estado.Equals("P"))
                 {
-                    dto.DescripcionEstado = "Pendiente";}
-                else if(reclamo.Estado.Equals("C"))
+                    dto.DescripcionEstado = "Pendiente";
+                }
+                else if (reclamo.Estado.Equals("C"))
                 {
                     dto.DescripcionEstado = "Cancelado";
                 }
-                else {dto.DescripcionEstado = "Atendido";}
+                else if (reclamo.Estado.Equals("R"))
+                {
+                    dto.DescripcionEstado = "Rechazado";
+                }
+                else if (reclamo.Estado.Equals("A"))
+                {
+                    dto.DescripcionEstado = "Aprobado";
+                }
+                else { dto.DescripcionEstado = "En Evaluación"; }
 
                 dto.Estado = reclamo.Estado;
                 dto.Motivo = reclamo.Motivo;
@@ -116,7 +130,15 @@ namespace ETNA.WCF.PV
                 {
                     dto.DescripcionEstado = "Cancelado";
                 }
-                else { dto.DescripcionEstado = "Atendido"; }
+                else if (reclamo.Estado.Equals("R"))
+                {
+                    dto.DescripcionEstado = "Rechazado";
+                }
+                else if (reclamo.Estado.Equals("A"))
+                {
+                    dto.DescripcionEstado = "Aprobado";
+                }
+                else { dto.DescripcionEstado = "En Evaluación"; }
 
                 dto.Estado = reclamo.Estado;
                 dto.Motivo = reclamo.Motivo;
@@ -164,8 +186,16 @@ namespace ETNA.WCF.PV
             {
                 dto.DescripcionEstado = "Cancelado";
             }
-            else { dto.DescripcionEstado = "Atendido"; }
-            dto.DiasSinAtender = DateTime.Today.Subtract(reclamo.FechaHoraReclamo).Days+1;
+            else if (reclamo.Estado.Equals("R"))
+            {
+                dto.DescripcionEstado = "Rechazado";
+            }
+            else if (reclamo.Estado.Equals("A"))
+            {
+                dto.DescripcionEstado = "Aprobado";
+            }
+            else { dto.DescripcionEstado = "En Evaluación"; } 
+            dto.DiasSinAtender = DateTime.Today.Subtract(reclamo.FechaHoraReclamo).Days + 1;
 
            return dto;
  

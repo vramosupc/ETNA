@@ -21,6 +21,8 @@ namespace ETNA.WCF.PV
         [OperationContract]
         bool EditarReclamo(int idReclamo, string codigoReclamo, DateTime fechaHoraReclamo, string motivo,
             string detalle, string observaciones, DateTime fechaRespuesta, string estado, int idFacturaDetalle);
+        [OperationContract]
+        bool ActualizarEstadoReclamo(int idReclamo,string estado);
 
         [OperationContract]
         List<ReclamoDto> ListaReclamos();

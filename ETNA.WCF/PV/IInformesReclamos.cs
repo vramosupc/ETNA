@@ -13,7 +13,7 @@ namespace ETNA.WCF.PV
     {
         [OperationContract]
         int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, DateTime fechaAprobacion, DateTime fechaElaboracion,
-            string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId);
+            string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId);
         
         [OperationContract]
         bool EditarInformeReclamo(int idInforme, string codigoInforme, string descripcion, string detalleInforme,

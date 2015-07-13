@@ -12,7 +12,7 @@
         <xs:element minOccurs="0" name="observacionAprobador" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="reclamoId" type="xs:int" />
-        <xs:element minOccurs="0" name="elboradoPorId" type="xs:int" />
+        <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
         <xs:element minOccurs="0" name="aprobadoPorId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>

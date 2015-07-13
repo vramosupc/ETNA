@@ -20,6 +20,12 @@
   <wsdl:message name="IReclamos_EditarReclamo_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditarReclamoResponse" />
   </wsdl:message>
+  <wsdl:message name="IReclamos_ActualizarEstadoReclamo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoReclamo" />
+  </wsdl:message>
+  <wsdl:message name="IReclamos_ActualizarEstadoReclamo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoReclamoResponse" />
+  </wsdl:message>
   <wsdl:message name="IReclamos_ListaReclamos_InputMessage">
     <wsdl:part name="parameters" element="tns:ListaReclamos" />
   </wsdl:message>
@@ -59,6 +65,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/EditarReclamo" message="tns:IReclamos_EditarReclamo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/EditarReclamoResponse" message="tns:IReclamos_EditarReclamo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoReclamo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ActualizarEstadoReclamo" message="tns:IReclamos_ActualizarEstadoReclamo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ActualizarEstadoReclamoResponse" message="tns:IReclamos_ActualizarEstadoReclamo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListaReclamos">
       <wsdl:input wsaw:Action="http://tempuri.org/IReclamos/ListaReclamos" message="tns:IReclamos_ListaReclamos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReclamos/ListaReclamosResponse" message="tns:IReclamos_ListaReclamos_OutputMessage" />
@@ -93,6 +103,15 @@
     </wsdl:operation>
     <wsdl:operation name="EditarReclamo">
       <soap:operation soapAction="http://tempuri.org/IReclamos/EditarReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstadoReclamo">
+      <soap:operation soapAction="http://tempuri.org/IReclamos/ActualizarEstadoReclamo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

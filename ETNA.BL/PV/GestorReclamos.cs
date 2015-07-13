@@ -70,6 +70,28 @@ namespace ETNA.BL.PV
             }
             return true;
         }
+        public bool ActualizarEstadoReclamo(int idReclamo, string estado)
+        {
+            var context = new INTEGRADOModelContainer();
+
+            var reclamo = context.TB_PV_Reclamos.Find(idReclamo);
+            try
+            {
+                reclamo.Estado = estado;
+                if (estado == "R" || estado == "A")
+                {
+                    reclamo.FechaRespuesta = DateTime.Now;
+
+                }
+                context.SaveChanges();
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return true;
+        }
+
 
         public List<TB_PV_Reclamos> Listar()
         {

@@ -8,6 +8,7 @@ using ETNA.MVC.FacturasServices;
 using ETNA.MVC.InformesReclamosServices;
 using ETNA.MVC.Models.PV;
 using AutoMapper;
+using WebMatrix.WebData;
 
 namespace ETNA.MVC.Controllers.PV
 {
@@ -53,6 +54,7 @@ namespace ETNA.MVC.Controllers.PV
 
         public ActionResult Create()
         {
+           
             return View();
         }
 
@@ -65,7 +67,7 @@ namespace ETNA.MVC.Controllers.PV
             try
             {
                 var service = new InformesReclamosServices.InformesReclamosClient();
-                service.InsertarInformeReclamo(model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId, model1.ElaboradoPorId, model1.AprobadoPorId);
+                service.InsertarInformeReclamo(model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId, WebSecurity.CurrentUserId, model1.AprobadoPorId);
           
 
                 return RedirectToAction("Index", new { creado = true });

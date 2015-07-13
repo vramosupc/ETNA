@@ -13,23 +13,23 @@ namespace ETNA.WCF.PV
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione InformesReclamos.svc o InformesReclamos.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class InformesReclamos : IInformesReclamos
     {
-        public int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, DateTime fechaAprobacion, DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId)
+        public int InsertarInformeReclamo(string codigoInforme, string descripcion, string detalleInforme, DateTime fechaAprobacion, DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int idUsuario, int aprobadoPorId)
         {
             var gestorInformesReclamos = new GestorInformesReclamo();
-            return gestorInformesReclamos.InsertarInformeReclamo(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, elboradoPorId, aprobadoPorId);
+            return gestorInformesReclamos.InsertarInformeReclamo(codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, idUsuario, aprobadoPorId);
         }
 
 
-        public bool EditarInformeReclamo(int idInforme, string codigoInforme, string descripcion, string detalleInforme, DateTime fechaAprobacion, DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int elboradoPorId, int aprobadoPorId)
+        public bool EditarInformeReclamo(int idInforme, string codigoInforme, string descripcion, string detalleInforme, DateTime fechaAprobacion, DateTime fechaElaboracion, string observacionAprobador, string estado, int reclamoId, int IdUsuario, int aprobadoPorId)
         {
             var gestorInformesReclamos = new GestorInformesReclamo();
-            return gestorInformesReclamos.EditarInformeReclamo(idInforme, codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, elboradoPorId, aprobadoPorId);
+            return gestorInformesReclamos.EditarInformeReclamo(idInforme, codigoInforme, descripcion, detalleInforme, fechaAprobacion, fechaElaboracion, observacionAprobador, estado, reclamoId, IdUsuario, aprobadoPorId);
         }
 
-        public bool AprobarInformeReclamo(int idInforme,  DateTime fechaAprobacion, string observacionAprobador, string estado, int userId)
+        public bool AprobarInformeReclamo(int idInforme,  DateTime fechaAprobacion, string observacionAprobador, string estado, int IdUsuario)
         {
             var gestorInformesReclamos = new GestorInformesReclamo();
-            return gestorInformesReclamos.AprobarInformeReclamo(idInforme, fechaAprobacion,  observacionAprobador, estado,userId);
+            return gestorInformesReclamos.AprobarInformeReclamo(idInforme, fechaAprobacion,  observacionAprobador, estado,IdUsuario);
         }
 
         public List<InformeReclamoDto> ListaInfomesReclamos()
@@ -37,7 +37,8 @@ namespace ETNA.WCF.PV
             var gestorInformeReclamo = new GestorInformesReclamo();
             var lista = gestorInformeReclamo.Listar();
             var listaDtos = new List<InformeReclamoDto>();
-
+            var gestorReclamo = new GestorReclamos();
+            
             foreach (var informe in lista)
             {
                 var dto = new InformeReclamoDto();
@@ -60,6 +61,11 @@ namespace ETNA.WCF.PV
                 
                 dto.Estado = informe.Estado;
                 dto.ReclamoId = informe.ReclamoId;
+                var reclamo = gestorReclamo.ObtenerReclamo(dto.ReclamoId);
+                dto.NombreCliente = informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim() +
+                                    "," +
+                                    informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim();
+                dto.FechaHoraReclamo = informe.TB_PV_Reclamos.FechaHoraReclamo;
                 dto.CodigoReclamo = informe.TB_PV_Reclamos.CodigoReclamo;
 
                 if (informe.Estado.Equals("E"))
@@ -110,7 +116,11 @@ namespace ETNA.WCF.PV
                 dto.Estado = informe.Estado;
                 dto.ReclamoId = informe.ReclamoId;
                 dto.CodigoReclamo = informe.TB_PV_Reclamos.CodigoReclamo;
-
+                dto.NombreCliente = informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim() +
+                                 "," +
+                                 informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim();
+                dto.FechaHoraReclamo = informe.TB_PV_Reclamos.FechaHoraReclamo;
+             
                 if (informe.Estado.Equals("E"))
                 {
                     dto.DescripcionEstado = "Elaborado";
@@ -161,7 +171,11 @@ namespace ETNA.WCF.PV
                 dto.Estado = informe.Estado;
                 dto.ReclamoId = informe.ReclamoId;
                 dto.CodigoReclamo = informe.TB_PV_Reclamos.CodigoReclamo;
-
+                dto.NombreCliente = informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.ApellidoPaterno.Trim() +
+                                 "," +
+                                 informe.TB_PV_Reclamos.TB_VT_FacturaDetalles.TB_VT_Facturas.TB_VT_Clientes.PrimerNombre.Trim();
+                dto.FechaHoraReclamo = informe.TB_PV_Reclamos.FechaHoraReclamo;
+             
                 if (informe.Estado.Equals("E"))
                 {
                     dto.DescripcionEstado = "Elaborado";

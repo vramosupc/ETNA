@@ -92,7 +92,7 @@
         
         <td>
             
-            @if (item.Estado != "A")
+            @if (item.Estado == "P")
             {
                 @Html.ActionLink("Modificar", "Edit", new {id = item.Id})
             }
@@ -118,7 +118,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $(".btndenegado").click(function(){
-                alert("No se puede editar, por que se encuentra Atendido");
+                alert("Solo se pueden modificar reclamos Pendientes");
             });
         });
     </script>

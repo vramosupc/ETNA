@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using ETNA.MVC.FacturasServices;
+using ETNA.MVC.InformesReclamosServices;
 using ETNA.MVC.PostVentaServices;
 using ETNA.MVC.Models.PV;
 using AutoMapper;
+using WebMatrix.WebData;
 
 namespace ETNA.MVC.Controllers.PV
 {
@@ -86,6 +88,51 @@ namespace ETNA.MVC.Controllers.PV
 
         //
         // GET: /Reclamo/Edit/5
+        // GET: /InformeReclamo/Create
+       
+        public ActionResult Atender(int id)
+        {
+            var service = new PostVentaServices.ReclamosClient();
+
+            //Como código de empleado le pasamos el current user id (es importante que coincida con el empleado id)
+            var reclamosDto = service.ObtenerReclamo(id);
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+  
+
+            //Mapeamos el DTO a nuestro modelo (de forma automática o a mano, dependiendo de nuestra necesidad)
+            var model = new InformeReclamoViewModel();
+            model.CodigoReclamo = reclamosDto.CodigoReclamo;
+            model.NombreCliente = reclamosDto.NombreCliente;
+            model.FechaHoraReclamo = reclamosDto.FechaHoraReclamo;
+            model.ReclamoId = id;
+        
+   
+            return View(model);
+
+        }
+
+        //
+        // POST: /InformeReclamo/Create
+
+        [HttpPost]
+        public ActionResult Atender(InformeReclamoViewModel model1)
+        {
+            try
+            {
+                var service = new InformesReclamosServices.InformesReclamosClient();
+                service.InsertarInformeReclamo(model1.CodigoInforme, model1.Descripcion, model1.DetalleInforme, model1.FechaAprobacion, model1.FechaElaboracion, model1.ObservacionAprobador, model1.Estado, model1.ReclamoId, WebSecurity.CurrentUserId, model1.AprobadoPorId);
+
+
+                return RedirectToAction("Index", new { creado = true });
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
 
     }
 }

@@ -46,6 +46,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarEstadoReclamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idReclamo" type="xs:int" />
+        <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarEstadoReclamoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActualizarEstadoReclamoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListaReclamos">
     <xs:complexType>
       <xs:sequence />
