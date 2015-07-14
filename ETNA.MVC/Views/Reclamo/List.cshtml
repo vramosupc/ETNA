@@ -6,6 +6,7 @@
     Layout = null;
 }
 <link rel="stylesheet" href="http://www.w3schools.com/bs/css/bootstrap_w3schools.css" />
+@Styles.Render("~/Content/bootstrap/css")
 
 <style type="text/css">
     .centrado {
@@ -79,7 +80,9 @@
         </td>
 
         <td>
-            <a class="idReclamo" data-id="@item.Id" data-codigoreclamo="@item.CodigoReclamo" data-fechahora="@item.FechaHoraReclamo" data-cliente="@item.NombreCliente">Seleccionar</a>
+            <a class="idReclamo" onclick="idReclamo(this);" data-id="@item.Id" data-codigoreclamo="@item.CodigoReclamo" data-fechahora="@item.FechaHoraReclamo" data-cliente="@item.NombreCliente">Seleccionar</a>
+            &nbsp;&nbsp;/&nbsp;&nbsp;
+            <a class="consultarIdReclamo" onclick="consultarIdReclamo(this);" data-id="@item.Id" data-toggle="modal" href="#divDetalleReclamo" data-target=".bs-example-modal-lg">Ver</a>
         </td>
     </tr>
 }
@@ -89,7 +92,7 @@
         <td colspan="3" class="derecha">
             @for (int i = 1; i <= @ViewBag.TotalPages; i++)
             {
-                <a class="paginacion" data-pagina="@i">@i</a>
+                <a class="paginacion" onclick="paginacion(this);" data-pagina="@i">@i</a>
                 @Html.Display(" ")
             }
         </td>

@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Create";
 }
+@Styles.Render("~/Content/bootstrap/css")
 <script type="text/javascript">
     
     function load() {
@@ -88,7 +89,7 @@
             @Html.HiddenFor(model => model.ReclamoId)
             @Html.ValidationMessageFor(model => model.ReclamoId)
             <tr>
-                <td>@Html.LabelFor(model => model.CodigoReclamo)</td>
+                <td id="codigoreclamo">@Html.LabelFor(model => model.CodigoReclamo)</td>
                 <td colspan="3" style="text-align: left">
                     @Html.TextBoxFor(model => model.CodigoReclamo,(object)new {disabled="disabled",Style="background:#cccccc;" })
                   
@@ -129,10 +130,28 @@
         </table>
      </fieldset>
 
+    <div class="modal fade bs-example-modal-lg" id="divDetalleReclamo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Reclamo</h4>
+          </div>
+          <div class="modal-body" id="infoDetalleReclamo">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+            <!--<button type="button" class="btn btn-primary">Aceptar</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -161,43 +180,7 @@
                 }
             });
 
-            $(".paginacion").live("click", function () {
-                var codigoReclamo = $("#CodReclamo").val();
-                var pagina = $(this).data("pagina");
-
-                if (codigoReclamo !== "") {
-                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
-
-                    var request = $.ajax({
-                        url: "/Reclamo/List/" + codigoReclamo + "/page/" + pagina,
-                        method: "GET",
-                        dataType: "html"
-                    });
-
-                    request.done(function (msg) {
-                        $("#resultadoDiv").html(msg);
-                    });
-
-                    request.fail(function (jqXHR, textStatus) {
-                        alert("Request failed: " + textStatus);
-                    });
-                } else {
-                    alert("Ingrese el Cod. de Reclamo a Consultar");
-                }
-            });
-
-            $(".idReclamo").live('click', function () {
-                var id = $(this).data('id');
-                var codigo = $(this).data('codigoreclamo');
-                var fechahora = $(this).data('fechahora');
-                var cliente = $(this).data('cliente');
-                $("#ReclamoId").val(id);
-                $("#CodigoReclamo").val(codigo);
-                $("#FechaHoraReclamo").val(fechahora);
-                $("#NombreCliente").val(cliente);
-            });
-
-            $("#btnGrabar").live('click', function () {
+            $("#btnGrabar").on('click', function () {
 
                 var descripcion = $("#Descripcion").val();
                 var detalle = $("#DetalleInforme").val();
@@ -228,6 +211,67 @@
 
             });
         });
+
+        function idReclamo(obj) {
+            var id = $(obj).data('id');
+            var codigo = $(obj).data('codigoreclamo');
+            var fechahora = $(obj).data('fechahora');
+            var cliente = $(obj).data('cliente');
+            $("#ReclamoId").val(id);
+            $("#CodigoReclamo").val(codigo);
+            $("#FechaHoraReclamo").val(fechahora);
+            $("#NombreCliente").val(cliente);
+        }
+
+        function paginacion(obj) {
+            var codigoReclamo = $("#CodReclamo").val();
+            var pagina = $(obj).data("pagina");
+
+            if (codigoReclamo !== "") {
+                $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
+
+                var request = $.ajax({
+                    url: "/Reclamo/List/" + codigoReclamo + "/page/" + pagina,
+                    method: "GET",
+                    dataType: "html"
+                });
+
+                request.done(function (msg) {
+                    $("#resultadoDiv").html(msg);
+                });
+
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
+                });
+            } else {
+                alert("Ingrese el Cod. de Reclamo a Consultar");
+            }
+        }
+
+        function consultarIdReclamo(obj) {
+            //$('#divDetalleReclamo').modal('show');
+            var idReclamo = $(obj).data('id');
+
+            if (idReclamo !== "") {
+                $('#infoDetalleReclamo').html('<img src="/Images/ajax-loader.gif"> Buscando...');
+
+                var request = $.ajax({
+                    url: "/Reclamo/Detail/" + idReclamo,
+                    method: "GET",
+                    dataType: "html"
+                });
+
+                request.done(function (msg) {
+                    $("#infoDetalleReclamo").html(msg);
+                });
+
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
+                });
+            } else {
+                alert("Seleccione el Id de Reclamo a Consultar");
+            }
+        }
     </script>
 
 }

@@ -11,6 +11,9 @@ namespace ETNA.MVC
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/bootstrap/js/bootstrap.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
@@ -38,6 +41,8 @@ namespace ETNA.MVC
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap/css").Include("~/Scripts/bootstrap/css/bootstrap.css"));
         }
     }
 }

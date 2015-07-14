@@ -51,6 +51,19 @@ namespace ETNA.MVC.Controllers.PV
             return View(model);
         }
 
+        // GET: /Reclamo/Detail/5
+
+        public ActionResult Detail(int id)
+        {
+            @ViewBag.Id = id;
+
+            var service = new PostVentaServices.ReclamosClient();
+            var reclamosDto = service.ObtenerReclamo(id);
+            var model = Mapper.Map<ReclamoViewModel>(reclamosDto);
+
+            return View(model);
+        }
+
         //
         // GET: /Reclamo/Create
 
