@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Común", "00. Común", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNA.Common", "ETNA.Common\ETNA.Common.csproj", "{48128773-EA3B-41F6-9095-A267D4536913}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationETNASendMail", "C:\Users\juancho\Desktop\ConsoleApplicationETNASendMail\ConsoleApplicationETNASendMail\ConsoleApplicationETNASendMail.csproj", "{D4CBC4A4-E1E9-451A-9195-C25F13EBF2CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETNASendMail", "ETNASendMail\ETNASendMail\ETNASendMail.csproj", "{D4CBC4A4-E1E9-451A-9195-C25F13EBF2CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
