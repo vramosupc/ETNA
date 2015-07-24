@@ -109,7 +109,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             
-            $("#btnGrabar").live('click', function () {
+            $("#btnGrabar").click(function() {
 
                 var codigoProgramacion = $("#CodigoProgramacion").val();
                 var estado = $("#Estado").val();
@@ -118,6 +118,7 @@
                 var periodicidad = $("#Periodicidad").val();
                 var fechaInicio = $("#FechaInicio").val();
                 var fechaFin = $("#FechaFin").val();
+                var fechaHoy = new Date();
                 var porcentajeEncuestados = $("#PorcentajeEncuestados").val();
                 var diasVigencia = $("#DiasVigencia").val();
 
@@ -148,6 +149,19 @@
 
                 if (fechaFin == null || fechaFin == "") {
                     alert("Debe ingresar la Fecha de Fin para la Programación");
+                    $("#FechaFin").focus();
+                    return false;
+                }
+
+
+                if (fechaInicio < fechaHoy) {
+                    alert("La fecha de Inicio No puede ser menor a la fecha actual");
+                    $("#FechaInicio").focus();
+                    return false;
+                }
+
+                if (fechaFin < fechaHoy) {
+                    alert("La fecha de Fin No puede ser menor a la fecha actual");
                     $("#FechaFin").focus();
                     return false;
                 }

@@ -75,7 +75,7 @@
         </td>
 
         <td>
-            <a class="codigoDetalle" data-id="@item.Id" data-nrofactura="@item.NroFactura" data-producto="@item.NombreProducto" data-cliente="@item.NombreCliente">Seleccionar</a>
+            <a class="codigoDetalle" onclick="codigoDetalle(this);" data-id="@item.Id" data-nrofactura="@item.NroFactura" data-producto="@item.NombreProducto" data-cliente="@item.NombreCliente">Seleccionar</a>
         </td>
     </tr>
 }
@@ -85,7 +85,7 @@
         <td colspan="3" class="derecha">
             @for (int i = 1; i <= @ViewBag.TotalPages; i++)
             {
-                <a class="paginacion" data-pagina="@i">@i</a>
+                <a class="paginacion" onclick="paginacion(this);" data-pagina="@i">@i</a>
                 @Html.Display(" ")
             }
         </td>

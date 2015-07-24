@@ -76,7 +76,7 @@
                  
             @if (item.Estado == "E" )
             {
-                @Html.ActionLink("Modificar", "Edit", new {id = 0 })
+                @Html.ActionLink("Modificar", "Edit", new { id=item.InformeReclamoId   })
             }
             else
             {

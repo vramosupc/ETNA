@@ -178,44 +178,9 @@
                 }
             });
 
-            $(".paginacion").live("click", function () {
-                var facturaId = $("#FacturaId").val();
-                var pagina = $(this).data("pagina");
-
-                if (facturaId !== "") {
-                    $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
-
-                    var request = $.ajax({
-                        url: "/Factura/Details/" + facturaId + "/page/" + pagina,
-                        method: "GET",
-                        dataType: "html"
-                    });
-
-                    request.done(function (msg) {
-                        $("#resultadoDiv").html(msg);
-                    });
-
-                    request.fail(function (jqXHR, textStatus) {
-                        alert("Request failed: " + textStatus);
-                    });
-                } else {
-                    alert("Ingrese el Nro de Factura a Consultar");
-                }
-            });
-
-            $(".codigoDetalle").live('click', function() {
-                var id = $(this).data('id');
-                var nro = $(this).data('nrofactura');
-                var producto = $(this).data('producto');
-                var cliente = $(this).data('cliente');
-                $("#IdFacturaDetalle").val(id);
-                $("#NumeroFactura").val(nro);
-                $("#NombreProducto").val(producto);
-                $("#NombreCliente").val(cliente);
-            });
-
-
-            $("#btnGrabar").live('click', function () {
+      
+                $("#btnGrabar").click(function() {
+         
 
                 var motivo = $("#Motivo").val();
                 var detalle = $("#Detalle").val();
@@ -258,6 +223,43 @@
 
 
         });
+
+        function paginacion(obj) {
+
+            var facturaId = $("#FacturaId").val();
+            var pagina = $(obj).data("pagina");
+
+            if (facturaId !== "") {
+                $('#resultadoDiv').html('<img src="/Images/ajax-loader.gif"> loading...');
+
+                var request = $.ajax({
+                    url: "/Factura/Details/" + facturaId + "/page/" + pagina,
+                    method: "GET",
+                    dataType: "html"
+                });
+
+                request.done(function (msg) {
+                    $("#resultadoDiv").html(msg);
+                });
+
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
+                });
+            } else {
+                alert("Ingrese el Nro de Factura a Consultar");
+            }
+        }
+
+        function codigoDetalle(obj) {
+            var id = $(obj).data('id');
+            var nro = $(obj).data('nrofactura');
+            var producto = $(obj).data('producto');
+            var cliente = $(obj).data('cliente');
+            $("#IdFacturaDetalle").val(id);
+            $("#NumeroFactura").val(nro);
+            $("#NombreProducto").val(producto);
+            $("#NombreCliente").val(cliente);
+        }
     </script>
 
 }
