@@ -118,7 +118,11 @@
                 var periodicidad = $("#Periodicidad").val();
                 var fechaInicio = $("#FechaInicio").val();
                 var fechaFin = $("#FechaFin").val();
-                var fechaHoy = new Date();
+                var now = new Date();
+                var day = ("0" + now.getDate()).slice(-2);
+                var month = ("0" + (now.getMonth() + 1)).slice(-2);
+                var fechaHoy = now.getFullYear() + "-" + (month) + "-" + (day);
+                
                 var porcentajeEncuestados = $("#PorcentajeEncuestados").val();
                 var diasVigencia = $("#DiasVigencia").val();
 
